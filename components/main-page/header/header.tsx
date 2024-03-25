@@ -4,14 +4,14 @@ import Image from "next/image";
 
 const Header = () => {
   return (
-    <section className="bg-white text-slate-900">
+    <section className="bg-gradient-to-b from-whitecaritravel via-white to-whitecaritravel text-slate-900">
       <div className="mx-auto max-w-screen-xl px-8 lg:flex lg:h-screen lg:items-center">
         <div className="max-w-full text-left">
           <div className="w-full flex items-center">
             <div className="w-full">
               <>
                 <p className="max-w-xl sm:text-xl/relaxed">Cari Travel,</p>
-                <h1 className="bg-gradient-to-r from-pinkcaritravel to-yellowcaritravel bg-clip-text text-3xl font-extrabold text-transparent sm:text-5xl mt-4">
+                <h1 className="bg-gradient-to-r from-pinkcaritravel-900 to-yellowcaritravel bg-clip-text text-3xl font-extrabold text-transparent sm:text-5xl mt-4">
                   Make your Journey&apos;s.
                   <span className="sm:block pt-2">
                     {" "}
@@ -44,7 +44,7 @@ const Header = () => {
             </div>
 
             <div className="">
-              <ul className="mt-8 grid grid-cols-1 gap-4 lg:grid-cols-3">
+              <ul className="mt-12 grid grid-cols-1 gap-4 lg:grid-cols-3">
                 <li>
                   <a href="#" className="group relative block">
                     <Image
@@ -52,7 +52,7 @@ const Header = () => {
                       alt=""
                       className="aspect-square w-full object-cover transition duration-500 group-hover:opacity-90 rounded-xl"
                       width={300}
-                      height={300}
+                      height={600}
                     />
                   </a>
                 </li>
@@ -64,7 +64,7 @@ const Header = () => {
                       alt=""
                       className="aspect-square w-full object-cover transition duration-500 group-hover:opacity-90 rounded-xl"
                       width={300}
-                      height={300}
+                      height={600}
                     />
                   </a>
                 </li>
@@ -76,7 +76,7 @@ const Header = () => {
                       alt=""
                       className="aspect-square w-full object-cover transition duration-500 group-hover:opacity-90 rounded-xl"
                       width={300}
-                      height={300}
+                      height={600}
                     />
                   </a>
                 </li>
