@@ -10,31 +10,81 @@ const Features = () => {
             <div className="relative h-64 overflow-hidden rounded-lg sm:h-80 lg:order-last lg:h-full">
               <Image
                 alt=""
-                src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                className="absolute inset-0 h-full w-full object-cover"
+                // src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                src="/images/bag.png"
+                className="absolute inset-x-16 object-contain"
                 width={500}
                 height={500}
               />
             </div>
-
             <div className="lg:py-24">
               <h2 className="text-3xl font-bold sm:text-4xl">
-                Grow your audience
+                Pelayanan terbaik kami!
               </h2>
 
-              <p className="mt-4 text-gray-600">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut
-                qui hic atque tenetur quis eius quos ea neque sunt, accusantium
-                soluta minus veniam tempora deserunt? Molestiae eius quidem quam
-                repellat.
-              </p>
-
-              <a
-                href="#"
-                className="mt-8 inline-block rounded bg-indigo-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-indigo-700 focus:outline-none focus:ring focus:ring-yellow-400"
-              >
-                Get Started Today
-              </a>
+              <div className="flex mt-8 gap-4">
+                <div>
+                  <Image
+                    alt=""
+                    src="/images/features.png"
+                    className=""
+                    width={64}
+                    height={64}
+                  />
+                </div>
+                <div>
+                  <h1 className="text-xl font-bold pb-2">
+                    Pengalaman Tak Terlupakan
+                  </h1>
+                  <p>
+                    Ikuti rasa ingin tahu Anda, rasakan kegembiraan dari
+                    penemuan-penemuan nyata, dan jelajahi lebih banyak dari
+                    dunia.
+                  </p>
+                </div>
+              </div>
+              <div className="flex mt-8 gap-4">
+                <div>
+                  <Image
+                    alt=""
+                    src="/images/features.png"
+                    className=""
+                    width={64}
+                    height={64}
+                  />
+                </div>
+                <div>
+                  <h1 className="text-xl font-bold pb-2">
+                    Pesan dengan satu paket
+                  </h1>
+                  <p>
+                    Menawarkan pengalaman satu paket yang lengkap. Tidak perlu
+                    khawatir dengan kerumitan perjalanan dari satu tempat ke
+                    tempat lain.
+                  </p>
+                </div>
+              </div>
+              <div className="flex mt-8 gap-4">
+                <div>
+                  <Image
+                    alt=""
+                    src="/images/features.png"
+                    className=""
+                    width={64}
+                    height={64}
+                  />
+                </div>
+                <div>
+                  <h1 className="text-xl font-bold pb-2">
+                    Jelajahi dengan penuh kenyamanan
+                  </h1>
+                  <p>
+                    Nikmati rekomendasi travel kami yang dipersonalisasi dengan
+                    lebih dari 100+ tour guide. Kamu tinggal berangkat cap cus
+                    aja!
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

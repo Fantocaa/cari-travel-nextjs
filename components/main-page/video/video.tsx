@@ -4,31 +4,27 @@ const Video = () => {
   return (
     <section className="bg-white text-slate-900">
       <div className="mx-auto max-w-screen-xl px-8 py-32 lg:flex lg:h-screen lg:items-center">
-        <div className="mx-auto max-w-3xl text-center">
-          <h1 className="bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 bg-clip-text text-3xl font-extrabold text-transparent sm:text-5xl">
-            Understand User Flow.
-            <span className="sm:block"> Increase Conversion. </span>
+        <div className="mx-auto max-w-full text-center">
+          <h1 className="bg-gradient-to-r from-pinkcaritravel-900 to-yellowcaritravel bg-clip-text text-3xl font-extrabold text-transparent sm:text-5xl">
+            Unforgettable Travel Experiences
           </h1>
-
-          <p className="mx-auto mt-4 max-w-xl sm:text-xl/relaxed">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt
-            illo tenetur fuga ducimus numquam ea!
+          <p className="mx-auto mt-4 max-w-5xl sm:text-xl/relaxed">
+            Go beyond the surface of the world&apos;s must see travel
+            destinatioins. Discover our authentic, unforgettable experiences and
+            explore the world for real
           </p>
-
-          <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <a
-              className="block w-full rounded border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-white focus:outline-none focus:ring active:text-opacity-75 sm:w-auto"
-              href="#"
-            >
-              Get Started
-            </a>
-
-            <a
-              className="block w-full rounded border border-blue-600 px-12 py-3 text-sm font-medium text-blue-600 hover:text-white hover:bg-blue-600 focus:outline-none focus:ring active:bg-blue-500 sm:w-auto"
-              href="#"
-            >
-              Learn More
-            </a>
+          <div className="mt-8 mx-auto">
+            <iframe
+              width="800"
+              height="480"
+              src="https://www.youtube.com/embed/BFS9n4B_2xA?si=a_f5NSfB8n-WClyp"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+              className="mx-auto"
+            ></iframe>
           </div>
         </div>
       </div>
