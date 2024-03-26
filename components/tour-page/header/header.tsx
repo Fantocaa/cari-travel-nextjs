@@ -1,35 +1,75 @@
 import React from "react";
+import Image from "next/image";
+import { Input } from "@/components/ui/input";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Button } from "@/components/ui/button";
 
 const Header = () => {
   return (
-    <section className="bg-white text-slate-900">
-      <div className="mx-auto max-w-screen-xl px-8 py-32 lg:flex lg:h-screen lg:items-center">
-        <div className="max-w-3xl text-left">
-          <h1 className="bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 bg-clip-text text-3xl font-extrabold text-transparent sm:text-5xl">
-            Understand User Flow.
-            <span className="sm:block"> Increase Conversion. </span>
+    <section className="relative">
+      <div className="mx-auto lg:flex lg:h-full relative z-10">
+        <Image
+          alt="tour"
+          height={1080}
+          width={1920}
+          src="/images/tour.png"
+          className="w-full h-full bg-no-repeat object-cover relative"
+        />
+        <div className="absolute inset-0 flex flex-col justify-center items-center z-50 px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-3xl font-extrabold sm:text-5xl text-whitecaritravel">
+            Let Us Plan Your Perfect Gateway
           </h1>
-
-          <p className="mx-auto mt-4 max-w-xl sm:text-xl/relaxed">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt
-            illo tenetur fuga ducimus numquam ea!
+          <p className="mt-4 sm:text-lg/relaxed text-whitecaritravel max-w-2xl">
+            Leave the Details to Us and Embark on your Ideal Escape. Our Expert
+            Team Will Curate A Personalized Itinerary For A Seamless And
+            Unforgettable Journey
           </p>
-
-          <div className="mt-8 flex flex-wrap justify-start gap-4">
-            <a
-              className="block w-full rounded border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-white focus:outline-none focus:ring active:text-opacity-75 sm:w-auto"
-              href="#"
-            >
-              Get Started
-            </a>
-
-            <a
-              className="block w-full rounded border border-blue-600 px-12 py-3 text-sm font-medium text-blue-600 hover:text-white hover:bg-blue-600 focus:outline-none focus:ring active:bg-blue-500 sm:w-auto"
-              href="#"
-            >
-              Learn More
-            </a>
-          </div>
+        </div>
+      </div>
+      <div className="bg-white p-4 flex justify-between mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+        <div className="flex gap-4">
+          <Input id="search" type="text" placeholder="Cari" />
+          <Button>Search</Button>
+        </div>
+        <div className="flex gap-4">
+          <Select>
+            <SelectTrigger className="w-[180px]">
+              <SelectValue placeholder="Sort By" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectGroup>
+                <SelectLabel>Sort By</SelectLabel>
+                <SelectItem value="apple">Apple</SelectItem>
+                <SelectItem value="banana">Banana</SelectItem>
+                <SelectItem value="blueberry">Blueberry</SelectItem>
+                <SelectItem value="grapes">Grapes</SelectItem>
+                <SelectItem value="pineapple">Pineapple</SelectItem>
+              </SelectGroup>
+            </SelectContent>
+          </Select>
+          <Select>
+            <SelectTrigger className="w-[180px]">
+              <SelectValue placeholder="Category" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectGroup>
+                <SelectLabel>Category</SelectLabel>
+                <SelectItem value="apple">Apple</SelectItem>
+                <SelectItem value="banana">Banana</SelectItem>
+                <SelectItem value="blueberry">Blueberry</SelectItem>
+                <SelectItem value="grapes">Grapes</SelectItem>
+                <SelectItem value="pineapple">Pineapple</SelectItem>
+              </SelectGroup>
+            </SelectContent>
+          </Select>
         </div>
       </div>
     </section>

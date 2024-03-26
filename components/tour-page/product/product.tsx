@@ -1,241 +1,67 @@
 import React from "react";
 import Image from "next/image";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+
+import {
+  Pagination,
+  PaginationContent,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from "@/components/ui/pagination";
+
+import ItemProduct from "@/components/main-page/product-location/itemproduct-location/itemproduct-location";
 
 const Product = () => {
   return (
     <section>
-      <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
-        <header>
-          <h2 className="text-xl font-bold text-gray-900 sm:text-3xl">
-            Product Collection
-          </h2>
-
-          <p className="mt-4 max-w-md text-gray-500">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque
-            praesentium cumque iure dicta incidunt est ipsam, officia dolor
-            fugit natus?
-          </p>
-        </header>
-
-        <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <li>
-            <a href="#" className="group block overflow-hidden">
-              <Image
-                src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                alt="product"
-                className="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
-                width={500}
-                height={500}
-              />
-
-              <div className="relative bg-white pt-3">
-                <h3 className="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
-                  Basic Tee
-                </h3>
-
-                <p className="mt-2">
-                  <span className="sr-only"> Regular Price </span>
-
-                  <span className="tracking-wider text-gray-900">
-                    {" "}
-                    £24.00 GBP{" "}
-                  </span>
-                </p>
-              </div>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" className="group block overflow-hidden">
-              <Image
-                src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                alt=""
-                className="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
-                width={500}
-                height={500}
-              />
-
-              <div className="relative bg-white pt-3">
-                <h3 className="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
-                  Basic Tee
-                </h3>
-
-                <p className="mt-2">
-                  <span className="sr-only"> Regular Price </span>
-
-                  <span className="tracking-wider text-gray-900">
-                    {" "}
-                    £24.00 GBP{" "}
-                  </span>
-                </p>
-              </div>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" className="group block overflow-hidden">
-              <Image
-                src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                alt=""
-                className="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
-                width={500}
-                height={500}
-              />
-
-              <div className="relative bg-white pt-3">
-                <h3 className="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
-                  Basic Tee
-                </h3>
-
-                <p className="mt-2">
-                  <span className="sr-only"> Regular Price </span>
-
-                  <span className="tracking-wider text-gray-900">
-                    {" "}
-                    £24.00 GBP{" "}
-                  </span>
-                </p>
-              </div>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" className="group block overflow-hidden">
-              <Image
-                src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                alt=""
-                className="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
-                width={500}
-                height={500}
-              />
-
-              <div className="relative bg-white pt-3">
-                <h3 className="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
-                  Basic Tee
-                </h3>
-
-                <p className="mt-2">
-                  <span className="sr-only"> Regular Price </span>
-
-                  <span className="tracking-wider text-gray-900">
-                    {" "}
-                    £24.00 GBP{" "}
-                  </span>
-                </p>
-              </div>
-            </a>
-          </li>
-        </ul>
-        <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <li>
-            <a href="#" className="group block overflow-hidden">
-              <Image
-                src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                alt="product"
-                className="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
-                width={500}
-                height={500}
-              />
-
-              <div className="relative bg-white pt-3">
-                <h3 className="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
-                  Basic Tee
-                </h3>
-
-                <p className="mt-2">
-                  <span className="sr-only"> Regular Price </span>
-
-                  <span className="tracking-wider text-gray-900">
-                    {" "}
-                    £24.00 GBP{" "}
-                  </span>
-                </p>
-              </div>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" className="group block overflow-hidden">
-              <Image
-                src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                alt=""
-                className="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
-                width={500}
-                height={500}
-              />
-
-              <div className="relative bg-white pt-3">
-                <h3 className="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
-                  Basic Tee
-                </h3>
-
-                <p className="mt-2">
-                  <span className="sr-only"> Regular Price </span>
-
-                  <span className="tracking-wider text-gray-900">
-                    {" "}
-                    £24.00 GBP{" "}
-                  </span>
-                </p>
-              </div>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" className="group block overflow-hidden">
-              <Image
-                src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                alt=""
-                className="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
-                width={500}
-                height={500}
-              />
-
-              <div className="relative bg-white pt-3">
-                <h3 className="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
-                  Basic Tee
-                </h3>
-
-                <p className="mt-2">
-                  <span className="sr-only"> Regular Price </span>
-
-                  <span className="tracking-wider text-gray-900">
-                    {" "}
-                    £24.00 GBP{" "}
-                  </span>
-                </p>
-              </div>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" className="group block overflow-hidden">
-              <Image
-                src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                alt=""
-                className="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
-                width={500}
-                height={500}
-              />
-
-              <div className="relative bg-white pt-3">
-                <h3 className="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
-                  Basic Tee
-                </h3>
-
-                <p className="mt-2">
-                  <span className="sr-only"> Regular Price </span>
-
-                  <span className="tracking-wider text-gray-900">
-                    {" "}
-                    £24.00 GBP{" "}
-                  </span>
-                </p>
-              </div>
-            </a>
-          </li>
-        </ul>
-      </div>
+      <section>
+        <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+          <div className="flex justify-between"></div>
+          <div>
+            <Carousel>
+              <CarouselContent>
+                <CarouselItem>
+                  <ItemProduct />
+                  <ItemProduct />
+                </CarouselItem>
+              </CarouselContent>
+            </Carousel>
+            <Pagination>
+              <PaginationContent>
+                <PaginationItem>
+                  <PaginationPrevious href="#" />
+                </PaginationItem>
+                <PaginationItem>
+                  <PaginationLink href="#">1</PaginationLink>
+                </PaginationItem>
+                <PaginationItem>
+                  <PaginationLink href="#" isActive>
+                    2
+                  </PaginationLink>
+                </PaginationItem>
+                <PaginationItem>
+                  <PaginationLink href="#">3</PaginationLink>
+                </PaginationItem>
+                <PaginationItem>
+                  <PaginationEllipsis />
+                </PaginationItem>
+                <PaginationItem>
+                  <PaginationNext href="#" />
+                </PaginationItem>
+              </PaginationContent>
+            </Pagination>
+          </div>
+        </div>
+      </section>
     </section>
   );
 };
