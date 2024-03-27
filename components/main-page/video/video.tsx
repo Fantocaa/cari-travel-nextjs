@@ -2,7 +2,7 @@ import React from "react";
 
 const Video = () => {
   return (
-    <section className="bg-white text-slate-900">
+    <section className="bg-white text-slate-900 py-36">
       <div className="mx-auto max-w-screen-xl px-8 py-32 lg:flex lg:h-screen lg:items-center">
         <div className="mx-auto max-w-full text-center">
           <h1 className="bg-gradient-to-r from-pinkcaritravel-900 to-yellowcaritravel bg-clip-text text-3xl font-extrabold text-transparent sm:text-5xl">

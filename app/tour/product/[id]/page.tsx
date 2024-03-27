@@ -14,7 +14,26 @@ import ProductDetail from "@/components/product-page/detail-product";
 import Cta from "@/components/main-page/cta/cta";
 import { Button } from "@/components/ui/button";
 
-const ProductPage = ({ params }: { params: { id: string } }) => {
+async function getData() {
+  // const res = await fetch("http://cms-caritravel.test/api/post");
+  const res = await fetch("https://fakestoreapi.com/products");
+
+  if (!res.ok) {
+    throw console.log("Error uwu");
+  }
+
+  return res.json();
+}
+
+// const ProductPage = ({ params }: { params: { id: string } }) => {
+export default async function ProductPage({
+  params,
+}: {
+  params: { id: string };
+}) {
+  const data = await getData();
+  console.log(data);
+
   return (
     <section className="relative">
       <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
@@ -54,6 +73,6 @@ const ProductPage = ({ params }: { params: { id: string } }) => {
       </div>
     </section>
   );
-};
+}
 
-export default ProductPage;
+// export default ProductPage;

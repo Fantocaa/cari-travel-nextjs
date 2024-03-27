@@ -8,6 +8,18 @@ import {
 } from "@/components/ui/carousel";
 import ItemProduct from "./itemproduct/itemproduct";
 
+export async function getStaticProps() {
+  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+  const allPostsData = await res.json();
+  return {
+    props: {
+      allPostsData,
+    },
+    revalidate: 30,
+  };
+}
+
+// const Product = ({ allPostsData }: { allPostsData: React.ReactNode }) => {
 const Product = () => {
   return (
     <section className="pt-16">
@@ -20,18 +32,31 @@ const Product = () => {
           <p className="mt-2 max-w-full text-gray-500">
             Jelajahi Destinasi Menarik dengan Rekomendasi Khusus dari Kami!
           </p>
+          {/* <div>{allPostsData}</div> */}
         </header>
         <div>
           <Carousel>
             <CarouselContent>
               <CarouselItem>
-                <ItemProduct />
+                <div className="grid grid-cols-3 gap-4 mt-8">
+                  <ItemProduct />
+                  <ItemProduct />
+                  <ItemProduct />
+                </div>
               </CarouselItem>
               <CarouselItem>
-                <ItemProduct />
+                <div className="grid grid-cols-3 gap-4 mt-8">
+                  <ItemProduct />
+                  <ItemProduct />
+                  <ItemProduct />
+                </div>
               </CarouselItem>
               <CarouselItem>
-                <ItemProduct />
+                <div className="grid grid-cols-3 gap-4 mt-8">
+                  <ItemProduct />
+                  <ItemProduct />
+                  <ItemProduct />
+                </div>
               </CarouselItem>
             </CarouselContent>
             <CarouselPrevious />

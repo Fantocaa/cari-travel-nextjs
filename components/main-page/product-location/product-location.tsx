@@ -32,8 +32,14 @@ const ProductLocation = () => {
           <Carousel>
             <CarouselContent>
               <CarouselItem>
-                <ItemProduct />
-                <ItemProduct />
+                <div className="grid grid-cols-3 gap-4 mt-8">
+                  <ItemProduct />
+                  <ItemProduct />
+                  <ItemProduct />
+                  <ItemProduct />
+                  <ItemProduct />
+                  <ItemProduct />
+                </div>
               </CarouselItem>
             </CarouselContent>
           </Carousel>
