@@ -3,15 +3,15 @@ import React from "react";
 
 const HeaderProduct = () => {
   return (
-    <div className="pt-8 flex gap-4">
+    <div className="pt-8 flex gap-4 w-full">
       <Image
         alt="Image1"
         width={800}
         height={400}
         src="/images/product-images/image 27.png"
-        className="rounded-xl"
+        className="rounded-xl max-w-screen-xl"
       />
-      <div className="grid grid-cols-2 gap-4 max-w-xl">
+      <div className="grid grid-cols-2 gap-4">
         <div className="flex flex-col gap-4">
           <Image
             alt="Image2"
