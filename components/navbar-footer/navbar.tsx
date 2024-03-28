@@ -1,122 +1,162 @@
-import React from "react";
+"use client";
+
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { Navbar } from "flowbite-react";
 
-const Navbar = () => {
+const Navigationbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      setIsScrolled(scrollTop > 0);
+    };
+
+    const handleResize = () => {
+      // Periksa lebar layar
+      setIsMobile(window.innerWidth <= 768); // Misalnya, di bawah 768 piksel dianggap sebagai layar mobile
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize);
+
+    handleResize();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
-    <header className="bg-white fixed top-0 left-0 right-0 z-50">
-      <div className="max-w-screen-xl px-4 sm:px-6 lg:px-8 mx-auto">
-        <div className="flex h-16 items-center justify-between">
-          <div className="flex-1 md:flex md:items-center md:gap-12">
-            <Link className="block text-teal-600" href="/">
-              <span className="sr-only">Home</span>
-              <Image
-                src={"/images/logo/cari-travel.svg"}
-                width={100}
-                height={32}
-                alt="logo caritravel"
-              />
-            </Link>
+    <header>
+      {isMobile && (
+        <Navbar
+          fluid
+          className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-500  ${
+            isScrolled
+              ? " bg-pinkcaritravel-900 text-white"
+              : "bg-white text-blackcaritravel"
+          }`}
+        >
+          <div className="2xl:px-8 max-w-screen-xl w-full mx-auto flex items-center justify-between">
+            <Navbar.Brand as={Link} href="/">
+              {isScrolled ? (
+                <Image
+                  src={"/images/logo/Logo CariTravel Putih.png"}
+                  width={100}
+                  height={32}
+                  alt="logo caritravel"
+                />
+              ) : (
+                <Image
+                  src={"/images/logo/cari-travel.svg"}
+                  width={100}
+                  height={32}
+                  alt="logo caritravel"
+                />
+              )}
+            </Navbar.Brand>
+            <Navbar.Toggle
+              className={isScrolled ? "text-white" : "text-pinkcaritravel-900"}
+            />
+            {/* </div> */}
           </div>
-
-          <div className="md:flex md:items-center md:gap-12">
-            <nav aria-label="Global" className="hidden md:block">
-              <ul className="flex items-center gap-6 text-sm">
-                <li>
-                  <Link
-                    className="text-gray-500 transition hover:text-gray-500/75"
-                    href="/"
-                  >
-                    {" "}
-                    Home{" "}
-                  </Link>
-                </li>
-
-                <li>
-                  <Link
-                    className="text-gray-500 transition hover:text-gray-500/75"
-                    href="/tour"
-                  >
-                    {" "}
-                    Tour Package{" "}
-                  </Link>
-                </li>
-
-                <li>
-                  <Link
-                    className="text-gray-500 transition hover:text-gray-500/75"
-                    href="/about"
-                  >
-                    {" "}
-                    About Us{" "}
-                  </Link>
-                </li>
-
-                {/* <li>
-                  <a
-                    className="text-gray-500 transition hover:text-gray-500/75"
-                    href="#"
-                  >
-                    {" "}
-                    FAQ{" "}
-                  </a>
-                </li> */}
-
-                <li>
-                  <Link
-                    className="text-gray-500 transition hover:text-gray-500/75"
-                    href="/contact"
-                  >
-                    {" "}
-                    Contact{" "}
-                  </Link>
-                </li>
-              </ul>
-            </nav>
-
-            {/* <div className="flex items-center gap-4">
-              <div className="sm:flex sm:gap-4">
-                <a
-                  className="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow"
-                  href="#"
-                >
-                  Login
-                </a>
-
-                <div className="hidden sm:flex">
-                  <a
-                    className="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600"
-                    href="#"
-                  >
-                    Register
-                  </a>
-                </div>
-              </div>
-
-              <div className="block md:hidden">
-                <button className="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M4 6h16M4 12h16M4 18h16"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </div> */}
+          <div className="w-full">
+            <Navbar.Collapse>
+              <Navbar.Link
+                href="/"
+                className={isScrolled ? "text-white" : "text-blackcaritravel"}
+              >
+                Home
+              </Navbar.Link>
+              <Navbar.Link
+                href="/tour"
+                className={isScrolled ? "text-white" : "text-blackcaritravel"}
+              >
+                Tour Package
+              </Navbar.Link>
+              <Navbar.Link
+                as={Link}
+                href="/about"
+                className={isScrolled ? "text-white" : "text-blackcaritravel"}
+              >
+                About
+              </Navbar.Link>
+              <Navbar.Link
+                href="#"
+                className={isScrolled ? "text-white" : "text-blackcaritravel"}
+              >
+                Contact
+              </Navbar.Link>
+            </Navbar.Collapse>
           </div>
-        </div>
-      </div>
+        </Navbar>
+      )}
+
+      {!isMobile && (
+        <Navbar
+          fluid
+          className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-500  ${
+            isScrolled
+              ? " bg-pinkcaritravel-900 text-white"
+              : "bg-white text-blackcaritravel"
+          }`}
+        >
+          <div className="px-4 2xl:px-8 max-w-screen-xl w-full mx-auto flex items-center justify-between">
+            <Navbar.Brand as={Link} href="/">
+              {isScrolled ? (
+                <Image
+                  src={"/images/logo/Logo CariTravel Putih.png"}
+                  width={100}
+                  height={32}
+                  alt="logo caritravel"
+                />
+              ) : (
+                <Image
+                  src={"/images/logo/cari-travel.svg"}
+                  width={100}
+                  height={32}
+                  alt="logo caritravel"
+                />
+              )}
+            </Navbar.Brand>
+            <Navbar.Collapse>
+              <Navbar.Link
+                href="/"
+                className={isScrolled ? "text-white" : "text-blackcaritravel"}
+              >
+                Home
+              </Navbar.Link>
+              <Navbar.Link
+                href="/tour"
+                className={isScrolled ? "text-white" : "text-blackcaritravel"}
+              >
+                Tour Package
+              </Navbar.Link>
+              <Navbar.Link
+                as={Link}
+                href="/about"
+                className={isScrolled ? "text-white" : "text-blackcaritravel"}
+              >
+                About
+              </Navbar.Link>
+              <Navbar.Link
+                href="#"
+                className={isScrolled ? "text-white" : "text-blackcaritravel"}
+              >
+                Contact
+              </Navbar.Link>
+            </Navbar.Collapse>
+          </div>
+          <div className="w-full"></div>
+        </Navbar>
+      )}
     </header>
   );
 };
 
-export default Navbar;
+export default Navigationbar;

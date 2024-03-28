@@ -2,7 +2,7 @@ import React from "react";
 
 const Video = () => {
   return (
-    <section className="bg-white text-slate-900 py-36">
+    <section className="bg-white text-slate-900 md:py-32">
       <div className="mx-auto max-w-screen-xl px-8 py-32 lg:flex lg:h-screen lg:items-center">
         <div className="mx-auto max-w-full text-center">
           <h1 className="bg-gradient-to-r from-pinkcaritravel-900 to-yellowcaritravel bg-clip-text text-3xl font-extrabold text-transparent sm:text-5xl">
@@ -23,7 +23,7 @@ const Video = () => {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
-              className="mx-auto"
+              className="mx-auto w-full h-72 md:h-[480px]"
             ></iframe>
           </div>
         </div>

@@ -4,8 +4,10 @@ import Image from "next/image";
 const ProductTitle = () => {
   return (
     <div className="pt-8">
-      <h1 className="font-semibold text-3xl">Bangkok Dinner Cruise</h1>
-      <div className="flex gap-8 pt-4">
+      <h1 className="font-semibold text-xl md:text-3xl">
+        Bangkok Dinner Cruise
+      </h1>
+      <div className="flex gap-4 md:gap-8 pt-4 flex-wrap">
         <div className="flex items-center gap-2">
           <Image
             alt="pin"

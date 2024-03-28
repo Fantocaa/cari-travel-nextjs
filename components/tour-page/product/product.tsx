@@ -30,7 +30,7 @@ const Product = () => {
           <Carousel>
             <CarouselContent>
               <CarouselItem>
-                <div className="grid grid-cols-3 gap-4 mt-8">
+                <div className="hidden md:grid grid-cols-3 gap-4 mt-8">
                   <ItemProduct />
                   <ItemProduct />
                   <ItemProduct />
@@ -38,10 +38,15 @@ const Product = () => {
                   <ItemProduct />
                   <ItemProduct />
                 </div>
+                <div className="md:hidden gap-4 mt-8">
+                  <ItemProduct />
+                  <ItemProduct />
+                  <ItemProduct />
+                </div>
               </CarouselItem>
             </CarouselContent>
           </Carousel>
-          <Pagination className="pt-8">
+          <Pagination className="pt-8 pb-8">
             <PaginationContent>
               <PaginationItem>
                 <PaginationPrevious href="#" />

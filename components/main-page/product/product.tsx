@@ -38,23 +38,32 @@ const Product = () => {
           <Carousel>
             <CarouselContent>
               <CarouselItem>
-                <div className="grid grid-cols-3 gap-4 mt-8">
+                <div className="hidden md:grid grid-cols-3 gap-4 mt-8 ">
                   <ItemProduct />
                   <ItemProduct />
                   <ItemProduct />
                 </div>
-              </CarouselItem>
-              <CarouselItem>
-                <div className="grid grid-cols-3 gap-4 mt-8">
-                  <ItemProduct />
-                  <ItemProduct />
+                <div className="grid md:hidden gap-4 mt-8">
                   <ItemProduct />
                 </div>
               </CarouselItem>
               <CarouselItem>
-                <div className="grid grid-cols-3 gap-4 mt-8">
+                <div className="hidden md:grid grid-cols-3 gap-4 mt-8">
                   <ItemProduct />
                   <ItemProduct />
+                  <ItemProduct />
+                </div>
+                <div className="grid md:hidden gap-4 mt-8">
+                  <ItemProduct />
+                </div>
+              </CarouselItem>
+              <CarouselItem>
+                <div className="hidden md:grid grid-cols-3 gap-4 mt-8">
+                  <ItemProduct />
+                  <ItemProduct />
+                  <ItemProduct />
+                </div>
+                <div className="grid md:hidden gap-4 mt-8">
                   <ItemProduct />
                 </div>
               </CarouselItem>

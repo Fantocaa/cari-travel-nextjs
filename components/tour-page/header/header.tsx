@@ -15,7 +15,7 @@ import { Button } from "@/components/ui/button";
 const Header = () => {
   return (
     <section className="relative">
-      <div className="mx-auto lg:flex lg:h-full relative z-10">
+      <div className="mx-auto lg:flex lg:h-full relative z-10 h-96">
         <Image
           alt="tour"
           width={1920}
@@ -23,7 +23,7 @@ const Header = () => {
           src="/images/tour.png"
           className="w-full h-full bg-no-repeat object-cover relative"
         />
-        <div className="absolute inset-0 flex flex-col justify-center items-center z-50 px-4 sm:px-6 lg:px-8">
+        <div className="absolute inset-0 flex flex-col justify-center items-center z-50 px-4 sm:px-6 lg:px-8 pt-12 md:pt-0">
           <div className="text-center flex flex-col justify-center items-center">
             <h1 className="text-3xl font-extrabold sm:text-5xl text-whitecaritravel">
               Let Us Plan Your Perfect Gateway
@@ -36,8 +36,8 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <div className="flex bg-white p-8 rounded-xl mt-4 w-full justify-between mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
-        <div className="flex gap-4 relative">
+      <div className="md:flex bg-white p-8 rounded-xl mt-4 w-full justify-between mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+        <div className="flex gap-4 relative pb-4 md:pb-0">
           <Image
             src="/images/icon/pin.svg"
             alt="pin"
@@ -49,13 +49,13 @@ const Header = () => {
             id="search"
             type="text"
             placeholder="Cari Destinasi kamu disini"
-            className="h-12 w-96 rounded-full px-4 pl-12"
+            className="h-12 w-full md:w-96 rounded-full px-4 pl-12"
           />
-          <Button className="h-full rounded-full bg-pinkcaritravel-900">
+          <Button className="h-12 md:h-full rounded-full bg-pinkcaritravel-900">
             Search
           </Button>
         </div>
-        <div className="flex gap-4">
+        <div className="flex gap-2 md:gap-4">
           <Select>
             <SelectTrigger className="w-[180px] h-12 rounded-full px-4">
               <SelectValue placeholder="Sort By" />

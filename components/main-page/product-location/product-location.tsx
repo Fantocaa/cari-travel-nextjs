@@ -26,12 +26,14 @@ const ProductLocation = () => {
             </p>
           </header>
 
-          <Button>See All</Button>
+          <Button className="bg-pink-200 text-pinkcaritravel-900 hidden md:block">
+            See All
+          </Button>
         </div>
-        <div>
+        <div className="text-center">
           <Carousel>
-            <CarouselContent>
-              <CarouselItem>
+            <CarouselContent className="text-left">
+              <CarouselItem className="hidden md:block">
                 <div className="grid grid-cols-3 gap-4 mt-8">
                   <ItemProduct />
                   <ItemProduct />
@@ -41,8 +43,28 @@ const ProductLocation = () => {
                   <ItemProduct />
                 </div>
               </CarouselItem>
+              <CarouselItem className="md:hidden">
+                <div className="grid md:hidden gap-4 mt-8">
+                  <ItemProduct />
+                </div>
+              </CarouselItem>
+              <CarouselItem className="md:hidden">
+                <div className="grid md:hidden gap-4 mt-8">
+                  <ItemProduct />
+                </div>
+              </CarouselItem>
+              <CarouselItem className="md:hidden">
+                <div className="grid md:hidden gap-4 mt-8">
+                  <ItemProduct />
+                </div>
+              </CarouselItem>
             </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
           </Carousel>
+          <Button className="bg-pink-200 text-pinkcaritravel-900 mt-4 md:hidden">
+            See All
+          </Button>
         </div>
       </div>
     </section>
