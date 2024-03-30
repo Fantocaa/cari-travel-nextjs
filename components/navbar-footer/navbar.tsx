@@ -4,6 +4,8 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Navbar } from "flowbite-react";
+import { usePathname } from "next/navigation";
+// import { link } from "fs";
 
 const Navigationbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -30,6 +32,15 @@ const Navigationbar = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  // const navLinks = [
+  //   { name: "Home", href: "/" },
+  //   { name: "Tour Package", href: "/tour" },
+  //   { name: "About Us", href: "/about" },
+  //   { name: "Contact", href: "/contact" },
+  // ];
+
+  const pathname = usePathname();
 
   return (
     <header>
@@ -69,7 +80,11 @@ const Navigationbar = () => {
             <Navbar.Collapse>
               <Navbar.Link
                 href="/"
-                className={isScrolled ? "text-white" : "text-blackcaritravel"}
+                className={
+                  isScrolled
+                    ? "text-white"
+                    : "text-blackcaritravel hover:text-pinkcaritravel-900"
+                }
               >
                 Home
               </Navbar.Link>
@@ -87,7 +102,7 @@ const Navigationbar = () => {
                 About
               </Navbar.Link>
               <Navbar.Link
-                href="#"
+                href="/contact"
                 className={isScrolled ? "text-white" : "text-blackcaritravel"}
               >
                 Contact
@@ -101,9 +116,7 @@ const Navigationbar = () => {
         <Navbar
           fluid
           className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-500  ${
-            isScrolled
-              ? " bg-pinkcaritravel-900 text-white"
-              : "bg-white text-blackcaritravel"
+            isScrolled ? "bg-pinkcaritravel-900" : "bg-white"
           }`}
         >
           <div className="px-4 2xl:px-8 max-w-screen-xl w-full mx-auto flex items-center justify-between">
@@ -125,34 +138,73 @@ const Navigationbar = () => {
               )}
             </Navbar.Brand>
             <Navbar.Collapse>
-              <Navbar.Link
+              <Link
                 href="/"
-                className={isScrolled ? "text-white" : "text-blackcaritravel"}
+                className={`${
+                  pathname === "/"
+                    ? "active text-pinkcaritravel-900"
+                    : !isScrolled
+                    ? "text-blackcaritravel transition-colors duration-500"
+                    : "text-whitecaritravel opacity-75 hover:text-whitecaritravel hover:opacity-100 transition-colors duration-500"
+                } ${
+                  pathname === "/" && isScrolled
+                    ? "text-white transition-colors duration-500"
+                    : "Ztext-pinkcaritravel-900 transition-colors duration-500"
+                }`}
               >
                 Home
-              </Navbar.Link>
-              <Navbar.Link
+              </Link>
+
+              <Link
                 href="/tour"
-                className={isScrolled ? "text-white" : "text-blackcaritravel"}
+                className={`${
+                  pathname === "/tour"
+                    ? "active text-pinkcaritravel-900"
+                    : !isScrolled
+                    ? "text-blackcaritravel transition-colors duration-500"
+                    : "text-whitecaritravel opacity-75 hover:text-whitecaritravel hover:opacity-100 transition-colors duration-500"
+                } ${
+                  pathname === "/tour" && isScrolled
+                    ? "text-white transition-colors duration-500"
+                    : "hover:text-pinkcaritravel-900 hover:opacity-100 transition-colors duration-500"
+                }`}
               >
                 Tour Package
-              </Navbar.Link>
-              <Navbar.Link
-                as={Link}
+              </Link>
+              <Link
                 href="/about"
-                className={isScrolled ? "text-white" : "text-blackcaritravel"}
+                className={`${
+                  pathname === "/about"
+                    ? "active text-pinkcaritravel-900"
+                    : !isScrolled
+                    ? "text-blackcaritravel transition-colors duration-500"
+                    : "text-whitecaritravel opacity-75 hover:text-whitecaritravel hover:opacity-100 transition-colors duration-500"
+                } ${
+                  pathname === "/about" && isScrolled
+                    ? "text-white transition-colors duration-500"
+                    : "hover:text-pinkcaritravel-900 hover:opacity-100 transition-colors duration-500"
+                }`}
               >
-                About
-              </Navbar.Link>
-              <Navbar.Link
-                href="#"
-                className={isScrolled ? "text-white" : "text-blackcaritravel"}
+                About Us
+              </Link>
+              <Link
+                href="/contact"
+                className={`${
+                  pathname === "/contact"
+                    ? "active text-pinkcaritravel-900"
+                    : !isScrolled
+                    ? "text-blackcaritravel transition-colors duration-500"
+                    : "text-whitecaritravel opacity-75 hover:text-whitecaritravel hover:opacity-100 transition-colors duration-500"
+                } ${
+                  pathname === "/contact" && isScrolled
+                    ? "text-white transition-colors duration-500"
+                    : "hover:text-pinkcaritravel-900 hover:opacity-100 transition-colors duration-500"
+                }`}
               >
                 Contact
-              </Navbar.Link>
+              </Link>
             </Navbar.Collapse>
           </div>
-          <div className="w-full"></div>
         </Navbar>
       )}
     </header>

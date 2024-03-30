@@ -44,10 +44,6 @@ export default function ProductPage({ params }: { params: { id: string } }) {
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
-              <BreadcrumbLink href="/">Home</BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator />
-            <BreadcrumbItem>
               <BreadcrumbLink href="/tour">Tour Package</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
