@@ -59,8 +59,8 @@ const ProductLocation = () => {
                 </div>
               </CarouselItem>
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+            <CarouselPrevious className="md:hidden" />
+            <CarouselNext className="md:hidden" />
           </Carousel>
           <Button className="bg-pink-200 text-pinkcaritravel-900 mt-4 md:hidden">
             See All

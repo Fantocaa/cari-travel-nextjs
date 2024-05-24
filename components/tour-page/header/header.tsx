@@ -1,18 +1,13 @@
 import React from "react";
 import Image from "next/image";
-import { Input } from "@/components/ui/input";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { Button } from "@/components/ui/button";
 
-const Header = () => {
+// type ProductProps = {
+//   products: any[];
+// };
+
+// export default function Header({ products }: ProductProps) {
+// const Header = () => {
+export default function Header() {
   return (
     <section className="relative">
       <div className="mx-auto lg:flex lg:h-full relative z-10 h-96">
@@ -36,60 +31,8 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <div className="md:flex bg-white p-8 rounded-xl mt-4 w-full justify-between mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
-        <div className="flex gap-4 relative pb-4 md:pb-0">
-          <Image
-            src="/images/icon/pin.svg"
-            alt="pin"
-            width={24}
-            height={24}
-            className="absolute left-3 top-3 h-6 w-6 text-gray-400"
-          />
-          <Input
-            id="search"
-            type="text"
-            placeholder="Cari Destinasi kamu disini"
-            className="h-12 w-full md:w-96 rounded-full px-4 pl-12"
-          />
-          <Button className="h-12 md:h-full rounded-full bg-pinkcaritravel-900">
-            Search
-          </Button>
-        </div>
-        <div className="flex gap-2 md:gap-4">
-          <Select>
-            <SelectTrigger className="w-[180px] h-12 rounded-full px-4">
-              <SelectValue placeholder="Sort By" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectGroup>
-                <SelectLabel>Sort By</SelectLabel>
-                <SelectItem value="apple">Apple</SelectItem>
-                <SelectItem value="banana">Banana</SelectItem>
-                <SelectItem value="blueberry">Blueberry</SelectItem>
-                <SelectItem value="grapes">Grapes</SelectItem>
-                <SelectItem value="pineapple">Pineapple</SelectItem>
-              </SelectGroup>
-            </SelectContent>
-          </Select>
-          <Select>
-            <SelectTrigger className="w-[180px] h-12 rounded-full px-4">
-              <SelectValue placeholder="Category" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectGroup>
-                <SelectLabel>Category</SelectLabel>
-                <SelectItem value="apple">Apple</SelectItem>
-                <SelectItem value="banana">Banana</SelectItem>
-                <SelectItem value="blueberry">Blueberry</SelectItem>
-                <SelectItem value="grapes">Grapes</SelectItem>
-                <SelectItem value="pineapple">Pineapple</SelectItem>
-              </SelectGroup>
-            </SelectContent>
-          </Select>
-        </div>
-      </div>
     </section>
   );
-};
+}
 
-export default Header;
+// export default Header;

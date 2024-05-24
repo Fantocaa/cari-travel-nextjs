@@ -10,6 +10,7 @@ const config = {
     "./node_modules/flowbite-react/lib/**/*.js",
   ],
   prefix: "",
+  mode: "jit",
   theme: {
     container: {
       center: true,

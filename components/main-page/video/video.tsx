@@ -2,13 +2,13 @@ import React from "react";
 
 const Video = () => {
   return (
-    <section className="bg-white text-slate-900 md:py-32">
-      <div className="mx-auto max-w-screen-xl px-8 py-32 lg:flex lg:h-screen lg:items-center">
+    <section className="bg-white text-slate-900 mt-16 2xl:mt-0">
+      <div className="mx-auto max-w-screen-xl px-8 py-16 lg:flex h-full lg:items-center">
         <div className="mx-auto max-w-full text-center">
-          <h1 className="bg-gradient-to-r from-pinkcaritravel-900 to-yellowcaritravel bg-clip-text text-3xl font-extrabold text-transparent sm:text-5xl">
+          <h1 className="bg-gradient-to-r from-pinkcaritravel-900 to-yellowcaritravel bg-clip-text text-3xl font-extrabold text-transparent sm:text-5xl py-4">
             Unforgettable Travel Experiences
           </h1>
-          <p className="mx-auto mt-4 max-w-5xl sm:text-xl/relaxed">
+          <p className="mx-auto mt-2 max-w-5xl sm:text-xl/relaxed">
             Go beyond the surface of the world&apos;s must see travel
             destinatioins. Discover our authentic, unforgettable experiences and
             explore the world for real

@@ -13,12 +13,31 @@ export const metadata: Metadata = {
   description: "Make your Journey to the next level",
 };
 
-export default function Home() {
+async function getData() {
+  const res = await fetch("http://cms-caritravel.test/api/postdata", {
+    cache: "no-store",
+  });
+
+  if (!res.ok) {
+    throw console.log("Error failed to fetch");
+  }
+
+  const products = await res.json();
+
+  return { products };
+}
+
+type ProductProps = {
+  products: any[]; // Sesuaikan dengan tipe data produk yang Anda gunakan
+};
+
+export default async function Home() {
+  const { products } = await getData();
   return (
     // <main className="flex min-h-screen flex-col items-center justify-between p-24">
     <main>
       <Header />
-      <Product />
+      <Product products={products} />
       <Video />
       <Features />
       <ProductLocation />

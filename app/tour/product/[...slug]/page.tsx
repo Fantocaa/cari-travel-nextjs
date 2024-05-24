@@ -18,24 +18,24 @@ import { Button } from "@/components/ui/button";
 import HeaderProductMobile from "@/components/product-page/header-product-mobile";
 import { useWindowSize } from "usehooks-ts";
 
-async function getData() {
-  // const res = await fetch("http://cms-caritravel.test/api/post");
-  const res = await fetch("https://fakestoreapi.com/products");
+// async function getData() {
+//   // const res = await fetch("http://cms-caritravel.test/api/post");
+//   const res = await fetch("https://fakestoreapi.com/products");
 
-  if (!res.ok) {
-    throw console.log("Error uwu");
-  }
+//   if (!res.ok) {
+//     throw console.log("Error uwu");
+//   }
 
-  return res.json();
-}
+//   return res.json();
+// }
 
-// const ProductPage = ({ params }: { params: { id: string } }) => {
-export default function ProductPage({ params }: { params: { id: string } }) {
-  // const data = await getData();
-  // console.log(data);
+// export default function ProductPage({ params }: { params: { slug: string } }) {
+export default function ProductPage(props: { params: { slug: string[] } }) {
+  const { params } = props;
+  // console.log("🚀 ~ ProductPage ~ params:", params);
 
   const { width } = useWindowSize();
-  const isMobile = width <= 768; // Menyesuaikan dengan lebar layar yang dianggap sebagai mobile
+  const isMobile = width <= 768;
 
   return (
     <section className="relative">
@@ -48,7 +48,7 @@ export default function ProductPage({ params }: { params: { id: string } }) {
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbPage>Product : {params.id}</BreadcrumbPage>
+              <BreadcrumbPage>Product : {params.slug}</BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
@@ -75,5 +75,3 @@ export default function ProductPage({ params }: { params: { id: string } }) {
     </section>
   );
 }
-
-// export default ProductPage;
