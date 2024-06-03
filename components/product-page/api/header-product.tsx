@@ -62,7 +62,7 @@ const HeaderProduct = ({ images }: HeaderProductProps) => {
       </div>
 
       <Lightbox
-        plugins={[Fullscreen, Zoom, Download, Captions]}
+        plugins={[Fullscreen, Zoom]}
         open={index >= 0}
         index={index}
         close={() => setIndex(-1)}

@@ -65,7 +65,7 @@ const Product = ({ products }: Props) => {
                     <Image
                       src={product.attachment[0].url}
                       alt="photo-location"
-                      className="h-72 w-full object-cover p-8 transition duration-500 group-hover:scale-105 bg-white"
+                      className="h-72 w-full object-cover transition duration-500 group-hover:scale-105 bg-white"
                       width={500}
                       height={500}
                     />
@@ -99,44 +99,6 @@ const Product = ({ products }: Props) => {
             </div>
           ))}
         </div>
-        {/* <div>
-          <Carousel>
-            <CarouselContent>
-              <CarouselItem>
-                <div className="hidden md:grid grid-cols-3 gap-4 mt-8 ">
-                  <ItemProduct />
-                  <ItemProduct />
-                  <ItemProduct />
-                </div>
-                <div className="grid md:hidden gap-4 mt-8">
-                  <ItemProduct />
-                </div>
-              </CarouselItem>
-              <CarouselItem>
-                <div className="hidden md:grid grid-cols-3 gap-4 mt-8">
-                  <ItemProduct />
-                  <ItemProduct />
-                  <ItemProduct />
-                </div>
-                <div className="grid md:hidden gap-4 mt-8">
-                  <ItemProduct />
-                </div>
-              </CarouselItem>
-              <CarouselItem>
-                <div className="hidden md:grid grid-cols-3 gap-4 mt-8">
-                  <ItemProduct />
-                  <ItemProduct />
-                  <ItemProduct />
-                </div>
-                <div className="grid md:hidden gap-4 mt-8">
-                  <ItemProduct />
-                </div>
-              </CarouselItem>
-            </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
-          </Carousel>
-        </div> */}
       </div>
     </section>
   );

@@ -71,9 +71,11 @@ export default async function DetailProductPage({ searchParams }: Props) {
                 </p>
               </div>
               <div>
-                <Button className="text-base md:text-lg p-5 2xl:p-6 bg-pinkcaritravel-900 hover:bg-pinkcaritravel-700">
-                  Pesan Sekarang
-                </Button>
+                <Link href={product?.whatsapp_link}>
+                  <Button className="text-base md:text-lg p-5 2xl:p-6 bg-pinkcaritravel-900 hover:bg-pinkcaritravel-700">
+                    Pesan Sekarang
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
