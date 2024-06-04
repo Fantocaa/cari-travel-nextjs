@@ -17,6 +17,7 @@ interface DetailProductProps {
   cities: string;
   traveler: string;
   duration: string;
+  duration_night: string;
   start_date: string;
   end_date: string;
   title: string;
@@ -35,19 +36,28 @@ interface Props {
 
 const Product = ({ products }: Props) => {
   return (
-    <section className="pt-16">
-      <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
-        <header>
-          <h2 className="text-xl font-bold text-gray-900 sm:text-3xl">
-            Rekomendasi Untuk Kamu 🗺️📌
-          </h2>
+    <section className="2xl:pt-32 py-16">
+      {/* <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8"> */}
+      <div className="container">
+        <div className="flex justify-between">
+          <header>
+            <h2 className="text-xl font-bold text-gray-900 sm:text-3xl">
+              Rekomendasi Untuk Kamu 🗺️📌
+            </h2>
 
-          <p className="mt-2 max-w-full text-gray-500">
-            Jelajahi Destinasi Menarik dengan Rekomendasi Khusus dari Kami!
-          </p>
-        </header>
+            <p className="mt-2 max-w-full text-gray-500">
+              Jelajahi Destinasi Menarik dengan Rekomendasi Khusus dari Kami!
+            </p>
+          </header>
+
+          <Link href="/tour">
+            <Button className="bg-pink-200 text-pinkcaritravel-900 hidden md:block">
+              See All
+            </Button>
+          </Link>
+        </div>
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 w-full py-6">
-          {products.map((product, idx) => (
+          {products.slice(0, 6).map((product, idx) => (
             <div key={idx}>
               <div className="group relative block overflow-hidden rounded-xl border border-darkcmi border-opacity-10 shadow-lg">
                 <Link
@@ -59,7 +69,9 @@ const Product = ({ products }: Props) => {
                 >
                   <div>
                     <div className="absolute px-4 end-4 top-4 z-10 rounded-full bg-white p-1.5 text-gray-900 transition hover:text-gray-900/75 flex items-center gap-2">
-                      <p>{product.duration} Hari</p>
+                      <p>
+                        {product.duration} Hari {product.duration_night} Malam
+                      </p>
                     </div>
 
                     <Image
@@ -83,9 +95,9 @@ const Product = ({ products }: Props) => {
                           </h3>
                           <h3 className="text-xl font-bold text-gray-900">
                             Rp. {product.price}
-                            <span className="text-sm font-medium text-gray-400">
+                            {/* <span className="text-sm font-medium text-gray-400">
                               /Orang
-                            </span>
+                            </span> */}
                           </h3>
                         </div>
                         <Button className="bg-pink-200 text-pinkcaritravel-900 hover:text-pinkcaritravel-300 hover:bg-pink-50">
@@ -99,6 +111,11 @@ const Product = ({ products }: Props) => {
             </div>
           ))}
         </div>
+        <Link href="/tour">
+          <Button className="bg-pink-200 text-pinkcaritravel-900 md:hidden text-lg w-full py-6 rounded-full">
+            See All
+          </Button>
+        </Link>
       </div>
     </section>
   );

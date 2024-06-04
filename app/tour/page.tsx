@@ -36,7 +36,7 @@ type ProductProps = {
 export default async function Tour() {
   const { products, categories } = await getData();
   return (
-    <main className="bg-slate-50">
+    <main>
       <Header />
       {/* <Product products={products} /> */}
       <ProductTest products={products} categories={categories} />

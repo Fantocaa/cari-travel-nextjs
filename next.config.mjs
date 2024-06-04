@@ -16,6 +16,10 @@ const nextConfig = {
         protocol: "http",
         hostname: "localhost",
       },
+      {
+        protocol: "https",
+        hostname: "backend.caritravel.com",
+      },
     ],
   },
 };

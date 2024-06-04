@@ -7,6 +7,7 @@ interface ProductTitleProps {
   countries: string;
   traveler: string;
   duration: string;
+  duration_night: string;
   start_date: string;
   end_date: string;
 }
@@ -50,7 +51,9 @@ export default function ProductTitle({ product }: Props) {
             src="/images/icon/clock.svg"
             className="h-6 w-6"
           />
-          <h1>{product.duration} Hari</h1>
+          <h1>
+            {product.duration} Hari {product.duration_night} Malam
+          </h1>
         </div>
         <div className="flex items-center gap-2">
           <Image

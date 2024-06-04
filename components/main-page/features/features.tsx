@@ -4,25 +4,23 @@ import React from "react";
 const Features = () => {
   return (
     <div>
-      <section>
-        <div className="mx-auto max-w-screen-xl px-4 pb-24 md:pb-0 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
-            <div className="relative h-64 overflow-hidden rounded-lg sm:h-80 lg:order-last lg:h-full hidden md:block">
+      <section className="bg-slate-50">
+        <div className="container py-16">
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 lg:gap-16">
+            <div className="relative lg:order-last lg:h-full hidden md:block -translate-x-24 2xl:-translate-x-12">
               <Image
                 alt=""
-                // src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
                 src="/images/bag.png"
-                className="absolute inset-x-16 inset-y-16 w-96 object-contain"
+                className="absolute inset-x-16 inset-y-8 w-full object-contain"
                 width={500}
                 height={500}
               />
             </div>
-            <div className="lg:py-24">
+            <div className="lg:py-24 col-span-2 max-w-2xl">
               <h2 className="text-3xl font-bold sm:text-4xl">
                 Pelayanan terbaik kami!
               </h2>
-
-              <div className="flex mt-8 gap-4">
+              <div className="flex mt-8 gap-4 ">
                 <div>
                   <Image
                     alt=""

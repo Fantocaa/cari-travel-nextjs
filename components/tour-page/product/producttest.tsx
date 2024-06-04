@@ -25,20 +25,9 @@ import {
 } from "@/components/ui/select";
 import { usePathname, useRouter } from "next/navigation";
 import { useSearchParams } from "next/navigation";
-// import useProductStore from "@/components/store/useProductStore";
+import { Search } from "lucide-react";
 
-// interface DetailProductProps {
-//   id: number;
-//   title: string;
-//   description: string;
-//   category: string;
-//   image: string;
-//   rating: {
-//     rate: string;
-//     count: string;
-//   };
-//   price: number;
-// }
+// import useProductStore from "@/components/store/useProductStore";
 
 interface DetailProductProps {
   id: number;
@@ -46,6 +35,7 @@ interface DetailProductProps {
   cities: string;
   traveler: string;
   duration: string;
+  duration_night: string;
   start_date: string;
   end_date: string;
   title: string;
@@ -77,35 +67,56 @@ export default function ProductPage({ products, categories }: Props) {
   // const setProduct = useProductStore((state) => state.setProduct);
 
   useEffect(() => {
-    let updatedProducts = [...products]; // Salin products ke updatedProducts
+    // let updatedProducts = [...products]; // Salin products ke updatedProducts
+
+    // if (searchTerm) {
+    //   setCurrentPage(1);
+    //   const filtered = products.filter((product) =>
+    //     product.title.toLowerCase().includes(searchTerm.toLowerCase())
+    //   );
+    //   setFilteredProducts(filtered);
+    // } else if (pageParam) {
+    //   setCurrentPage(parseInt(pageParam) || 1);
+    //   let sortedProducts = [...products]; // Salin products ke sortedProducts
+    //   if (sortBy === "new") {
+    //     // Sort products by ID in descending order (largest to smallest ID)
+    //     sortedProducts.sort((a, b) => b.id - a.id);
+    //   } else if (sortBy === "old") {
+    //     // Sort products by ID in ascending order (smallest to largest ID)
+    //     sortedProducts.sort((a, b) => a.id - b.id);
+    //   }
+    //   setFilteredProducts(sortedProducts); // Perbarui filteredProducts dengan produk yang sudah diurutkan
+    // } else if (pageParam) {
+    //   setCurrentPage(parseInt(pageParam) || 1);
+    //   setFilteredProducts(products); // Reset filteredProducts ke nilai awal
+    // }
+
+    // if (searchTerm) {
+    //   setCurrentPage(1); // Reset ke halaman pertama saat melakukan pencarian
+    //   updatedProducts = updatedProducts.filter((product) =>
+    //     product.title.toLowerCase().includes(searchTerm.toLowerCase())
+    //   );
+    // }
+
+    let updatedProducts = [...products];
 
     if (searchTerm) {
       setCurrentPage(1);
-      const filtered = products.filter((product) =>
-        product.title.toLowerCase().includes(searchTerm.toLowerCase())
+      updatedProducts = updatedProducts.filter(
+        (product) =>
+          product.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          product.cities.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          product.countries.toLowerCase().includes(searchTerm.toLowerCase())
       );
-      setFilteredProducts(filtered);
     } else if (pageParam) {
       setCurrentPage(parseInt(pageParam) || 1);
-      let sortedProducts = [...products]; // Salin products ke sortedProducts
+      let sortedProducts = [...products];
       if (sortBy === "new") {
-        // Sort products by ID in descending order (largest to smallest ID)
         sortedProducts.sort((a, b) => b.id - a.id);
       } else if (sortBy === "old") {
-        // Sort products by ID in ascending order (smallest to largest ID)
         sortedProducts.sort((a, b) => a.id - b.id);
       }
-      setFilteredProducts(sortedProducts); // Perbarui filteredProducts dengan produk yang sudah diurutkan
-    } else if (pageParam) {
-      setCurrentPage(parseInt(pageParam) || 1);
-      setFilteredProducts(products); // Reset filteredProducts ke nilai awal
-    }
-
-    if (searchTerm) {
-      setCurrentPage(1); // Reset ke halaman pertama saat melakukan pencarian
-      updatedProducts = updatedProducts.filter((product) =>
-        product.title.toLowerCase().includes(searchTerm.toLowerCase())
-      );
+      updatedProducts = sortedProducts;
     }
 
     // Filter berdasarkan kategori jika kategori telah dipilih
@@ -125,9 +136,10 @@ export default function ProductPage({ products, categories }: Props) {
   }, [searchTerm, pageParam, products, sortBy, selectedCategory]);
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(e.target.value);
+    const searchTerm = e.target.value.toLowerCase();
+    setSearchTerm(searchTerm);
 
-    // Filter products based on title, cities, and countries
+    // Filter produk berdasarkan title, cities, dan countries
     const filtered = products.filter(
       (product) =>
         product.title.toLowerCase().includes(searchTerm) ||
@@ -190,36 +202,38 @@ export default function ProductPage({ products, categories }: Props) {
 
   return (
     <>
-      <div className="md:flex p-8 rounded-xl mt-4 w-full justify-between mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 ">
-        <div className="flex gap-4 relative pb-4 md:pb-0">
-          {/* <Search /> */}
-          <Input
-            id="search"
-            type="text"
-            placeholder="Cari Produk"
-            className="h-12 w-full md:w-96 rounded-full px-4 pl-12 bg-white"
-            value={searchTerm}
-            onChange={handleSearchChange}
-          />
-        </div>
-        <div className="flex gap-2 md:gap-4">
-          <Select onValueChange={(value: string) => handleSortChange(value)}>
-            <SelectTrigger className="w-[180px] h-12 rounded-full px-4 bg-white">
-              {/* <SelectValue placeholder="Sort By" /> */}
-              <SelectValue
-                placeholder={sortBy === "new" ? "Paling Baru" : "Paling Lama"}
-              ></SelectValue>
-            </SelectTrigger>
-            <SelectContent>
-              <SelectGroup>
-                <SelectLabel>Sort By</SelectLabel>
-                <SelectItem value="new">Paling Baru</SelectItem>
-                <SelectItem value="old">Paling Lama</SelectItem>
-              </SelectGroup>
-            </SelectContent>
-          </Select>
+      <div className=" p-8 rounded-xl mt-4 w-full mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 ">
+        <h1 className="text-2xl pb-4">Kamu mau kemana?</h1>
+        <div className="md:flex justify-between">
+          <div className="flex gap-4 relative pb-4 md:pb-0">
+            <Search className="absolute translate-y-3 translate-x-4" />
+            <Input
+              id="search"
+              type="text"
+              placeholder="Cari lokasi travel kamu disini"
+              className="h-12 w-full md:w-96 rounded-full px-4 pl-12 bg-white"
+              value={searchTerm}
+              onChange={handleSearchChange}
+            ></Input>
+          </div>
+          <div className="flex gap-2 md:gap-4">
+            <Select onValueChange={(value: string) => handleSortChange(value)}>
+              <SelectTrigger className="w-[180px] h-12 rounded-full px-4 bg-white">
+                {/* <SelectValue placeholder="Sort By" /> */}
+                <SelectValue
+                  placeholder={sortBy === "new" ? "Paling Baru" : "Paling Lama"}
+                ></SelectValue>
+              </SelectTrigger>
+              <SelectContent>
+                <SelectGroup>
+                  <SelectLabel>Sort By</SelectLabel>
+                  <SelectItem value="new">Paling Baru</SelectItem>
+                  <SelectItem value="old">Paling Lama</SelectItem>
+                </SelectGroup>
+              </SelectContent>
+            </Select>
 
-          {/* <Select
+            {/* <Select
             onValueChange={(value: string) => handleCategoryChange(value)}
           >
             <SelectTrigger className="w-[180px] h-12 rounded-full px-4 bg-white">
@@ -239,6 +253,7 @@ export default function ProductPage({ products, categories }: Props) {
               </SelectGroup>
             </SelectContent>
           </Select> */}
+          </div>
         </div>
       </div>
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 sm:pb-12 lg:px-8 ">
@@ -260,7 +275,10 @@ export default function ProductPage({ products, categories }: Props) {
                       <div>
                         <div className="absolute px-4 end-4 top-4 z-10 rounded-full bg-white p-1.5 text-gray-900 transition hover:text-gray-900/75 flex items-center gap-2">
                           {/* <p>Stock : {product.rating.count}</p>Zz */}
-                          <p>{product.duration} Hari</p>
+                          <p>
+                            {product.duration} Hari {product.duration_night}{" "}
+                            Malam
+                          </p>
                         </div>
 
                         <Image
@@ -287,9 +305,9 @@ export default function ProductPage({ products, categories }: Props) {
                               <h3 className="text-xl font-bold text-gray-900">
                                 Rp. {product.price}
                                 {/* ${product.price} */}
-                                <span className="text-sm font-medium text-gray-400">
+                                {/* <span className="text-sm font-medium text-gray-400">
                                   /Orang
-                                </span>
+                                </span> */}
                               </h3>
                             </div>
                             <Button className="bg-pink-200 text-pinkcaritravel-900 hover:text-pinkcaritravel-300 hover:bg-pink-50">
@@ -366,7 +384,7 @@ function PaginationSection({
           key={i}
           className={
             currentPage === i
-              ? "bg-content bg-darkcmi rounded-md text-white"
+              ? "rounded-md bg-pink-50 text-pinkcaritravel-900"
               : ""
           }
         >

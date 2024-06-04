@@ -15,14 +15,14 @@ const AboutContent = () => {
             className="rounded-xl"
           />
           <div className="max-w-xl">
-            <h1 className="font-bold text-3xl md:text-5xl max-w-lg pt-8 md:pt-0">
+            <h1 className="font-bold text-3xl md:text-5xl max-w-lg pt-8 md:pt-0 leading-[32rem]">
               The{" "}
               <span className="bg-gradient-to-r from-pinkcaritravel-900 to-yellowcaritravel bg-clip-text text-transparent">
                 Perfect Travel
               </span>{" "}
               Place for you!
             </h1>
-            <p className="text-gray-500 pt-6 w-full">
+            <p className="text-gray-500 pt-6 w-full leading-relaxed">
               Bergerak di dunia biro perjalanan wisata CARI TRAVEL memiki
               jaringan bisnis yang luas sehingga memudahkan kami untuk
               memberikan pelayanan terbaik diantaranya tiket penerbangan,kereta
@@ -41,11 +41,11 @@ const AboutContent = () => {
             className="rounded-xl"
           />
           <div className="max-w-xl">
-            <h1 className="font-bold text-3xl md:text-5xl max-w-full pt-8 md:pt-0">
+            <p className="font-bold text-3xl md:text-5xl leading-loose">
               Kami percaya setiap dari anda bisa melakukan perjalanan tanpa
               batasan.
-            </h1>
-            <p className="text-gray-500 pt-6">
+            </p>
+            <p className="text-gray-500 pt-6 leading-relaxed">
               Kami selalu meningkatkan kualitas pelayanan dan kenyamanan
               pelanggan dengan motto kami yang ingin mejadikan perjalanan anda
               menjadi pengalaman yang berbeda kami berkomitmen memberikan
@@ -55,7 +55,7 @@ const AboutContent = () => {
           </div>
         </div>
       </div>
-      <Features />
+      {/* <Features /> */}
     </div>
   );
 };

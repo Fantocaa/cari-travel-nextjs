@@ -22,7 +22,7 @@ export default function HeaderProductMain({ product }: Props) {
   return (
     <div>
       {isMobile ? (
-        <HeaderProductMobile />
+        <HeaderProductMobile images={product.attachment} />
       ) : (
         <HeaderProduct images={product.attachment} />
       )}

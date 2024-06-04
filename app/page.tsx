@@ -41,7 +41,7 @@ export default async function Home() {
       <Product products={products} />
       <Video />
       <Features />
-      <ProductLocation />
+      {/* <ProductLocation /> */}
       <Cta />
     </main>
   );

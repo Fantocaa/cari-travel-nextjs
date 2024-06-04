@@ -15,8 +15,8 @@ export default function Header() {
           alt="tour"
           width={1920}
           height={1080}
-          src="/images/tour.png"
-          className="w-full h-full bg-no-repeat object-cover relative"
+          src="/images/tour.webp"
+          className="w-full h-full object-cover relative"
         />
         <div className="absolute inset-0 flex flex-col justify-center items-center z-50 px-4 sm:px-6 lg:px-8 pt-12 md:pt-0">
           <div className="text-center flex flex-col justify-center items-center">

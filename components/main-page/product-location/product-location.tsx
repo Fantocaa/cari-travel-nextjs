@@ -9,11 +9,12 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import ItemProduct from "./itemproduct-location/itemproduct-location";
+import Link from "next/link";
 
 const ProductLocation = () => {
   return (
     <section>
-      <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+      <div className="container py-16 xl:pt-32">
         <div className="flex justify-between">
           <header>
             <h2 className="text-xl font-bold text-gray-900 sm:text-3xl">
@@ -26,9 +27,11 @@ const ProductLocation = () => {
             </p>
           </header>
 
-          <Button className="bg-pink-200 text-pinkcaritravel-900 hidden md:block">
-            See All
-          </Button>
+          <Link href="/tour">
+            <Button className="bg-pink-200 text-pinkcaritravel-900 hidden md:block">
+              See All
+            </Button>
+          </Link>
         </div>
         <div className="text-center">
           <Carousel>
