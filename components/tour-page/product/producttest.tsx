@@ -285,7 +285,7 @@ export default function ProductPage({ products, categories }: Props) {
                           src={product.attachment[0].url}
                           // src="/"
                           alt="photo-location"
-                          className="h-72 w-full object-cover p-8 transition duration-500 group-hover:scale-105 bg-white"
+                          className="h-72 w-full object-cover transition duration-500 group-hover:scale-105 bg-white"
                           width={500}
                           height={500}
                         />
