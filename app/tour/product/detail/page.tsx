@@ -41,7 +41,7 @@ export default async function DetailProductPage({ searchParams }: Props) {
   // console.log(product);
 
   return (
-    <section className="py-24 2xl:py-32 bg-slate-50">
+    <section className="pt-24 md:pt-0 md:py-24 2xl:py-32 bg-slate-50">
       <div className="relative mx-auto">
         <div className="container mx-auto">
           <Breadcrumb>

@@ -34,26 +34,26 @@ const HeaderProductMobile = ({ images }: HeaderProductProps) => {
   return (
     <>
       <div className="pt-8 flex gap-4 w-full">
-        {/* <Carousel> */}
-        {/* <CarouselContent> */}
-        {/* <CarouselItem> */}
-        {/* {images.map((image, idx) => (
-          <div key={idx}>
-            <Image
-              alt={`Image${idx + 1}`}
-              width={800}
-              height={400}
-              src={image.url}
-              className="rounded-xl cursor-pointer h-full object-cover"
-              onClick={() => setIndex(idx + 1)}
-            />
-          </div>
-        ))} */}
-        {/* </CarouselItem> */}
-        {/* </CarouselContent> */}
-        {/* <CarouselPrevious /> */}
-        {/* <CarouselNext /> */}
-        {/* </Carousel> */}
+        <Carousel>
+          <CarouselContent>
+            {images.map((image, idx) => (
+              <CarouselItem key={idx}>
+                <div>
+                  <Image
+                    alt={`Image${idx + 1}`}
+                    width={800}
+                    height={400}
+                    src={image.url}
+                    className="rounded-xl cursor-pointer h-full object-cover"
+                    onClick={() => setIndex(idx + 1)}
+                  />
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
       </div>
       <Lightbox
         plugins={[Fullscreen, Zoom]}
