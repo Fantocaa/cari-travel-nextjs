@@ -119,7 +119,7 @@ const Navigationbar = () => {
             isScrolled ? "bg-pinkcaritravel-900" : "bg-white"
           }`}
         >
-          <div className="2xl:container xl:px-4 w-full flex items-center justify-between">
+          <div className="2xl:container xl:px-4 2xl:px-8 w-full flex items-center justify-between">
             <Navbar.Brand as={Link} href="/">
               {isScrolled ? (
                 <Image

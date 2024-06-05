@@ -25,8 +25,8 @@ import {
 } from "@/components/ui/select";
 import { usePathname, useRouter } from "next/navigation";
 import { useSearchParams } from "next/navigation";
-import { Search } from "lucide-react";
-
+import { Search, X } from "lucide-react";
+import { BeatLoader } from "react-spinners";
 // import useProductStore from "@/components/store/useProductStore";
 
 interface DetailProductProps {
@@ -57,8 +57,10 @@ export default function ProductPage({ products, categories }: Props) {
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(6);
   const [searchTerm, setSearchTerm] = useState("");
+  const [tempSearchTerm, setTempSearchTerm] = useState("");
   const [filteredProducts, setFilteredProducts] = useState(products);
   const [selectedCategory, setSelectedCategory] = useState("all");
+  const [loading, setLoading] = useState(true); // Tambahkan keadaan loading
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -67,36 +69,16 @@ export default function ProductPage({ products, categories }: Props) {
   // const setProduct = useProductStore((state) => state.setProduct);
 
   useEffect(() => {
-    // let updatedProducts = [...products]; // Salin products ke updatedProducts
+    // Contoh: Menunggu 2 detik sebelum mengatur loading menjadi false
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
 
-    // if (searchTerm) {
-    //   setCurrentPage(1);
-    //   const filtered = products.filter((product) =>
-    //     product.title.toLowerCase().includes(searchTerm.toLowerCase())
-    //   );
-    //   setFilteredProducts(filtered);
-    // } else if (pageParam) {
-    //   setCurrentPage(parseInt(pageParam) || 1);
-    //   let sortedProducts = [...products]; // Salin products ke sortedProducts
-    //   if (sortBy === "new") {
-    //     // Sort products by ID in descending order (largest to smallest ID)
-    //     sortedProducts.sort((a, b) => b.id - a.id);
-    //   } else if (sortBy === "old") {
-    //     // Sort products by ID in ascending order (smallest to largest ID)
-    //     sortedProducts.sort((a, b) => a.id - b.id);
-    //   }
-    //   setFilteredProducts(sortedProducts); // Perbarui filteredProducts dengan produk yang sudah diurutkan
-    // } else if (pageParam) {
-    //   setCurrentPage(parseInt(pageParam) || 1);
-    //   setFilteredProducts(products); // Reset filteredProducts ke nilai awal
-    // }
+    return () => clearTimeout(timeout);
+  }, []);
 
-    // if (searchTerm) {
-    //   setCurrentPage(1); // Reset ke halaman pertama saat melakukan pencarian
-    //   updatedProducts = updatedProducts.filter((product) =>
-    //     product.title.toLowerCase().includes(searchTerm.toLowerCase())
-    //   );
-    // }
+  useEffect(() => {
+    setLoading(true); // Set loading menjadi true saat memuat data
 
     let updatedProducts = [...products];
 
@@ -119,34 +101,39 @@ export default function ProductPage({ products, categories }: Props) {
       updatedProducts = sortedProducts;
     }
 
-    // Filter berdasarkan kategori jika kategori telah dipilih
-    // if (selectedCategory !== "all") {
-    //   updatedProducts = updatedProducts.filter(
-    //     (product) => product.category === selectedCategory
-    //   );
-    // }
-
-    // Sort products based on the selected sorting option
     if (sortBy === "new") {
       updatedProducts.sort((a, b) => b.id - a.id);
     } else if (sortBy === "old") {
       updatedProducts.sort((a, b) => a.id - b.id);
     }
     setFilteredProducts(updatedProducts);
+
+    // Set loading menjadi false setelah semua perubahan state selesai dilakukan
+    setLoading(false);
   }, [searchTerm, pageParam, products, sortBy, selectedCategory]);
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const searchTerm = e.target.value.toLowerCase();
-    setSearchTerm(searchTerm);
+    const newSearchTerm = e.target.value;
+    setTempSearchTerm(newSearchTerm);
 
-    // Filter produk berdasarkan title, cities, dan countries
-    const filtered = products.filter(
-      (product) =>
-        product.title.toLowerCase().includes(searchTerm) ||
-        product.cities.toLowerCase().includes(searchTerm) ||
-        product.countries.toLowerCase().includes(searchTerm)
-    );
-    setFilteredProducts(filtered);
+    if (newSearchTerm === "") {
+      setSearchTerm(""); // Kosongkan searchTerm
+      setFilteredProducts(products); // Tampilkan semua produk
+      setCurrentPage(1); // Set halaman ke 1
+      // router.push(`${pathname}?page=1`); // Perbarui URL ke page=1
+    }
+  };
+
+  const handleSearchClick = () => {
+    setSearchTerm(tempSearchTerm);
+  };
+
+  const clearSearch = () => {
+    setTempSearchTerm("");
+    setSearchTerm("");
+    // setFilteredProducts(products);
+    setCurrentPage(1); // Set halaman ke 1
+    // router.push(`${pathname}?page=1`); // Perbarui URL ke page=1
   };
 
   const handleSortChange = (value: string) => {
@@ -202,7 +189,7 @@ export default function ProductPage({ products, categories }: Props) {
 
   return (
     <>
-      <div className=" p-8 rounded-xl mt-4 w-full mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 ">
+      <div className=" p-8 rounded-xl mt-4 w-full container">
         <h1 className="text-2xl pb-4">Kamu mau kemana?</h1>
         <div className="md:flex justify-between">
           <div className="flex gap-4 relative pb-4 md:pb-0">
@@ -212,9 +199,21 @@ export default function ProductPage({ products, categories }: Props) {
               type="text"
               placeholder="Cari lokasi travel kamu disini"
               className="h-12 w-full md:w-96 rounded-full px-4 pl-12 bg-white"
-              value={searchTerm}
+              value={tempSearchTerm}
               onChange={handleSearchChange}
             ></Input>
+            {tempSearchTerm && (
+              <X
+                className="absolute right-28 top-1/2 -translate-y-1/2 cursor-pointer"
+                onClick={clearSearch}
+              />
+            )}
+            <Button
+              onClick={handleSearchClick}
+              className="h-12 bg-pink-500 text-white hover:bg-pink-400 rounded-full px-4"
+            >
+              Search
+            </Button>
           </div>
           <div className="flex gap-2 md:gap-4">
             <Select onValueChange={(value: string) => handleSortChange(value)}>
@@ -232,98 +231,83 @@ export default function ProductPage({ products, categories }: Props) {
                 </SelectGroup>
               </SelectContent>
             </Select>
-
-            {/* <Select
-            onValueChange={(value: string) => handleCategoryChange(value)}
-          >
-            <SelectTrigger className="w-[180px] h-12 rounded-full px-4 bg-white">
-              <SelectValue
-                placeholder={sortBy === "all" ? "Category" : "All"}
-              />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectGroup>
-                <SelectItem value="all">All</SelectItem>
-
-                {categories.map((category, index) => (
-                  <SelectItem key={index} value={category}>
-                    {category}
-                  </SelectItem>
-                ))}
-              </SelectGroup>
-            </SelectContent>
-          </Select> */}
           </div>
         </div>
       </div>
-      <div className="mx-auto max-w-screen-xl px-4 sm:px-6 sm:pb-12 lg:px-8 ">
+      <div className="container sm:pb-12">
         <>
-          {currentPosts.length > 0 ? (
-            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 w-full py-6">
-              {currentPosts.map((product, idx) => (
-                <div key={idx}>
-                  <div className="group relative block overflow-hidden rounded-xl border border-darkcmi border-opacity-10 shadow-lg">
-                    <Link
-                      // href={`/products/${product.id}`}
-                      href={{
-                        pathname: "/tour/product/detail",
-                        query: { id: product?.id },
-                      }}
-                      key={product.id}
-                      // onClick={() => setProduct(product)}
-                    >
-                      <div>
-                        <div className="absolute px-4 end-4 top-4 z-10 rounded-full bg-white p-1.5 text-gray-900 transition hover:text-gray-900/75 flex items-center gap-2">
-                          {/* <p>Stock : {product.rating.count}</p>Zz */}
-                          <p>
-                            {product.duration} Hari {product.duration_night}{" "}
-                            Malam
-                          </p>
-                        </div>
-
-                        <Image
-                          src={product.attachment[0].url}
-                          // src="/"
-                          alt="photo-location"
-                          className="h-72 w-full object-cover transition duration-500 group-hover:scale-105 bg-white"
-                          width={500}
-                          height={500}
-                        />
-                        <div className="relative border border-gray-100 bg-white p-6">
-                          <h3 className="text-xl font-semibold text-gray-900 truncate">
-                            {/* Bangkok Dinner Cruise */}
-                            {product.title}
-                          </h3>
-                          <h4 className="text-sm text-gray-500">
-                            {product.cities}, {product.countries}
-                          </h4>
-                          <div className="flex justify-between items-end">
+          <>
+            {loading ? ( // Tampilkan elemen loading jika loading adalah true
+              <div className="flex flex-col justify-center items-center h-screen gap-2">
+                <BeatLoader loading={loading} color="#EE66A9" size={10} />
+                <h1 className="text-xl">Loading</h1>
+              </div>
+            ) : (
+              <>
+                {currentPosts.length > 0 ? (
+                  <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 w-full py-6">
+                    {currentPosts.map((product, idx) => (
+                      <div key={idx}>
+                        <div className="group relative block overflow-hidden rounded-xl border border-darkcmi border-opacity-10 shadow-lg">
+                          <Link
+                            href={{
+                              pathname: "/tour/product/detail",
+                              query: { id: product?.id },
+                            }}
+                            key={product.id}
+                          >
                             <div>
-                              <h3 className="mt-4 text-sm font-medium text-gray-900">
-                                Starting From:
-                              </h3>
-                              <h3 className="text-xl font-bold text-gray-900">
-                                Rp. {product.price}
-                                {/* ${product.price} */}
-                                {/* <span className="text-sm font-medium text-gray-400">
-                                  /Orang
-                                </span> */}
-                              </h3>
+                              <div className="absolute px-4 end-4 top-4 z-10 rounded-full bg-white p-1.5 text-gray-900 transition hover:text-gray-900/75 flex items-center gap-2">
+                                <p>
+                                  {product.duration} Hari{" "}
+                                  {product.duration_night} Malam
+                                </p>
+                              </div>
+
+                              <Image
+                                src={product.attachment[0].url}
+                                alt="photo-location"
+                                className="h-72 w-full object-cover transition duration-500 group-hover:scale-105 bg-white"
+                                width={500}
+                                height={500}
+                              />
+                              <div className="relative border border-gray-100 bg-white p-6">
+                                <h3 className="text-xl font-semibold text-gray-900 truncate">
+                                  {product.title}
+                                </h3>
+                                <h4 className="text-sm text-gray-500">
+                                  {product.cities}, {product.countries}
+                                </h4>
+                                <div className="flex justify-between items-end">
+                                  <div>
+                                    <h3 className="mt-4 text-sm font-medium text-gray-900">
+                                      Starting From:
+                                    </h3>
+                                    <h3 className="text-xl font-bold text-gray-900">
+                                      Rp. {product.price}
+                                    </h3>
+                                  </div>
+                                  <Button className="bg-pink-200 text-pinkcaritravel-900 hover:text-pinkcaritravel-300 hover:bg-pink-50">
+                                    View Details
+                                  </Button>
+                                </div>
+                              </div>
                             </div>
-                            <Button className="bg-pink-200 text-pinkcaritravel-900 hover:text-pinkcaritravel-300 hover:bg-pink-50">
-                              View Details
-                            </Button>
-                          </div>
+                          </Link>
                         </div>
                       </div>
-                    </Link>
+                    ))}
                   </div>
-                </div>
-              ))}
-            </div>
-          ) : (
-            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-10 w-full p-10"></div>
-          )}
+                ) : (
+                  <div className="flex justify-center items-center h-64">
+                    <h1 className="text-2xl font-bold text-gray-500">
+                      Tidak ada produk yang ditemukan
+                    </h1>
+                  </div>
+                )}
+              </>
+            )}
+          </>
 
           <PaginationSection
             // products={products.length}

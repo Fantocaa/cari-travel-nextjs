@@ -18,7 +18,9 @@ const Cta = () => {
                 entertainment here.
               </p>
               <Link href="/contact">
-                <Button>Connect with us</Button>
+                <Button className="bg-yellowcaritravel text-blackcaritravel hover:bg-orange-300">
+                  Connect with us
+                </Button>
               </Link>
             </div>
             <Image
@@ -38,9 +40,11 @@ const Cta = () => {
                 Have a healthy & beatiful trirp with us. You have all kinds of
                 entertainment here.
               </p>
-              <Button className="bg-yellowcaritravel text-blackcaritravel hover:bg-yellow-300 ">
-                Connect with us
-              </Button>
+              <Link href="/contact">
+                <Button className="bg-yellowcaritravel text-blackcaritravel hover:bg-yellow-300 ">
+                  Connect with us
+                </Button>
+              </Link>
             </div>
             <Image
               alt="CTA"
