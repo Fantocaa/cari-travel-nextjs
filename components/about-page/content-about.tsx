@@ -8,7 +8,7 @@ const AboutContent = () => {
       <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
         <div className="w-full md:flex md:flex-row-reverse items-center justify-between">
           <Image
-            src="/images/aboutimage.svg"
+            src="/images/aboutimage.webp"
             alt="About"
             width={480}
             height={200}
@@ -34,7 +34,7 @@ const AboutContent = () => {
         </div>
         <div className="w-full md:flex items-center justify-between py-16">
           <Image
-            src="/images/aboutimage.svg"
+            src="/images/aboutimage.webp"
             alt="About"
             width={480}
             height={200}

@@ -9,7 +9,7 @@ const HeaderAbout = () => {
           alt="tour"
           height={1080}
           width={1920}
-          src="/images/about.svg"
+          src="/images/About.webp"
           className="w-full bg-no-repeat object-cover mx-auto lg:flex lg:h-full relative z-10 h-96"
         />
         <div className="absolute inset-0 flex flex-col justify-center items-center z-50 px-4 sm:px-6 lg:px-8 text-center">
