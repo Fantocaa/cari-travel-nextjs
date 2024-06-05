@@ -25,12 +25,12 @@ const ProductDetail = ({ product }: Props) => {
               <h1 className="font-bold text-lg pt-4">Informasi Umum</h1>
             </AccordionTrigger>
             <AccordionContent>
-              <p className="leading-7">{product.general_info}</p>
+              <p className="leading-7 text-gray-500">{product.general_info}</p>
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
             <AccordionTrigger>
-              <h1 className="font-bold text-lg pt-4">Jadwal Perjalanan</h1>
+              <h1 className="font-bold text-lg pt-4">Informasi Paket</h1>
             </AccordionTrigger>
             <AccordionContent>
               <div
@@ -44,7 +44,9 @@ const ProductDetail = ({ product }: Props) => {
               <h1 className="font-bold text-lg pt-4">Info Tambahan</h1>
             </AccordionTrigger>
             <AccordionContent>
-              <p className="leading-7 pt-4">{product.additional_info}</p>
+              <p className="leading-7 pt-4 text-gray-500">
+                {product.additional_info}
+              </p>
             </AccordionContent>
           </AccordionItem>
         </Accordion>
