@@ -37,7 +37,6 @@ interface Props {
 const Product = ({ products }: Props) => {
   return (
     <section className="2xl:pt-32 py-16">
-      {/* <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8"> */}
       <div className="container">
         <div className="flex justify-between">
           <header>
@@ -56,10 +55,10 @@ const Product = ({ products }: Props) => {
             </Button>
           </Link>
         </div>
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 w-full py-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 py-6 ">
           {products.slice(0, 6).map((product, idx) => (
             <div key={idx}>
-              <div className="group relative block overflow-hidden rounded-xl border border-darkcmi border-opacity-10 shadow-lg">
+              <div className="group relative block overflow-hidden rounded-xl shadow-lg">
                 <Link
                   href={{
                     pathname: "/tour/product/detail",
@@ -85,7 +84,7 @@ const Product = ({ products }: Props) => {
                       <h3 className="text-xl font-semibold text-gray-900 truncate">
                         {product.title}
                       </h3>
-                      <h4 className="text-sm text-gray-500">
+                      <h4 className="text-sm text-gray-500 truncate">
                         {product.cities}, {product.countries}
                       </h4>
                       <div className="flex justify-between items-end">
@@ -95,9 +94,6 @@ const Product = ({ products }: Props) => {
                           </h3>
                           <h3 className="text-xl font-bold text-gray-900">
                             Rp. {product.price}
-                            {/* <span className="text-sm font-medium text-gray-400">
-                              /Orang
-                            </span> */}
                           </h3>
                         </div>
                         <Button className="bg-pink-200 text-pinkcaritravel-900 hover:text-pinkcaritravel-300 hover:bg-pink-50">

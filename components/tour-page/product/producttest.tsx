@@ -245,10 +245,10 @@ export default function ProductPage({ products, categories }: Props) {
             ) : (
               <>
                 {currentPosts.length > 0 ? (
-                  <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 w-full py-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 w-full py-6">
                     {currentPosts.map((product, idx) => (
                       <div key={idx}>
-                        <div className="group relative block overflow-hidden rounded-xl border border-darkcmi border-opacity-10 shadow-lg">
+                        <div className="group relative block overflow-hidden rounded-xl shadow-lg">
                           <Link
                             href={{
                               pathname: "/tour/product/detail",
