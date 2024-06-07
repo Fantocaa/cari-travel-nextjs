@@ -94,8 +94,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-
-          <div className="w-full grid grid-cols-2 lg:gap-8 col-span-2 sm:grid-cols-2 lg:col-span-3 lg:grid-cols-6">
+          <div className="w-full grid grid-cols-3 gap-6 lg:gap-8 col-span-2 sm:grid-cols-2 lg:col-span-3 lg:grid-cols-6">
             <div className="col-span-1 hidden md:block"></div>
             <div className="col-span-1 lg:col-span-2">
               <p className="font-medium text-gray-900">Helpful Links</p>
@@ -138,16 +137,17 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-
-            <div className="col-span-1 lg:col-span-3">
-              <p className="font-medium text-gray-900">Location Adress</p>
+            <div className="col-span-2 lg:col-span-3 ">
+              <p className="font-medium text-gray-900">Contact Us</p>
 
               <ul className="mt-6 space-y-4 text-sm">
                 <li>
-                  <div className="text-gray-700">+62 81 280 578 717</div>
+                  <div className="text-gray-700">+62 821-4337-9200</div>
                 </li>
                 <li>
-                  <div className="text-gray-700">marketing@caritravel.com</div>
+                  <div className="text-gray-700">
+                    sub.operations@caritravel.com
+                  </div>
                 </li>
                 <li>
                   <div className="text-gray-700">

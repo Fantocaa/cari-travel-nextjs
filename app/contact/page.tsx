@@ -11,14 +11,14 @@ const Contact = () => {
             <h1 className="text-4xl font-semibold text-pinkcaritravel-600">
               Contact Us
             </h1>
-            <ul className="flex flex-col gap-4 mt-8">
+            <ul className="flex flex-col gap-4 mt-8 ">
               <li className="flex items-center gap-4">
                 <Phone />
-                <h1 className="2xl:text-lg ">+62 81 280 578 717</h1>
+                <h1 className="2xl:text-lg ">+62 821-4337-9200</h1>
               </li>
               <li className="flex items-center gap-4">
                 <Mail />
-                <h1 className="2xl:text-lg ">marketing@caritravel.com</h1>
+                <h1 className="2xl:text-lg">sub.operations@caritravel.com</h1>
               </li>
               <li className="flex items-center gap-4">
                 <MapPin />
