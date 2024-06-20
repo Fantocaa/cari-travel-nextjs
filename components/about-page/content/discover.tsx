@@ -7,10 +7,10 @@ import { ArrowRight } from "lucide-react";
 export default function Discover() {
   return (
     <>
-      <div className="py-16 2xl:pb-96">
+      <div className="pt-16 md:py-16  2xl:pb-96">
         <div className="2xl:h-full">
-          <div className="w-full flex container 2xl:h-full justify-start items-center">
-            <div className="w-1/2 2xl:translate-y-64">
+          <div className="container w-full md:flex 2xl:h-full justify-start items-center">
+            <div className="md:w-1/2 2xl:translate-y-64">
               <p className="text-lg">Discover More</p>
               <h1 className="font-bold text-5xl leading-tight py-4">
                 <span className="bg-gradient-to-r from-pinkcaritravel-900 to-yellowcaritravel bg-clip-text text-transparent">
@@ -18,7 +18,7 @@ export default function Discover() {
                 </span>
                 your Better Emotions
               </h1>
-              <p className="text-gray-500 text-lg leading-relaxed w-[35rem] 2xl:w-[39rem] pb-6">
+              <p className="text-gray-500 text-lg leading-relaxed md:w-[35rem] 2xl:w-[39rem] pb-6">
                 Kami selalu meningkatkan kualitas pelayanan dan kenyamanan
                 pelanggan dengan motto kami yang ingin mejadikan perjalanan anda
                 menjadi pengalaman yang berbeda kami berkomitmen memberikan
@@ -39,7 +39,7 @@ export default function Discover() {
             alt="disocver"
             width={1080}
             height={768}
-            className="absolute -z-30 2xl:h-full object-cover 2xl:object-contain -translate-y-[27rem] 2xl:-translate-y-[26rem] right-0 w-1/2"
+            className="md:absolute -z-30 2xl:h-full object-cover 2xl:object-contain -translate-y-[27rem] 2xl:-translate-y-[26rem] right-0 w-1/2 hidden md:block"
           />
         </div>
       </div>

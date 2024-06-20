@@ -47,7 +47,7 @@ const Navigationbar = () => {
       {isMobile && (
         <Navbar
           fluid
-          className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-500  ${
+          className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-500 px-4  ${
             isScrolled
               ? " bg-pinkcaritravel-900 text-white"
               : "bg-white text-blackcaritravel"

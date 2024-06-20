@@ -7,7 +7,7 @@ import Discover from "./content/discover";
 const AboutContent = () => {
   return (
     <>
-      <div className="mx-auto container py-16 md:pt-32">
+      <div className="mx-auto container py-16 md:pt-32 2xl:pb-32">
         <div className="w-full md:flex items-center justify-between md:gap-32">
           <div className="md:w-1/2">
             <p className="text-lg">About Us</p>
@@ -27,8 +27,8 @@ const AboutContent = () => {
           </p>
         </div>
       </div>
-      {/* <VisiMisi /> */}
-      {/* <Discover /> */}
+      <VisiMisi />
+      <Discover />
       {/* <Features /> */}
     </>
   );
