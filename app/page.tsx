@@ -7,6 +7,7 @@ import ProductLocation from "@/components/main-page/product-location/product-loc
 import Cta from "@/components/main-page/cta/cta";
 
 import type { Metadata } from "next";
+import Partner from "@/components/main-page/partner/Partner";
 
 export const metadata: Metadata = {
   title: "Home | Cari Travel: Cari tempat Travel Murah Meriah",
@@ -39,7 +40,8 @@ export default async function Home() {
     <main>
       <Header />
       <Product products={products} />
-      <Video />
+      {/* <Video /> */}
+      <Partner />
       <Features />
       {/* <ProductLocation /> */}
       <Cta />

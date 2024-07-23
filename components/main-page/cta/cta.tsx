@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Cta = () => {
   return (
-    <div>
+    <>
       <section>
         <div className="container py-16 relative mt-16">
           <div className="hidden md:block">
@@ -56,7 +56,7 @@ const Cta = () => {
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 };
 
