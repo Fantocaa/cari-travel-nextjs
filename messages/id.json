@@ -1,0 +1,109 @@
+{
+  "Navigation-Bar": {
+    "home": "Beranda",
+    "about": "Tentang Kami",
+    "service": "Paket Tour",
+    "document": "Dokumen dan Visa",
+    "contact": "Hubungi Kami",
+    "layanan": "Layanan Kami",
+    "footer": "Menjadi perusahaan Logistik Export dan Import terbaik yang terkemuka, terpercaya, dan handal dengan mengutamakan kepercayaan dan kepuasan Customer."
+  },
+  "Header-Home": {
+    "title": "Jangkau Penjuru Dunia Bersama Kami",
+    "subtitle": "Menjadi perusahaan Logistik Export dan Import terbaik yang terkemuka, terpercaya, dan handal dengan mengutamakan kepercayaan dan kepuasan Customer",
+    "button": "Lihat Layanan Kami"
+  },
+  "WhyChooseUs": {
+    "special": "Apa yang membuat kami Spesial?",
+    "special-sub": "Menyediakan layanan transportasi berkualitas tinggi, komprehensif dan selalu memahami kebutuhan cutomer.",
+    "commit": "Komitmen",
+    "commit-sub": "Memiliki komitmen untuk memberikan service yang terbaik dan loyal terhadap setiap customer yang kami handle.",
+    "ontime": "Tepat Waktu",
+    "ontime-sub": "Dalam memberikan layanan yang berkualitas, kami selalu memastikan ketepatan dalam estimasi waktu yang kami janjikan.",
+    "efficiency": "Efisiensi",
+    "efficiency-sub": "Bersama dengan tim melakukan tugas dengan cepat, tepat, dan cermat sehingga memberikan hasil yang memuaskan bagi customer.",
+    "relation": "Relasi",
+    "relation-sub": "Selalu siap untuk menjadi solusi customer serta memberikan pelayanan yang komunikatif dan tepat dengan yang menjadi kunci dalam hubungan kerjasama kami dengan customer.",
+    "safety": "Keamanan",
+    "safety-sub": "Dalam menjaga kepercayaan yang diberikan customer kepada kami, Kami pastikan setiap pengiriman anda akan aman dan sesuai dengan kebutuhan customer.",
+    "nicely": "Dengan Baik",
+    "nicely-sub": "Memastikan setiap customer mendapatkan informasi yang komunikatif dengan layanan yang ramah. Sehingga menciptakan hubungan yang baik dengan semua pihak.",
+    "reliability": "Kehandalan",
+    "reliability-sub": "Memberikan pelatihan terhadap SDM untuk meningkatkan kualitas pelayanan dan kehandalan dalam melakukan tanggung jawab pekerjaan yang sudah di percayakan oleh customer.",
+    "quote": "Menjadi pilihan utama untuk solusi logistik internasional, kami siap menghadirkan kehandalan dan kepuasan pelanggan di setiap langkahnya."
+  },
+  "Services-Home": {
+    "title": "Layanan Kami",
+    "subtitle": "Pelayanan unggul kami mencakup segala kebutuhan Anda, dari pengiriman cepat hingga layanan konsultasi yang komprehensif.",
+    "button": "Lihat Layanan Kami"
+  },
+  "Specialist-Home": {
+    "title": "Spesialis Transportasi",
+    "subtitle": "Kami menyediakan layanan transportasi komprehensif bagi mitra kami di seluruh dunia dan selalu menawarkan solusi inovatif untuk menghadapi tantangan logistik yang kompleks.",
+    "button": "Lihat Tentang Kami"
+  },
+  "Member-Home": {
+    "title": "Talenta Profesional Kami",
+    "subtitle": "Kenali anggota tim kami yang ramah, berpengalaman, berpengetahuan, dan dinamis yang selalu membuat pelanggan kami puas."
+  },
+  "CTA": {
+    "title": "Hubungi Kami",
+    "subtitle": "Kami selalu ada untuk menjawab pertanyaan Anda, memberikan informasi lebih lanjut, atau membantu Anda dengan kebutuhan logistik Anda. Jangan ragu untuk menghubungi kami!"
+  },
+  "MetadataHome": {
+    "title": "Beranda | Jangkau Penjuru Dunia Bersama Kami | PT. ANUGERAH MULTI LOGISTIK",
+    "description": "Menjadi perusahaan Logistik Export dan Import terbaik yang terkemuka, terpercaya, dan handal dengan mengutamakan kepercayaan dan kepuasan Customer",
+    "domestic-meta": "Domestic Market | Jangkau Penjuru Dunia Bersama Kami | PT. ANUGERAH MULTI LOGISTIK",
+    "domestic": "Jelajahi layanan logistik terpadu kami untuk kebutuhan distribusi lokal Anda. Dengan jaringan yang luas di seluruh negeri, kami siap memberikan solusi efisien dan handal untuk mengelola pengiriman barang di dalam negeri.",
+    "international-meta": "International Market | Jangkau Penjuru Dunia Bersama Kami | PT. ANUGERAH MULTI LOGISTIK",
+    "international": "Temukan solusi logistik global yang andal untuk kebutuhan pengiriman lintas negara Anda. Dengan pengalaman dan jaringan internasional yang kuat, kami siap membantu Anda mengelola pengiriman barang lintas batas dengan efisiensi dan kehandalan.",
+    "contact": "Contact | Jangkau Penjuru Dunia Bersama Kami | PT. ANUGERAH MULTI LOGISTIK"
+  },
+  "MetadataAbout": {
+    "title": "Tentang Kami | Jangkau Penjuru Dunia Bersama Kami | PT. ANUGERAH MULTI LOGISTIK",
+    "description": "Menjadi perusahaan Logistik Export dan Import terbaik yang terkemuka, terpercaya, dan handal dengan mengutamakan kepercayaan dan kepuasan Customer"
+  },
+  "MetadataServices": {
+    "title": "Layanan | Jangkau Penjuru Dunia Bersama Kami | PT. ANUGERAH MULTI LOGISTIK",
+    "description": "Menjadi perusahaan Logistik Export dan Import terbaik yang terkemuka, terpercaya, dan handal dengan mengutamakan kepercayaan dan kepuasan Customer"
+  },
+  "About": {
+    "header-1": "Tentang Kami",
+    "header-2": "Beranda",
+    "desc": "Kami telah membangun tim yang berpartisipasi dalam kursus pelatihan profesional, dipersiapkan untuk menangani setiap situasi yang muncul dengan tingkat ketenangan yang memberikan ketenangan pikiran kepada pelanggan.",
+    "vision": "Visi Kami",
+    "mission": "Misi Kami",
+    "content-1": "Menjadi Perusahaan Logistik Export dan Import terbaik yang terkemuka, terpercaya, dan handal dengan mengutamakan kepercayaan dan kepuasan Customer.",
+    "content-2": "Kami bertekad untuk menjadi pilihan utama dalam layanan logistik, memberikan solusi terbaik bagi kebutuhan ekspor dan impor, serta memberikan kepuasan yang tak tertandingi kepada setiap pelanggan. Dengan fokus pada keandalan, profesionalisme, dan inovasi, kami berkomitmen untuk terus meningkatkan kualitas layanan demi kepuasan dan kepercayaan pelanggan.",
+    "content-li-1": "Memberikan Pelayanan yang Kompetitif, Berkualitas, dan Aman.",
+    "content-li-2": "Menjadi solusi customer dalam keperluan pengiriman Export maupun Import.",
+    "content-li-3": "Melakukan perkembangan manajemen dan teknologi sehingga mampu memberikan kepuasan dan kepercayaan kepada Customer"
+  },
+  "Services": {
+    "header-1": "Layanan",
+    "header-2": "Beranda",
+    "content-1": "Apa yang kami tawarkan",
+    "content-2": "Menyediakan layanan logistik transportasi berkualitas tinggi dan komprehensif dengan biaya terendah",
+    "content-custom": "Kami mengurus semua proses bea cukai untuk memastikan kelancaran impor dan ekspor barang. Layanan kami mencakup persiapan dokumen, konsultasi kepabeanan, dan penyelesaian prosedur kepabeanan dengan cepat dan akurat.",
+    "content-custom-2": "Kami menyediakan jasa pengurusan kepabeanan (Bea Cukai) untuk pengiriman barang export & import via laut dan udara karena kami memiliki lisensi resmi sebagai Pengusaha Pengurusan Jasa Kepabeanan (PPJK). Semua proses pengerjaan dilakukan secara resmi.",
+    "content-sea": "Dengan jaringan global yang luas, kami menawarkan layanan pengiriman laut yang kompetitif dan andal. Kami menangani pengiriman Full Container Load (FCL) dan Less than Container Load (LCL) untuk memastikan barang Anda tiba dengan aman dan tepat waktu.",
+    "content-sea-1": "Jaringan kami juga tersebar di seluruh nusantara & memiliki kerjasama dengan agent-agent dari seluruh dunia. Tentunya harga yang kami tawarkan akan sangat kompetitif",
+    "content-sea-2": "Service dalam Freight Domestic / International yang kami berikan bisa meliputi :",
+    "content-sea-3": "Kami menawarkan solusi transportasi intermodal dan multimodal yang menggabungkan berbagai moda transportasi seperti laut, darat, dan udara. Layanan ini dirancang untuk memberikan fleksibilitas dan efisiensi dalam pengiriman barang.",
+    "content-sea-5": "Kami menawarkan layanan Less than Container Load (LCL) dan Full Container Load (FCL) untuk pengiriman laut, disesuaikan dengan kebutuhan volume dan kapasitas barang Anda.",
+    "content-sea-7": "Kami memiliki keahlian dalam menangani barang berbahaya sesuai dengan regulasi internasional, memastikan keamanan dan kepatuhan selama proses pengiriman.",
+    "content-sea-8": "Kami mengelola pengiriman kargo curah yang tidak dapat dimuat dalam kontainer standar, dengan solusi yang efisien untuk barang berukuran besar atau berat.",
+    "content-sea-9": "Kami menyediakan layanan konsolidasi pengiriman laut, menggabungkan barang dari berbagai pengirim untuk mengoptimalkan biaya dan efisiensi pengiriman.",
+    "content-sea-10": "Kami menawarkan layanan pengiriman dari pintu ke pelabuhan, memastikan barang Anda diambil dari lokasi Anda dan dikirim langsung ke pelabuhan tujuan dengan proses yang lancar dan terintegrasi.",
+    "content-trucking": "Kami menyediakan layanan trucking untuk pengiriman barang di seluruh wilayah Indonesia. Armada truk kami yang modern dan terawat memastikan pengiriman yang cepat, aman, dan efisien.",
+    "content-cargo": "Kami memahami pentingnya melindungi barang Anda selama proses pengiriman. Oleh karena itu, kami menawarkan layanan perantara asuransi kargo untuk memberikan perlindungan maksimal terhadap risiko kerusakan atau kehilangan.",
+    "content-intermodal": "Kami menawarkan solusi transportasi intermodal dan multimodal yang menggabungkan berbagai moda transportasi seperti laut, darat, dan udara. Layanan ini dirancang untuk memberikan fleksibilitas dan efisiensi dalam pengiriman barang.",
+    "content-intermodal-1": "Kami juga menyediakan Air Freight yang mencakup penanganan barang kiriman yang sensitif dan membutuhkan layanan secara cepat dan tepat yaitu via udara baik untuk wilayah Domestik ataupun Internasional.",
+    "content-intermodal-2": "Kami dapat menyediakan Sea Freight dengan term mulai EXW (Ex-Work), FOB (Free On Board), CNF (Cost & Freight), & CIF (Cost Insurance & Freight) yang mana disesuaikan dengan kebutuhan anda. Freight yang kami sediakan baik untuk pengiriman domestik maupun internasional.",
+    "content-intermodal-3": "Salah satu keunggulan kami sebagai transporter adalah dapat mengatur pengiriman barang secara multimoda (kombinasi jenis transportasi) untuk pengiriman barang hingga ke daerah yang sulit dijangkau oleh transportasi pada umumnya."
+  },
+  "Contact": {
+    "title": "Hubungi Kami",
+    "subtitle": "Punya masalah teknis? Ingin mengirim masukan tentang suatu fitur? Butuh detail tentang rencana Bisnis kami? Beritahu kami."
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "Navigation-Bar": {
+    "home": "Home",
+    "about": "About Us",
+    "service": "Tour Package",
+    "document": "Document & Visa",
+    "contact": "Contact Us",
+    "link": "Other Links",
+    "layanan": "Our Services",
+    "footer": "Become the best leading, trusted and reliable Export and Import Logistics company by prioritizing customer trust and satisfaction."
+  },
+  "Header-Home": {
+    "title": "Reach To All Corners of The World With Us",
+    "subtitle": "Become the best leading, trusted and reliable Export and Import Logistics company by prioritizing customer trust and satisfaction",
+    "button": "See our Services"
+  },
+  "WhyChooseUs": {
+    "special": "What Make Us Special?",
+    "special-sub": "Providing high quality, comprehensive transportation services and always understanding customer needs.",
+    "commit": "Commitment",
+    "commit-sub": "We are committed to providing the best service and being loyal to every customer we handle.",
+    "ontime": "On Time",
+    "ontime-sub": "When providing quality service, we always ensure the accuracy of the time estimates we promise.",
+    "efficiency": "Efficiency",
+    "efficiency-sub": "We work quickly, accurately, and carefully with the team to deliver results that satisfy our customers.",
+    "relation": "Relationship",
+    "relation-sub": "Always ready to be a customer solution and provide communicative and precise service which is the key to our cooperative relationship with customers.",
+    "safety": "Safety",
+    "safety-sub": "In maintaining the trust that customers have placed in us, we ensure that each of your deliveries will be safe and in accordance with customer needs.",
+    "nicely": "Nicely",
+    "nicely-sub": "Ensure that every customer gets communicative information with friendly service. So as to create good relationships with all parties.",
+    "reliability": "Reliability",
+    "reliability-sub": "Providing training to human resources to improve service quality and reliability in carrying out work responsibilities that have been entrusted by customers.",
+    "quote": "Being the first choice for international logistics solutions, we are ready to provide reliability and customer satisfaction every step of the way."
+  },
+  "Services-Home": {
+    "title": "Our Services",
+    "subtitle": "Our excellent services cover all your needs, from fast shipping to comprehensive consulting services.",
+    "button": "See our Services"
+  },
+  "Specialist-Home": {
+    "title": "Specialist for transportation",
+    "subtitle": "We provide comprehensive transportation services for our partners worldwide and always offer innovative solutions to address complex logistics challenges.",
+    "button": "See About Us"
+  },
+  "Member-Home": {
+    "title": "Our talent and professional members",
+    "subtitle": "Meet friendly, experienced, knowledgeable and dynamic team members who always make our customers pleased with."
+  },
+  "CTA": {
+    "title": "Get in touch with us",
+    "subtitle": "We are always here to answer your questions, provide more information, or assist you with your logistics needs. Feel free to reach out to us!"
+  },
+  "MetadataAbout": {
+    "title": "About | Reach To All Corners of The World With Us | PT. ANUGERAH MULTI LOGISTIK",
+    "description": "Become the best leading, trusted and reliable Export and Import Logistics company by prioritizing customer trust and satisfaction"
+  },
+  "MetadataServices": {
+    "title": "Services | Reach To All Corners of The World With Us | PT. ANUGERAH MULTI LOGISTIK",
+    "description": "Menjadi perusahaan Logistik Export dan Import terbaik yang terkemuka, terpercaya, dan handal dengan mengutamakan kepercayaan dan kepuasan Customer"
+  },
+  "MetadataHome": {
+    "title": "Home | Reach To All Corners of The World With Us | PT. ANUGERAH MULTI LOGISTIK",
+    "description": "Become the best leading, trusted and reliable Export and Import Logistics company by prioritizing customer trust and satisfaction",
+    "domestic-meta": "Domestic Market | Reach To All Corners of The World With Us | PT. ANUGERAH MULTI LOGISTIK",
+    "domestic": "Providing our integrated logistics services for the distribution of your local needs. With an extensive network throughout the country, we are ready to provide efficient and practical solutions for managing goods deliveries within the country.",
+    "international-meta": "International Market | Reach To All Corners of The World With Us | PT. ANUGERAH MULTI LOGISTIK",
+    "international": "Find reliable global logistics solutions for your cross-border shipping needs. With experience and a strong international network, we are ready to help you manage cross-border goods shipments with efficiency and reliability.",
+    "contact": "Contact | Reach To All Corners of The World With Us | PT. ANUGERAH MULTI LOGISTIK"
+  },
+  "About": {
+    "header-1": "About Us",
+    "header-2": "Home",
+    "desc": "We have built a team of employees, who are participated in professional training courses , are groomed to handle any emerging situation with a level of composure that gives the customer peace of mind.",
+    "vision": "Our Vision",
+    "mission": "Our Mission",
+    "content-1": "Become the best leading, trusted and reliable Export and Import Logistics Company by prioritizing customer trust and satisfaction",
+    "content-2": "We are determined to be the first choice in logistics services, providing the best solutions for export and import needs, and providing unmatched satisfaction to every customer. With a focus on reliability, professionalism and innovation, we are committed to continuously improving service quality for customer satisfaction and trust.",
+    "content-li-1": "Providing Competitive, Quality and Safe Services",
+    "content-li-2": "Become a customer solution for export and import shipping needs.",
+    "content-li-3": "Carrying out management and technology developments so as to provide satisfaction and trust to customers"
+  },
+  "Services": {
+    "header-1": "Services",
+    "header-2": "Home",
+    "content-1": "What We Offer",
+    "content-2": "Provides high quality and comprehensive transportation logistics services with the lowest cost",
+    "content-custom": "We take care of all customs processes to ensure smooth import and export of goods. Our services include document preparation, customs consultation, and completion of customs procedures quickly and accurately.",
+    "content-custom-2": "We provide customs clearance services (Customs) for shipping export & import goods via sea and air because we have an official license as a Customs Management Services Entrepreneur (PPJK). All work processes are carried out officially.",
+    "content-sea": "With an extensive global network, we offer competitive and reliable ocean shipping services. We handle Full Container Load (FCL) and Less than Container Load (LCL) deliveries to ensure your goods arrive safely and on time.",
+    "content-sea-1": "Our network is also spread throughout the archipelago & has collaborations with agents from all over the world. Of course the prices we offer will be very competitive.",
+    "content-sea-2": "The Domestic / International Freight Services that we provide can include:",
+    "content-sea-3": "We offer intermodal and multimodal transportation solutions that combine various modes of transportation such as sea, land and air. This service is designed to provide flexibility and efficiency in the delivery of goods.",
+    "content-sea-5": "We offer Less than Container Load (LCL) and Full Container Load (FCL) services for sea shipping, tailored to the volume and capacity needs of your goods.",
+    "content-sea-7": "We have expertise in handling dangerous goods in accordance with international regulations, ensuring safety and compliance throughout the shipping process.",
+    "content-sea-8": "We manage bulk cargo shipments that cannot be loaded in standard containers, with efficient solutions for oversized or heavy items.",
+    "content-sea-9": "We provide ocean freight consolidation services, combining goods from multiple shippers to optimize shipping costs and efficiency.",
+    "content-sea-10": "We offer door-to-port delivery services, ensuring your goods are picked up from your location and delivered directly to the destination port in a seamless and integrated process.",
+    "content-trucking": "We provide trucking services for shipping goods throughout Indonesia. Our fleet of modern and well-maintained trucks ensures fast, safe and efficient delivery.",
+    "content-cargo": "We understand the importance of protecting your goods during the shipping process. Therefore, we offer cargo insurance intermediary services to provide maximum protection against the risk of damage or loss.",
+    "content-intermodal": "We provide intermodal and multimodal transportation solutions that combine various modes of transportation such as sea, land and air. This service is designed to provide flexibility and efficiency in the delivery of goods.",
+    "content-intermodal-1": "We also provide Air Freight which includes handling sensitive shipments that require fast and precise service, namely via air for both domestic and international areas.",
+    "content-intermodal-2": "We can provide Sea Freight with terms ranging from EXW (Ex-Work), FOB (Free On Board), CNF (Cost & Freight), & CIF (Cost Insurance & Freight) which are adjusted to your needs. We provide freight for both domestic and international shipping.",
+    "content-intermodal-3": "One of our advantages as a transporter is that we can arrange multimodal delivery of goods (a combination of types of transportation) to send goods to areas that are difficult to reach by transportation in general."
+  },
+  "Contact": {
+    "title": "Contact Us",
+    "subtitle": "Got a technical issue? Want to send feedback about a feature? Need details about our Business plan? Let us know."
+  }
+}
