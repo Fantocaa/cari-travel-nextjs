@@ -3,7 +3,6 @@ import Header from "@/components/tour-page/header/header";
 import Product from "@/components/tour-page/product/product";
 import Cta from "@/components/main-page/cta/cta";
 import ProductTest from "@/components/tour-page/product/producttest";
-
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -12,8 +11,8 @@ export const metadata: Metadata = {
 };
 
 async function getData() {
-  // const res = await fetch("http://cms-caritravel.test/api/postdata", {
-  const res = await fetch("https://backend.caritravel.com/api/postdata", {
+  const res = await fetch("http://cms-caritravel.test/api/postdata", {
+    // const res = await fetch("https://backend.caritravel.com/api/postdata", {
     cache: "no-store",
   });
 

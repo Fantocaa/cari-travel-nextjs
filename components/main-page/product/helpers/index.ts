@@ -1,6 +1,6 @@
 async function getData() {
-  // const res = await fetch("http://cms-caritravel.test/api/postdata", {
-  const res = await fetch("https://backend.caritravel.com/api/postdata", {
+  const res = await fetch("http://cms-caritravel.test/api/postdata", {
+    // const res = await fetch("https://backend.caritravel.com/api/postdata", {
     cache: "no-store",
   });
   if (!res.ok) {

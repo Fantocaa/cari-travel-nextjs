@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import Lightbox from "yet-another-react-lightbox";
+import Lightbox, { Slide } from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import {
   Captions,
@@ -23,6 +23,7 @@ import {
 
 interface ImageProps {
   url: string;
+  type: "png" | "mp4";
 }
 
 interface HeaderProductProps {
@@ -31,6 +32,23 @@ interface HeaderProductProps {
 
 const HeaderProduct = ({ images }: HeaderProductProps) => {
   const [index, setIndex] = useState<number>(-1);
+
+  // const slides: Slide[] = images.map((image) =>
+  //   image.type === "mp4"
+  //     ? { src: image.url }
+  //     : {
+  //         type: "video",
+  //         width: 1280,
+  //         height: 720,
+  //         poster: "/public/poster-image.jpg",
+  //         sources: [
+  //           {
+  //             src: image.url,
+  //             type: "video/mp4",
+  //           },
+  //         ],
+  //       }
+  // );
   return (
     <>
       <div className="pt-8 md:flex gap-4 w-full h-[27rem] 2xl:h-[35rem] hidden">
@@ -46,6 +64,29 @@ const HeaderProduct = ({ images }: HeaderProductProps) => {
             />
           </div>
         )}
+        {/* {images[0] && (
+          <div className="relative w-1/2">
+            {images[0].type === "mp4" ? (
+              <video
+                width={800}
+                height={400}
+                src={images[0].url}
+                className="rounded-xl cursor-pointer h-full object-cover"
+                controls
+                onClick={() => setIndex(0)}
+              />
+            ) : (
+              <Image
+                alt="Image1"
+                width={800}
+                height={400}
+                src={images[0].url}
+                className="rounded-xl cursor-pointer h-full object-cover"
+                onClick={() => setIndex(0)}
+              />
+            )}
+          </div>
+        )} */}
         <div className="grid grid-cols-2 gap-4 h-full">
           {images.slice(1, 5).map((image, idx) => (
             <div key={idx} className="relative h-48 2xl:h-64">
@@ -95,6 +136,7 @@ const HeaderProduct = ({ images }: HeaderProductProps) => {
         index={index}
         close={() => setIndex(-1)}
         slides={images.map((image) => ({ src: image.url }))}
+        // slides={slides}
       />
     </>
   );

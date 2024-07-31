@@ -88,11 +88,18 @@ const Navigationbar = () => {
               >
                 Home
               </Navbar.Link>
+
               <Navbar.Link
                 href="/tour"
                 className={isScrolled ? "text-white" : "text-blackcaritravel"}
               >
                 Tour Package
+              </Navbar.Link>
+              <Navbar.Link
+                href="/visa"
+                className={isScrolled ? "text-white" : "text-blackcaritravel"}
+              >
+                Document & Visa
               </Navbar.Link>
               <Navbar.Link
                 as={Link}
@@ -171,6 +178,24 @@ const Navigationbar = () => {
               >
                 Tour Package
               </Link>
+
+              <Link
+                href="/visa"
+                className={`${
+                  pathname === "/visa"
+                    ? "active text-pinkcaritravel-900"
+                    : !isScrolled
+                    ? "text-blackcaritravel transition-colors duration-500"
+                    : "text-whitecaritravel opacity-75 hover:text-whitecaritravel hover:opacity-100 transition-colors duration-500"
+                } ${
+                  pathname === "/visa" && isScrolled
+                    ? "text-white transition-colors duration-500"
+                    : "hover:text-pinkcaritravel-900 hover:opacity-100 transition-colors duration-500"
+                }`}
+              >
+                Document & Visa
+              </Link>
+
               <Link
                 href="/about"
                 className={`${
