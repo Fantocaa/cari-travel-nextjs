@@ -43,7 +43,7 @@ export default async function Home() {
       {/* <Video /> */}
       <Partner />
       <Features />
-      {/* <ProductLocation /> */}
+      <ProductLocation />
       <Cta />
     </main>
   );

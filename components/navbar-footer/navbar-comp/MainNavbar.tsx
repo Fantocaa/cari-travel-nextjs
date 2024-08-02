@@ -141,7 +141,7 @@ export default function MainNavbar({
                 } ${
                   pathname === `/${locale}` && isScrolled
                     ? "text-white transition-colors duration-500"
-                    : "text-pinkcaritravel-900 transition-colors duration-500"
+                    : "hover:text-pinkcaritravel-900 transition-colors duration-500"
                 }`}
               >
                 Home

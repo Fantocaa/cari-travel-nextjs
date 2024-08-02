@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import LocaleLink from "@/components/locale-link";
 
 const Cta = () => {
   return (
@@ -17,11 +18,11 @@ const Cta = () => {
                 Have a healthy & beatiful trirp with us. You have all kinds of
                 entertainment here.
               </p>
-              <Link href="/contact">
+              <LocaleLink href="/contact">
                 <Button className="bg-yellowcaritravel text-blackcaritravel hover:bg-orange-300">
                   Connect with us
                 </Button>
-              </Link>
+              </LocaleLink>
             </div>
             <Image
               alt="CTA"

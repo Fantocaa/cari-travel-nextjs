@@ -8,8 +8,8 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import ItemProduct from "./itemproduct-location/itemproduct-location";
 import Link from "next/link";
+import ItemProduct from "./itemproduct-location/itemproduct-location";
 
 const ProductLocation = () => {
   return (

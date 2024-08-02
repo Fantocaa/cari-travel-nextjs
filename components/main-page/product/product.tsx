@@ -1,15 +1,10 @@
 import React from "react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 import ItemProduct from "./itemproduct/itemproduct";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import LocaleLink from "@/components/locale-link";
+import { useLocale } from "next-intl";
 
 interface DetailProductProps {
   id: number;
@@ -35,6 +30,7 @@ interface Props {
 }
 
 const Product = ({ products }: Props) => {
+  const locale = useLocale();
   return (
     <section className="2xl:pt-32 py-16">
       <div className="container">
@@ -49,11 +45,11 @@ const Product = ({ products }: Props) => {
             </p>
           </header>
 
-          <Link href="/tour">
+          <LocaleLink href="/tour">
             <Button className="bg-pink-200 text-pinkcaritravel-900 hidden md:block">
               See All
             </Button>
-          </Link>
+          </LocaleLink>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 py-6 ">
           {products.slice(0, 6).map((product, idx) => (
@@ -61,7 +57,7 @@ const Product = ({ products }: Props) => {
               <div className="group relative block overflow-hidden rounded-xl shadow-lg">
                 <Link
                   href={{
-                    pathname: "/tour/product/detail",
+                    pathname: `${locale}/tour/product/detail`,
                     query: { id: product?.id },
                   }}
                   key={product.id}

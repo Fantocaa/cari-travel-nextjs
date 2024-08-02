@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import ReactFlagsSelect from "react-flags-select";
+import { useLocale } from "next-intl";
 import {
   Accordion,
   AccordionContent,
@@ -11,15 +12,20 @@ import {
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 
+type LocaleType = "en" | "id";
+
 type Product = {
   id: number;
   info: {
     en: string;
     id: string;
   };
-  iso2: string;
-  name: string;
-  // flag: string;
+  category: {
+    en: string;
+    id: string;
+  };
+  iso2: string[];
+  country_names: string[];
 };
 
 interface Props {
@@ -28,36 +34,52 @@ interface Props {
 
 export default function HeaderVisa({ products }: Props) {
   const [selected, setSelected] = useState("");
-  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [selectedProducts, setSelectedProducts] = useState<Product[]>([]);
   const [initialized, setInitialized] = useState(false);
-  const router = useRouter(); // Initialize the router
+  const router = useRouter();
+  const locale = useLocale() as LocaleType;
 
-  // Create an object for custom labels
-  const customLabels = products.reduce(
-    (acc: { [key: string]: string }, product) => {
-      acc[product.iso2.toUpperCase()] = product.name;
-      return acc;
-    },
-    {}
-  );
+  const constructUrl = (path: string) => {
+    return path.startsWith(`/${locale}`) ? path : `/${locale}${path}`;
+  };
 
-  // Set default selection on component mount
   useEffect(() => {
     if (products.length > 0 && !initialized) {
       const defaultProduct = products[0];
-      setSelected(defaultProduct.iso2.toUpperCase());
-      setSelectedProduct(defaultProduct);
-      setInitialized(true); // Mark as initialized
-      router.push(`/visa?country=${defaultProduct.iso2.toUpperCase()}`);
+      setSelected(defaultProduct.iso2[0].toUpperCase());
+      setSelectedProducts(
+        products.filter((p) => p.iso2.includes(defaultProduct.iso2[0]))
+      );
+      setInitialized(true);
+      router.push(
+        constructUrl(`/visa?country=${defaultProduct.iso2[0].toUpperCase()}`)
+      );
     }
-  }, [products, router, initialized]);
+  }, [products, router, initialized, locale]);
 
-  // Handle flag selection
   const handleSelect = (code: string) => {
     setSelected(code);
-    const product = products.find((p) => p.iso2.toUpperCase() === code);
-    setSelectedProduct(product || null);
-    router.push(`/visa?country=${code}`);
+    const filteredProducts = products.filter((p) =>
+      p.iso2.includes(code.toLowerCase())
+    );
+    setSelectedProducts(filteredProducts);
+    router.push(constructUrl(`/visa?country=${code}`));
+  };
+
+  const getAllCountries = () => {
+    const allIso2Codes = products.flatMap((product) => product.iso2);
+    return Array.from(new Set(allIso2Codes));
+  };
+
+  const getCountryName = (iso2Code: string) => {
+    const product = products.find((p) =>
+      p.iso2.includes(iso2Code.toLowerCase())
+    );
+    if (product) {
+      const index = product.iso2.indexOf(iso2Code.toLowerCase());
+      return product.country_names[index] || iso2Code;
+    }
+    return iso2Code;
   };
 
   return (
@@ -76,31 +98,37 @@ export default function HeaderVisa({ products }: Props) {
             <ReactFlagsSelect
               selected={selected}
               onSelect={handleSelect}
-              countries={Object.keys(customLabels)}
-              customLabels={customLabels}
+              countries={getAllCountries().map((code) => code.toUpperCase())}
               className="w-64"
             />
             <div className="mt-8">
               <h1 className="text-2xl font-semibold mb-4">
                 Documents & Visa{" "}
-                {selectedProduct && <span>{selectedProduct.name}</span>}
+                {selected && <span>{getCountryName(selected)}</span>}
               </h1>
 
-              {products.map((product) => (
-                <div key={product.id}>
-                  <Accordion type="single" collapsible>
-                    <AccordionItem value="item-1">
-                      <AccordionTrigger className="text-lg">
-                        Requirements Visa Kunjungan
+              {selectedProducts.length > 0 && (
+                <Accordion type="multiple">
+                  {selectedProducts.map((product) => (
+                    <AccordionItem
+                      key={product.id}
+                      value={`item-${product.id}`}
+                    >
+                      <AccordionTrigger className="text-xl">
+                        Requirements {product.category[locale]}
                       </AccordionTrigger>
                       <AccordionContent>
-                        Yes. It adheres to the WAI-ARIA design pattern.
+                        <div
+                          dangerouslySetInnerHTML={{
+                            __html: product.info[locale],
+                          }}
+                          className="text-gray-600 text-lg"
+                        />
                       </AccordionContent>
                     </AccordionItem>
-                  </Accordion>
-                  {/* <h1>{product.iso2}</h1> */}
-                </div>
-              ))}
+                  ))}
+                </Accordion>
+              )}
             </div>
           </div>
         </div>

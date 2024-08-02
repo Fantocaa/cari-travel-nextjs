@@ -23,10 +23,10 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { usePathname, useRouter } from "next/navigation";
-import { useSearchParams } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { Search, X } from "lucide-react";
 import { BeatLoader } from "react-spinners";
+import { useLocale } from "next-intl";
 // import useProductStore from "@/components/store/useProductStore";
 
 interface DetailProductProps {
@@ -53,7 +53,8 @@ interface Props {
   categories: any[];
 }
 
-export default function ProductPage({ products, categories }: Props) {
+// export default function ProductPage({ products, categories }: Props) {
+export default function ProductPage({ products }: Props) {
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(6);
   const [searchTerm, setSearchTerm] = useState("");
@@ -77,76 +78,87 @@ export default function ProductPage({ products, categories }: Props) {
     return () => clearTimeout(timeout);
   }, []);
 
+  const parsePrice = (priceString: string): number => {
+    // Remove all non-numeric characters except periods and commas
+    // Handle multiple periods by keeping only the last one for decimal points
+    // Replace commas with periods for decimal points
+    const cleanedString = priceString
+      .replace(/[^0-9.,]+/g, "") // Remove all non-numeric characters except periods and commas
+      .replace(/(\..*)\./g, "$1") // Keep only the last period for decimal points
+      .replace(/,/g, "") // Remove all commas as thousand separators
+      .replace(/\.(?=\d{3})/g, ""); // Remove dots used as thousand separators
+
+    return parseFloat(cleanedString);
+  };
+
   useEffect(() => {
-    setLoading(true); // Set loading menjadi true saat memuat data
+    setLoading(true); // Set loading to true when loading data
 
     let updatedProducts = [...products];
 
     if (searchTerm) {
-      setCurrentPage(1);
       updatedProducts = updatedProducts.filter(
         (product) =>
           product.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
           product.cities.toLowerCase().includes(searchTerm.toLowerCase()) ||
           product.countries.toLowerCase().includes(searchTerm.toLowerCase())
       );
-    } else if (pageParam) {
+    }
+
+    if (pageParam) {
       setCurrentPage(parseInt(pageParam) || 1);
-      let sortedProducts = [...products];
-      if (sortBy === "new") {
-        sortedProducts.sort((a, b) => b.id - a.id);
-      } else if (sortBy === "old") {
-        sortedProducts.sort((a, b) => a.id - b.id);
-      }
-      updatedProducts = sortedProducts;
     }
 
     if (sortBy === "new") {
       updatedProducts.sort((a, b) => b.id - a.id);
     } else if (sortBy === "old") {
       updatedProducts.sort((a, b) => a.id - b.id);
+    } else if (sortBy === "lowPrice") {
+      updatedProducts.sort(
+        (a, b) =>
+          parsePrice(a.price.toString()) - parsePrice(b.price.toString())
+      );
+    } else if (sortBy === "highPrice") {
+      updatedProducts.sort(
+        (a, b) =>
+          parsePrice(b.price.toString()) - parsePrice(a.price.toString())
+      );
     }
+
     setFilteredProducts(updatedProducts);
 
-    // Set loading menjadi false setelah semua perubahan state selesai dilakukan
+    // Set loading to false after all state changes
     setLoading(false);
+
+    // console.log(
+    //   "Sorting by lowPrice:",
+    //   updatedProducts.map((p) => parsePrice(p.price.toString()))
+    // );
+    // console.log(
+    //   "Sorting by highPrice:",
+    //   updatedProducts.map((p) => parsePrice(p.price.toString()))
+    // );
   }, [searchTerm, pageParam, products, sortBy, selectedCategory]);
 
-  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const newSearchTerm = e.target.value;
-    setTempSearchTerm(newSearchTerm);
-
-    if (newSearchTerm === "") {
-      setSearchTerm(""); // Kosongkan searchTerm
-      setFilteredProducts(products); // Tampilkan semua produk
-      setCurrentPage(1); // Set halaman ke 1
-      // router.push(`${pathname}?page=1`); // Perbarui URL ke page=1
-    }
-  };
-
-  const handleSearchClick = () => {
-    setSearchTerm(tempSearchTerm);
-  };
-
-  const clearSearch = () => {
-    setTempSearchTerm("");
-    setSearchTerm("");
-    // setFilteredProducts(products);
-    setCurrentPage(1); // Set halaman ke 1
-    // router.push(`${pathname}?page=1`); // Perbarui URL ke page=1
-  };
-
   const handleSortChange = (value: string) => {
-    setSortBy(value); // Simpan pilihan pengurutan
+    setSortBy(value);
+    let sortedProducts = [...filteredProducts];
     if (value === "new") {
-      // Sort products by ID in descending order (largest to smallest ID)
-      const sortedProducts = [...filteredProducts].sort((a, b) => b.id - a.id);
-      setFilteredProducts(sortedProducts);
+      sortedProducts.sort((a, b) => b.id - a.id);
     } else if (value === "old") {
-      // Sort products by ID in ascending order (smallest to largest ID)
-      const sortedProducts = [...filteredProducts].sort((a, b) => a.id - b.id);
-      setFilteredProducts(sortedProducts);
+      sortedProducts.sort((a, b) => a.id - b.id);
+    } else if (value === "lowPrice") {
+      sortedProducts.sort(
+        (a, b) =>
+          parsePrice(a.price.toString()) - parsePrice(b.price.toString())
+      );
+    } else if (value === "highPrice") {
+      sortedProducts.sort(
+        (a, b) =>
+          parsePrice(b.price.toString()) - parsePrice(a.price.toString())
+      );
     }
+    setFilteredProducts(sortedProducts);
   };
 
   // const handleCategoryChange = (category: string) => {
@@ -170,6 +182,42 @@ export default function ProductPage({ products, categories }: Props) {
   //   }
   // };
 
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newSearchTerm = e.target.value;
+    setTempSearchTerm(newSearchTerm);
+
+    if (newSearchTerm === "") {
+      setSearchTerm(""); // Kosongkan searchTerm
+      setFilteredProducts(products); // Tampilkan semua produk
+      setCurrentPage(1); // Set halaman ke 1
+      router.push(`${pathname}?page=1`, {
+        scroll: false,
+      }); // Perbarui URL ke page=1
+    }
+  };
+
+  const handleSearchClick = () => {
+    setSearchTerm(tempSearchTerm);
+    router.push(`${pathname}?search=${tempSearchTerm}`, {
+      scroll: false,
+    });
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      handleSearchClick();
+    }
+  };
+
+  const clearSearch = () => {
+    setTempSearchTerm("");
+    setSearchTerm("");
+    // setFilteredProducts(products);
+    setCurrentPage(1); // Set halaman ke 1
+    // router.push(`${pathname}?page=1`); // Perbarui URL ke page=1
+    router.push(`${pathname}`, { scroll: false }); // Perbarui URL ke page=1
+  };
+
   const lastPostIndex = currentPage * postsPerPage;
   const firstPostIndex = lastPostIndex - postsPerPage;
   //   const currentPosts = products.slice(firstPostIndex, lastPostIndex);
@@ -187,6 +235,18 @@ export default function ProductPage({ products, categories }: Props) {
     }
   };
 
+  const locale = useLocale();
+
+  const constructUrl = (path: string) => {
+    // Pastikan locale tidak ditambahkan dua kali
+    const normalizedPath = path.startsWith(`/${locale}`)
+      ? path.slice(locale.length + 1)
+      : path;
+    return `/${locale}${
+      normalizedPath.startsWith("/") ? "" : "/"
+    }${normalizedPath}`;
+  };
+
   return (
     <>
       <div className=" p-8 rounded-xl mt-4 w-full container">
@@ -201,6 +261,7 @@ export default function ProductPage({ products, categories }: Props) {
               className="h-12 w-full md:w-96 rounded-full px-4 pl-12 bg-white"
               value={tempSearchTerm}
               onChange={handleSearchChange}
+              onKeyDown={handleKeyDown}
             ></Input>
             {tempSearchTerm && (
               <X
@@ -220,7 +281,17 @@ export default function ProductPage({ products, categories }: Props) {
               <SelectTrigger className="w-[180px] h-12 rounded-full px-4 bg-white">
                 {/* <SelectValue placeholder="Sort By" /> */}
                 <SelectValue
-                  placeholder={sortBy === "new" ? "Paling Baru" : "Paling Lama"}
+                  placeholder={
+                    sortBy === "new"
+                      ? "Paling Baru"
+                      : sortBy === "old"
+                      ? "Paling Lama"
+                      : sortBy === "lowPrice"
+                      ? "Termurah"
+                      : sortBy === "highPrice"
+                      ? "Termahal"
+                      : "Sort By"
+                  }
                 ></SelectValue>
               </SelectTrigger>
               <SelectContent>
@@ -228,6 +299,8 @@ export default function ProductPage({ products, categories }: Props) {
                   <SelectLabel>Sort By</SelectLabel>
                   <SelectItem value="new">Paling Baru</SelectItem>
                   <SelectItem value="old">Paling Lama</SelectItem>
+                  <SelectItem value="lowPrice">Termurah</SelectItem>
+                  <SelectItem value="highPrice">Termahal</SelectItem>
                 </SelectGroup>
               </SelectContent>
             </Select>
@@ -251,7 +324,7 @@ export default function ProductPage({ products, categories }: Props) {
                         <div className="group relative block overflow-hidden rounded-xl shadow-lg">
                           <Link
                             href={{
-                              pathname: "/tour/product/detail",
+                              pathname: constructUrl("/tour/product/detail"),
                               query: { id: product?.id },
                             }}
                             key={product.id}
@@ -375,7 +448,9 @@ function PaginationSection({
           <PaginationLink
             onClick={() => {
               setCurrentPage(i);
-              router.push(`?page=${i}`);
+              router.push(`?page=${i}`, {
+                scroll: false,
+              });
             }}
             className="bg-darkcmi opacity-50"
           >
@@ -409,7 +484,9 @@ function PaginationSection({
                 e.preventDefault(); // Mencegah perilaku default dari event onClick
                 handlePrevPage();
                 if (!isPrevDisabled) {
-                  router.push(`?page=${currentPage - 1}`);
+                  router.push(`?page=${currentPage - 1}`, {
+                    scroll: false,
+                  });
                 }
               }}
               isActive={currentPage === 1}
@@ -430,7 +507,9 @@ function PaginationSection({
                 e.preventDefault(); // Mencegah perilaku default dari event onClick
                 handleNextPage();
                 if (!isNextDisabled) {
-                  router.push(`?page=${currentPage + 1}`);
+                  router.push(`?page=${currentPage + 1}`, {
+                    scroll: false,
+                  });
                 }
               }}
               isActive={currentPage === totalPages}
