@@ -150,13 +150,15 @@ export default function MainNavbar({
               <LocaleLink
                 href="/tour"
                 className={`${
-                  pathname === `/${locale}/tour`
+                  // pathname === `/${locale}/tour`
+                  pathname.startsWith(`/${locale}/tour`)
                     ? "active text-pinkcaritravel-900"
                     : !isScrolled
                     ? "text-blackcaritravel transition-colors duration-500"
                     : "text-whitecaritravel opacity-75 hover:text-whitecaritravel hover:opacity-100 transition-colors duration-500"
                 } ${
-                  pathname === `/${locale}/tour` && isScrolled
+                  // pathname === `/${locale}/tour` && isScrolled
+                  pathname.startsWith(`/${locale}/tour`) && isScrolled
                     ? "text-white transition-colors duration-500"
                     : "hover:text-pinkcaritravel-900 hover:opacity-100 transition-colors duration-500"
                 }`}

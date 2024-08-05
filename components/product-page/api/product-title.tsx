@@ -1,15 +1,34 @@
 import React from "react";
 import Image from "next/image";
+import { useLocale } from "next-intl";
 
 interface ProductTitleProps {
-  title: string;
-  cities: string;
-  countries: string;
+  // id: number;
+  countries: string[];
+  cities: string[];
   traveler: string;
   duration: string;
   duration_night: string;
   start_date: string;
   end_date: string;
+  title: string;
+  // general_info: {
+  //   en: string;
+  //   id: string;
+  // };
+  // travel_schedule: {
+  //   en: string;
+  //   id: string;
+  // };
+  // additional_info: {
+  //   en: string;
+  //   id: string;
+  // };
+  // price: string;
+  // yt_links: string;
+  // thumb_img: string;
+  // image_name: string[];
+  // author_phone: string;
 }
 
 interface Props {
@@ -17,6 +36,7 @@ interface Props {
 }
 
 export default function ProductTitle({ product }: Props) {
+  // const locale = useLocale();
   return (
     <div className="pt-8">
       <h1 className="font-semibold text-xl md:text-3xl">{product.title}</h1>

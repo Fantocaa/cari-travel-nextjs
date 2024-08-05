@@ -19,6 +19,10 @@ const nextConfig = {
       },
       {
         protocol: "http",
+        hostname: "cms-caritravel-filament.test",
+      },
+      {
+        protocol: "http",
         hostname: "localhost",
       },
       {

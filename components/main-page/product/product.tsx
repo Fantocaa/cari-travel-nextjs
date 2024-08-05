@@ -8,21 +8,31 @@ import { useLocale } from "next-intl";
 
 interface DetailProductProps {
   id: number;
-  countries: string;
-  cities: string;
+  countries: string[];
+  cities: string[];
   traveler: string;
   duration: string;
   duration_night: string;
   start_date: string;
   end_date: string;
   title: string;
-  description: string;
-  body: JSON;
-  author: number;
-  price: number;
-  attachment: {
-    url: string;
-  }[];
+  general_info: {
+    en: string;
+    id: string;
+  };
+  travel_schedule: {
+    en: string;
+    id: string;
+  };
+  additional_info: {
+    en: string;
+    id: string;
+  };
+  price: string;
+  yt_links: string;
+  thumb_img: string;
+  image_name: string[];
+  author_phone: string;
 }
 
 interface Props {
@@ -31,6 +41,9 @@ interface Props {
 
 const Product = ({ products }: Props) => {
   const locale = useLocale();
+
+  // console.log(products);
+
   return (
     <section className="2xl:pt-32 py-16">
       <div className="container">
@@ -70,7 +83,7 @@ const Product = ({ products }: Props) => {
                     </div>
 
                     <Image
-                      src={product.attachment[0].url}
+                      src={product.image_name[0]}
                       alt="photo-location"
                       className="h-72 w-full object-cover transition duration-500 group-hover:scale-105 bg-white"
                       width={500}

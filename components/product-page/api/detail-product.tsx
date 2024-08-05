@@ -4,11 +4,21 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { useLocale } from "next-intl";
 
 interface ProductTitleProps {
-  general_info: string;
-  travel_schedule: string;
-  additional_info: string;
+  general_info: {
+    en: string;
+    id: string;
+  };
+  travel_schedule: {
+    en: string;
+    id: string;
+  };
+  additional_info: {
+    en: string;
+    id: string;
+  };
 }
 
 interface Props {
@@ -16,8 +26,12 @@ interface Props {
 }
 
 const ProductDetail = ({ product }: Props) => {
+  const locale = useLocale();
+
+  // console.log(product);
+
   return (
-    <div className="mt-8">
+    <div className="mt-16">
       <div className="bg-white p-8 rounded-xl">
         <Accordion type="single" collapsible defaultValue={"item-1"}>
           <AccordionItem value="item-1">
@@ -25,7 +39,15 @@ const ProductDetail = ({ product }: Props) => {
               <h1 className="font-bold text-lg pt-4">Informasi Umum</h1>
             </AccordionTrigger>
             <AccordionContent>
-              <p className="leading-7 text-gray-500">{product.general_info}</p>
+              <div
+                className="leading-7 text-gray-600 text-lg"
+                dangerouslySetInnerHTML={{
+                  __html:
+                    product.general_info[
+                      locale as keyof typeof product.general_info
+                    ],
+                }}
+              />
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
@@ -34,8 +56,13 @@ const ProductDetail = ({ product }: Props) => {
             </AccordionTrigger>
             <AccordionContent>
               <div
-                className="leading-7 pt-4"
-                dangerouslySetInnerHTML={{ __html: product.travel_schedule }}
+                className="leading-7 text-gray-600 text-lg"
+                dangerouslySetInnerHTML={{
+                  __html:
+                    product.travel_schedule[
+                      locale as keyof typeof product.travel_schedule
+                    ],
+                }}
               />
             </AccordionContent>
           </AccordionItem>
@@ -44,9 +71,15 @@ const ProductDetail = ({ product }: Props) => {
               <h1 className="font-bold text-lg pt-4">Info Tambahan</h1>
             </AccordionTrigger>
             <AccordionContent>
-              <p className="leading-7 pt-4 text-gray-500">
-                {product.additional_info}
-              </p>
+              <div
+                className="leading-7 text-gray-600 text-lg"
+                dangerouslySetInnerHTML={{
+                  __html:
+                    product.additional_info[
+                      locale as keyof typeof product.additional_info
+                    ],
+                }}
+              />
             </AccordionContent>
           </AccordionItem>
         </Accordion>

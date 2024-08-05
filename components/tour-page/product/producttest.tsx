@@ -27,25 +27,35 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { Search, X } from "lucide-react";
 import { BeatLoader } from "react-spinners";
 import { useLocale } from "next-intl";
-// import useProductStore from "@/components/store/useProductStore";
+import useSearchStore from "@/components/useSearchStore";
 
 interface DetailProductProps {
   id: number;
-  countries: string;
-  cities: string;
+  countries: string[];
+  cities: string[];
   traveler: string;
   duration: string;
   duration_night: string;
   start_date: string;
   end_date: string;
   title: string;
-  description: string;
-  body: JSON;
-  author: number;
-  price: number;
-  attachment: {
-    url: string;
-  }[];
+  general_info: {
+    en: string;
+    id: string;
+  };
+  travel_schedule: {
+    en: string;
+    id: string;
+  };
+  additional_info: {
+    en: string;
+    id: string;
+  };
+  price: string;
+  yt_links: string;
+  thumb_img: string;
+  image_name: string[];
+  author_phone: string;
 }
 
 interface Props {
@@ -57,8 +67,8 @@ interface Props {
 export default function ProductPage({ products }: Props) {
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(6);
-  const [searchTerm, setSearchTerm] = useState("");
-  const [tempSearchTerm, setTempSearchTerm] = useState("");
+  const { searchTerm, setSearchTerm } = useSearchStore();
+  const [tempSearchTerm, setTempSearchTerm] = useState(searchTerm);
   const [filteredProducts, setFilteredProducts] = useState(products);
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [loading, setLoading] = useState(true); // Tambahkan keadaan loading
@@ -67,7 +77,10 @@ export default function ProductPage({ products }: Props) {
   const searchParams = useSearchParams();
   const pageParam = searchParams.get("page");
   const [sortBy, setSortBy] = useState("new");
+  // const [tempSearchTerm, setTempSearchTerm] = useState("");
   // const setProduct = useProductStore((state) => state.setProduct);
+
+  console.log();
 
   useEffect(() => {
     // Contoh: Menunggu 2 detik sebelum mengatur loading menjadi false
@@ -79,9 +92,6 @@ export default function ProductPage({ products }: Props) {
   }, []);
 
   const parsePrice = (priceString: string): number => {
-    // Remove all non-numeric characters except periods and commas
-    // Handle multiple periods by keeping only the last one for decimal points
-    // Replace commas with periods for decimal points
     const cleanedString = priceString
       .replace(/[^0-9.,]+/g, "") // Remove all non-numeric characters except periods and commas
       .replace(/(\..*)\./g, "$1") // Keep only the last period for decimal points
@@ -100,9 +110,20 @@ export default function ProductPage({ products }: Props) {
       updatedProducts = updatedProducts.filter(
         (product) =>
           product.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          product.cities.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          product.countries.toLowerCase().includes(searchTerm.toLowerCase())
+          product.cities.some((city) =>
+            city.toLowerCase().includes(searchTerm.toLowerCase())
+          ) ||
+          product.countries.some((country) =>
+            country.toLowerCase().includes(searchTerm.toLowerCase())
+          )
       );
+
+      router.push(`${pathname}?search=${searchTerm}`, {
+        scroll: false,
+      });
+    } else {
+      // Reset to all products if searchTerm is empty
+      updatedProducts = [...products];
     }
 
     if (pageParam) {
@@ -129,16 +150,15 @@ export default function ProductPage({ products }: Props) {
 
     // Set loading to false after all state changes
     setLoading(false);
-
-    // console.log(
-    //   "Sorting by lowPrice:",
-    //   updatedProducts.map((p) => parsePrice(p.price.toString()))
-    // );
-    // console.log(
-    //   "Sorting by highPrice:",
-    //   updatedProducts.map((p) => parsePrice(p.price.toString()))
-    // );
-  }, [searchTerm, pageParam, products, sortBy, selectedCategory]);
+  }, [
+    searchTerm,
+    pageParam,
+    products,
+    sortBy,
+    selectedCategory,
+    pathname,
+    router,
+  ]);
 
   const handleSortChange = (value: string) => {
     setSortBy(value);
@@ -161,30 +181,10 @@ export default function ProductPage({ products }: Props) {
     setFilteredProducts(sortedProducts);
   };
 
-  // const handleCategoryChange = (category: string) => {
-  //   setSelectedCategory(category);
-  //   setCurrentPage(1); // Set halaman ke 1 setiap kali kategori berubah
-
-  //   // Membangun URL baru dengan halaman di-reset ke 1
-  //   const newUrl = `${pathname}?category=${encodeURIComponent(
-  //     category
-  //   )}&page=1`;
-
-  //   if (category === "all") {
-  //     router.push(`${pathname}?page=1`); // Pastikan untuk reset halaman ke 1
-  //     setFilteredProducts(products); // Reset ke semua produk jika kategori adalah 'all'
-  //   } else {
-  //     router.push(newUrl);
-  //     // const filtered = products.filter(
-  //     //   (product) => product.category === category
-  //     // );
-  //     // setFilteredProducts(filtered);
-  //   }
-  // };
-
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newSearchTerm = e.target.value;
     setTempSearchTerm(newSearchTerm);
+    // setSearchTerm(newSearchTerm); // Perbarui searchTerm di Zustand
 
     if (newSearchTerm === "") {
       setSearchTerm(""); // Kosongkan searchTerm
@@ -192,7 +192,7 @@ export default function ProductPage({ products }: Props) {
       setCurrentPage(1); // Set halaman ke 1
       router.push(`${pathname}?page=1`, {
         scroll: false,
-      }); // Perbarui URL ke page=1
+      });
     }
   };
 
@@ -247,6 +247,27 @@ export default function ProductPage({ products }: Props) {
     }${normalizedPath}`;
   };
 
+  // const handleCategoryChange = (category: string) => {
+  //   setSelectedCategory(category);
+  //   setCurrentPage(1); // Set halaman ke 1 setiap kali kategori berubah
+
+  //   // Membangun URL baru dengan halaman di-reset ke 1
+  //   const newUrl = `${pathname}?category=${encodeURIComponent(
+  //     category
+  //   )}&page=1`;
+
+  //   if (category === "all") {
+  //     router.push(`${pathname}?page=1`); // Pastikan untuk reset halaman ke 1
+  //     setFilteredProducts(products); // Reset ke semua produk jika kategori adalah 'all'
+  //   } else {
+  //     router.push(newUrl);
+  //     // const filtered = products.filter(
+  //     //   (product) => product.category === category
+  //     // );
+  //     // setFilteredProducts(filtered);
+  //   }
+  // };
+
   return (
     <>
       <div className=" p-8 rounded-xl mt-4 w-full container">
@@ -263,7 +284,8 @@ export default function ProductPage({ products }: Props) {
               onChange={handleSearchChange}
               onKeyDown={handleKeyDown}
             ></Input>
-            {tempSearchTerm && (
+            {/* {tempSearchTerm && ( */}
+            {searchTerm && (
               <X
                 className="absolute right-28 top-1/2 -translate-y-1/2 cursor-pointer"
                 onClick={clearSearch}
@@ -338,7 +360,7 @@ export default function ProductPage({ products }: Props) {
                               </div>
 
                               <Image
-                                src={product.attachment[0].url}
+                                src={product.image_name[0]}
                                 alt="photo-location"
                                 className="h-72 w-full object-cover transition duration-500 group-hover:scale-105 bg-white"
                                 width={500}
@@ -384,7 +406,7 @@ export default function ProductPage({ products }: Props) {
 
           <PaginationSection
             // products={products.length}
-            products={filteredProducts} // Menggunakan filteredProducts yang berisi produk yang sudah difilter
+            products={filteredProducts}
             postsPerPage={postsPerPage}
             currentPage={currentPage}
             setCurrentPage={setCurrentPage}

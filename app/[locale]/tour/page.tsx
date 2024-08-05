@@ -11,7 +11,8 @@ export const metadata: Metadata = {
 };
 
 async function getData() {
-  const res = await fetch("http://cms-caritravel.test/api/postdata", {
+  const res = await fetch("http://cms-caritravel-filament.test/traveldata", {
+    // const res = await fetch("http://cms-caritravel.test/api/postdata", {
     // const res = await fetch("https://backend.caritravel.com/api/postdata", {
     cache: "no-store",
   });

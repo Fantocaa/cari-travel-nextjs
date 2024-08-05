@@ -33,7 +33,7 @@
     "tailwindcss-animate": "^1.0.7",
     "usehooks-ts": "^3.0.2",
     "yet-another-react-lightbox": "^3.19.0",
-    "zustand": "^4.5.2"
+    "zustand": "^4.5.4"
   },
   "devDependencies": {
     "@faker-js/faker": "^8.4.1",

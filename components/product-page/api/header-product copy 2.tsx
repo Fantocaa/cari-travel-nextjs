@@ -1,6 +1,4 @@
-"use client";
-
-import { useState } from "react";
+import React, { useState } from "react";
 import Lightbox, { Slide } from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import { Fullscreen, Zoom } from "yet-another-react-lightbox/plugins";
@@ -17,13 +15,14 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-interface ImageProps {
-  url: string;
-  type: "png" | "mp4";
-}
+// interface ImageProps {
+//   url: string;
+//   // type: "png" | "mp4";
+// }
 
 interface HeaderProductProps {
-  images: ImageProps[];
+  // images: ImageProps[];
+  images: string[]; // Array of image URLs
   videoUrl?: string;
   thumbnailUrl?: string;
 }
@@ -38,7 +37,7 @@ type CarouselItemType =
     }
   | { src: string };
 
-const HeaderProduct = ({
+const HeaderProduct2 = ({
   images,
   videoUrl,
   thumbnailUrl,
@@ -57,7 +56,7 @@ const HeaderProduct = ({
         }
       : null,
     ...images.map((image) => ({
-      src: image.url,
+      src: image,
     })),
   ].filter(Boolean) as Slide[];
 
@@ -71,11 +70,11 @@ const HeaderProduct = ({
           height: 720,
         },
         ...images.map((image) => ({
-          src: image.url,
+          src: image,
         })),
       ]
     : images.map((image) => ({
-        src: image.url,
+        src: image,
       }));
 
   const isYouTubeItem = (
@@ -115,7 +114,7 @@ const HeaderProduct = ({
         ) : (
           images[0] && (
             <Image
-              src={images[0].url}
+              src={images[0]}
               alt="Image Thumbnail"
               width={800}
               height={400}
@@ -133,7 +132,7 @@ const HeaderProduct = ({
                   alt={`Image${idx + 2}`}
                   width={400}
                   height={400}
-                  src={image.url}
+                  src={image}
                   className="rounded-xl object-cover h-full cursor-pointer"
                   onClick={() => setIndex(idx + 1)}
                 />
@@ -203,4 +202,4 @@ const HeaderProduct = ({
   );
 };
 
-export default HeaderProduct;
+export default HeaderProduct2;

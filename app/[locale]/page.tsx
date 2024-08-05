@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 };
 
 async function getData() {
-  const res = await fetch("http://cms-caritravel.test/api/postdata", {
+  const res = await fetch("http://cms-caritravel-filament.test/traveldata", {
     // const res = await fetch("https://backend.caritravel.com/api/postdata", {
     cache: "no-store",
   });
@@ -35,6 +35,9 @@ type ProductProps = {
 
 export default async function Home() {
   const { products } = await getData();
+
+  // console.log(products);
+
   return (
     // <main className="flex min-h-screen flex-col items-center justify-between p-24">
     <main>
