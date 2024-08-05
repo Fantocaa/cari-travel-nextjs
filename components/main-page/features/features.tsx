@@ -17,11 +17,11 @@ const Features = () => {
               />
             </div>
             <div className="lg:py-24 col-span-2 max-w-2xl">
-              <h2 className="text-3xl font-bold sm:text-4xl">
+              <h2 className="text-2xl font-bold sm:text-4xl">
                 Pelayanan terbaik kami!
               </h2>
-              <div className="flex mt-8 gap-4 ">
-                <div>
+              <div className="flex mt-8 gap-4">
+                <div className="mt-1 md:mt-0">
                   <Image
                     alt=""
                     src="/images/features.png"
@@ -42,7 +42,7 @@ const Features = () => {
                 </div>
               </div>
               <div className="flex mt-8 gap-4">
-                <div>
+                <div className="mt-1 md:mt-0">
                   <Image
                     alt=""
                     src="/images/features.png"
@@ -63,7 +63,7 @@ const Features = () => {
                 </div>
               </div>
               <div className="flex mt-8 gap-4">
-                <div>
+                <div className="mt-1 md:mt-0">
                   <Image
                     alt=""
                     src="/images/features.png"

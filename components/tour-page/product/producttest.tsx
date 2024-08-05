@@ -284,8 +284,7 @@ export default function ProductPage({ products }: Props) {
               onChange={handleSearchChange}
               onKeyDown={handleKeyDown}
             ></Input>
-            {/* {tempSearchTerm && ( */}
-            {searchTerm && (
+            {tempSearchTerm && (
               <X
                 className="absolute right-28 top-1/2 -translate-y-1/2 cursor-pointer"
                 onClick={clearSearch}
@@ -367,11 +366,12 @@ export default function ProductPage({ products }: Props) {
                                 height={500}
                               />
                               <div className="relative border border-gray-100 bg-white p-6">
-                                <h3 className="text-xl font-semibold text-gray-900 truncate">
+                                <h3 className="text-xl font-semibold text-gray-900 line-clamp-1">
                                   {product.title}
                                 </h3>
-                                <h4 className="text-sm text-gray-500">
-                                  {product.cities}, {product.countries}
+                                <h4 className="text-sm text-gray-500 line-clamp-1">
+                                  {product.cities.join(", ")} |{" "}
+                                  {product.countries.join(", ")}
                                 </h4>
                                 <div className="flex justify-between items-end">
                                   <div>

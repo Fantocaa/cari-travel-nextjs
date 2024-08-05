@@ -42,13 +42,15 @@ const ItemProduct = ({ product }: ItemProductProps) => {
         <div className="flex justify-between items-end">
           <div>
             <h3 className="text-2xl font-semibold text-gray-900 line-clamp-1">
-              {product.countries}
-            </h3>
-            <h3 className="text-lg font-medium text-gray-900 line-clamp-1">
               {product.cities}
             </h3>
+            <h3 className="text-lg font-medium text-gray-900 line-clamp-1">
+              {product.countries}
+            </h3>
           </div>
-          <Button>View Details</Button>
+          <Button className="bg-pink-200 text-pinkcaritravel-900 hover:text-pinkcaritravel-300 hover:bg-pink-50">
+            View Details
+          </Button>
         </div>
       </div>
     </LocaleLink>

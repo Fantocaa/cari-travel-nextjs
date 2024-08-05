@@ -49,7 +49,7 @@ const Product = ({ products }: Props) => {
       <div className="container">
         <div className="flex justify-between">
           <header>
-            <h2 className="text-xl font-bold text-gray-900 sm:text-3xl">
+            <h2 className="text-2xl font-bold text-gray-900 sm:text-3xl">
               Rekomendasi Untuk Kamu 🗺️📌
             </h2>
 
@@ -90,11 +90,12 @@ const Product = ({ products }: Props) => {
                       height={500}
                     />
                     <div className="relative border border-gray-100 bg-white p-6">
-                      <h3 className="text-xl font-semibold text-gray-900 truncate">
+                      <h3 className="text-xl font-semibold text-gray-900 line-clamp-1">
                         {product.title}
                       </h3>
-                      <h4 className="text-sm text-gray-500 truncate">
-                        {product.cities}, {product.countries}
+                      <h4 className="text-sm text-gray-500 line-clamp-1">
+                        {product.cities.join(", ")} |{" "}
+                        {product.countries.join(", ")}
                       </h4>
                       <div className="flex justify-between items-end">
                         <div>
@@ -116,11 +117,11 @@ const Product = ({ products }: Props) => {
             </div>
           ))}
         </div>
-        <Link href="/tour">
+        <LocaleLink href="/tour">
           <Button className="bg-pink-200 text-pinkcaritravel-900 md:hidden text-lg w-full py-6 rounded-full">
             See All
           </Button>
-        </Link>
+        </LocaleLink>
       </div>
     </section>
   );

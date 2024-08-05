@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/carousel";
 import Link from "next/link";
 import ItemProduct from "./itemproduct-location/itemproduct-location";
+import LocaleLink from "@/components/locale-link";
 
 async function getData() {
   const res = await fetch(
@@ -37,15 +38,13 @@ type ProductProps = {
 export default async function ProductLocation() {
   const { products } = await getData();
 
-  // console.log(products);
-
   return (
     <>
       <section>
         <div className="container py-16 xl:pt-32">
           <div className="flex justify-between">
             <header>
-              <h2 className="text-xl font-bold text-gray-900 sm:text-3xl">
+              <h2 className="text-2xl font-bold text-gray-900 leading-normal">
                 Petualangan yang Tak Terlupakan Menanti! 🌍🌟
               </h2>
 
@@ -64,35 +63,22 @@ export default async function ProductLocation() {
           <div className="text-center">
             <Carousel>
               <CarouselContent className="text-left">
-                <CarouselItem className="hidden md:block">
-                  <div className="grid grid-cols-3 gap-4 mt-8">
+                <CarouselItem>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8 mb-8 md:mb-0">
                     {products.slice(0, 6).map((product: ProductProps) => (
                       <ItemProduct key={product.id} product={product} />
                     ))}
                   </div>
                 </CarouselItem>
-                {/* <CarouselItem className="md:hidden">
-                  <div className="grid md:hidden gap-4 mt-8">
-                    <ItemProduct />
-                  </div>
-                </CarouselItem>
-                <CarouselItem className="md:hidden">
-                  <div className="grid md:hidden gap-4 mt-8">
-                    <ItemProduct />
-                  </div>
-                </CarouselItem>
-                <CarouselItem className="md:hidden">
-                  <div className="grid md:hidden gap-4 mt-8">
-                    <ItemProduct />
-                  </div>
-                </CarouselItem> */}
               </CarouselContent>
-              <CarouselPrevious className="md:hidden" />
-              <CarouselNext className="md:hidden" />
+              {/* <CarouselPrevious className="md:hidden" />
+              <CarouselNext className="md:hidden" /> */}
             </Carousel>
-            <Button className="bg-pink-200 text-pinkcaritravel-900 mt-4 md:hidden">
-              See All
-            </Button>
+            <LocaleLink href="/tour">
+              <Button className="bg-pink-200 text-pinkcaritravel-900 md:hidden text-lg w-full py-6 rounded-full">
+                See All
+              </Button>
+            </LocaleLink>
           </div>
         </div>
       </section>

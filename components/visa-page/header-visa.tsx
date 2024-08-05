@@ -85,14 +85,17 @@ export default function HeaderVisa({ products }: Props) {
   return (
     <div>
       <div className="py-16 container mt-16">
-        <div className="grid grid-cols-6 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-6 gap-8">
           <div className="col-span-3">
-            <Image
-              src="/images/man-woman-dressed-travel-wear-glasses-take-paictures (1).png"
-              alt="document-img"
-              width={800}
-              height={800}
-            />
+            <div className="sticky top-20">
+              <Image
+                src="/images/man-woman-dressed-travel-wear-glasses-take-paictures (1).png"
+                alt="document-img"
+                width={800}
+                height={800}
+                className="hidden md:block"
+              />
+            </div>
           </div>
           <div className="col-span-3">
             <ReactFlagsSelect
@@ -102,19 +105,19 @@ export default function HeaderVisa({ products }: Props) {
               className="w-64"
             />
             <div className="mt-8">
-              <h1 className="text-2xl font-semibold mb-4">
+              <h1 className="text-xl md:text-2xl font-semibold mb-4">
                 Documents & Visa{" "}
                 {selected && <span>{getCountryName(selected)}</span>}
               </h1>
 
               {selectedProducts.length > 0 && (
-                <Accordion type="multiple">
+                <Accordion type="single" defaultValue={"item-1"} collapsible>
                   {selectedProducts.map((product) => (
                     <AccordionItem
                       key={product.id}
                       value={`item-${product.id}`}
                     >
-                      <AccordionTrigger className="text-xl">
+                      <AccordionTrigger className="text-xl text-left">
                         Requirements {product.category[locale]}
                       </AccordionTrigger>
                       <AccordionContent>
@@ -122,7 +125,7 @@ export default function HeaderVisa({ products }: Props) {
                           dangerouslySetInnerHTML={{
                             __html: product.info[locale],
                           }}
-                          className="text-gray-600 text-lg"
+                          className="text-gray-600 text-lg overflow-y-auto break-words w-full"
                         />
                       </AccordionContent>
                     </AccordionItem>

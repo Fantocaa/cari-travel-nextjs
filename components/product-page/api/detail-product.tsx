@@ -28,8 +28,6 @@ interface Props {
 const ProductDetail = ({ product }: Props) => {
   const locale = useLocale();
 
-  // console.log(product);
-
   return (
     <div className="mt-16">
       <div className="bg-white p-8 rounded-xl">
