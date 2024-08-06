@@ -59,7 +59,7 @@ const Product = ({ products }: Props) => {
           </header>
 
           <LocaleLink href="/tour">
-            <Button className="bg-pink-200 text-pinkcaritravel-900 hidden md:block">
+            <Button className="bg-pink-200 text-pinkcaritravel-900 hover:text-pinkcaritravel-300 hover:bg-pink-50 hidden md:block">
               See All
             </Button>
           </LocaleLink>

@@ -1,6 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import LocaleLink from "../locale-link";
+import { Building, Home, Mail, Phone } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -101,39 +103,48 @@ const Footer = () => {
 
               <ul className="mt-6 space-y-4 text-sm">
                 <li>
-                  <Link
+                  <LocaleLink
                     href="/"
                     className="text-gray-700 transition hover:opacity-75"
                   >
                     Home
-                  </Link>
+                  </LocaleLink>
                 </li>
 
                 <li>
-                  <Link
+                  <LocaleLink
                     href="/tour"
                     className="text-gray-700 transition hover:opacity-75"
                   >
                     Tour Package
-                  </Link>
+                  </LocaleLink>
                 </li>
 
                 <li>
-                  <Link
+                  <LocaleLink
+                    href="/visa"
+                    className="text-gray-700 transition hover:opacity-75"
+                  >
+                    Document & Visa
+                  </LocaleLink>
+                </li>
+
+                <li>
+                  <LocaleLink
                     href="/about"
                     className="text-gray-700 transition hover:opacity-75"
                   >
                     About Us
-                  </Link>
+                  </LocaleLink>
                 </li>
 
                 <li>
-                  <Link
+                  <LocaleLink
                     href="/contact"
                     className="text-gray-700 transition hover:opacity-75"
                   >
                     Contact
-                  </Link>
+                  </LocaleLink>
                 </li>
               </ul>
             </div>
@@ -142,17 +153,25 @@ const Footer = () => {
 
               <ul className="mt-6 space-y-4 text-sm">
                 <li>
-                  <div className="text-gray-700">+62 821-4337-9200</div>
-                </li>
-                <li>
-                  <div className="text-gray-700">
-                    sub.operations@caritravel.com
+                  <div className="text-gray-700 flex gap-4 items-center">
+                    <Phone />
+                    <h1>+62 821-4337-9200</h1>
                   </div>
                 </li>
                 <li>
-                  <div className="text-gray-700">
-                    Jl. Dharmahusada Indah Blok I Nomor Ruko 16 E, RT.01, RW.09,
-                    Kec. Mulyorejo, Kel. Mulyorejo Surabaya Kode pos : 60115
+                  <div className="text-gray-700 flex gap-4 items-center">
+                    <Mail />
+                    <h1>sub.operations@caritravel.com</h1>
+                  </div>
+                </li>
+                <li>
+                  <div className="text-gray-700 flex gap-4 items-center">
+                    <Building size={84} />
+                    <h1>
+                      Jl. Dharmahusada Indah Blok I Nomor Ruko 16 E, RT.01,
+                      RW.09, Kec. Mulyorejo, Kel. Mulyorejo Surabaya Kode pos :
+                      60115
+                    </h1>
                   </div>
                 </li>
               </ul>

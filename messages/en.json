@@ -50,22 +50,25 @@
     "title": "Get in touch with us",
     "subtitle": "We are always here to answer your questions, provide more information, or assist you with your logistics needs. Feel free to reach out to us!"
   },
+  "MetadataHome": {
+    "title": "Home | Cari Travel | Find a Place to Travel Cheaply",
+    "description": "Make your Journey to the next level"
+  },
+  "MetadataTour": {
+    "title": "Tour Packages | Cari Travel | Find a Place to Travel Cheaply",
+    "description": "Make your Journey to the next level"
+  },
   "MetadataAbout": {
-    "title": "About | Reach To All Corners of The World With Us | PT. ANUGERAH MULTI LOGISTIK",
-    "description": "Become the best leading, trusted and reliable Export and Import Logistics company by prioritizing customer trust and satisfaction"
+    "title": "About | Cari Travel | Cari tempat Travel Murah Meriah",
+    "description": "Make your Journey to the next level"
   },
   "MetadataServices": {
-    "title": "Services | Reach To All Corners of The World With Us | PT. ANUGERAH MULTI LOGISTIK",
-    "description": "Menjadi perusahaan Logistik Export dan Import terbaik yang terkemuka, terpercaya, dan handal dengan mengutamakan kepercayaan dan kepuasan Customer"
+    "title": "Document & Visa | Cari Travel | Cari tempat Travel Murah Meriah",
+    "description": "Make your Journey to the next level"
   },
-  "MetadataHome": {
-    "title": "Home | Reach To All Corners of The World With Us | PT. ANUGERAH MULTI LOGISTIK",
-    "description": "Become the best leading, trusted and reliable Export and Import Logistics company by prioritizing customer trust and satisfaction",
-    "domestic-meta": "Domestic Market | Reach To All Corners of The World With Us | PT. ANUGERAH MULTI LOGISTIK",
-    "domestic": "Providing our integrated logistics services for the distribution of your local needs. With an extensive network throughout the country, we are ready to provide efficient and practical solutions for managing goods deliveries within the country.",
-    "international-meta": "International Market | Reach To All Corners of The World With Us | PT. ANUGERAH MULTI LOGISTIK",
-    "international": "Find reliable global logistics solutions for your cross-border shipping needs. With experience and a strong international network, we are ready to help you manage cross-border goods shipments with efficiency and reliability.",
-    "contact": "Contact | Reach To All Corners of The World With Us | PT. ANUGERAH MULTI LOGISTIK"
+  "MetadataContact": {
+    "title": "Contact Us | Cari Travel | Cari tempat Travel Murah Meriah",
+    "description": "Make your Journey to the next level"
   },
   "About": {
     "header-1": "About Us",

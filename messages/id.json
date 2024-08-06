@@ -51,21 +51,24 @@
     "subtitle": "Kami selalu ada untuk menjawab pertanyaan Anda, memberikan informasi lebih lanjut, atau membantu Anda dengan kebutuhan logistik Anda. Jangan ragu untuk menghubungi kami!"
   },
   "MetadataHome": {
-    "title": "Beranda | Jangkau Penjuru Dunia Bersama Kami | PT. ANUGERAH MULTI LOGISTIK",
-    "description": "Menjadi perusahaan Logistik Export dan Import terbaik yang terkemuka, terpercaya, dan handal dengan mengutamakan kepercayaan dan kepuasan Customer",
-    "domestic-meta": "Domestic Market | Jangkau Penjuru Dunia Bersama Kami | PT. ANUGERAH MULTI LOGISTIK",
-    "domestic": "Jelajahi layanan logistik terpadu kami untuk kebutuhan distribusi lokal Anda. Dengan jaringan yang luas di seluruh negeri, kami siap memberikan solusi efisien dan handal untuk mengelola pengiriman barang di dalam negeri.",
-    "international-meta": "International Market | Jangkau Penjuru Dunia Bersama Kami | PT. ANUGERAH MULTI LOGISTIK",
-    "international": "Temukan solusi logistik global yang andal untuk kebutuhan pengiriman lintas negara Anda. Dengan pengalaman dan jaringan internasional yang kuat, kami siap membantu Anda mengelola pengiriman barang lintas batas dengan efisiensi dan kehandalan.",
-    "contact": "Contact | Jangkau Penjuru Dunia Bersama Kami | PT. ANUGERAH MULTI LOGISTIK"
+    "title": "Beranda | Cari Travel | Cari tempat Travel Murah Meriah",
+    "description": "Make your Journey to the next level"
+  },
+  "MetadataTour": {
+    "title": "Paket Tour | Cari Travel | Cari tempat Travel Murah Meriah",
+    "description": "Make your Journey to the next level"
   },
   "MetadataAbout": {
-    "title": "Tentang Kami | Jangkau Penjuru Dunia Bersama Kami | PT. ANUGERAH MULTI LOGISTIK",
-    "description": "Menjadi perusahaan Logistik Export dan Import terbaik yang terkemuka, terpercaya, dan handal dengan mengutamakan kepercayaan dan kepuasan Customer"
+    "title": "Tentang Kami | Cari Travel | Cari tempat Travel Murah Meriah",
+    "description": "Make your Journey to the next level"
   },
   "MetadataServices": {
-    "title": "Layanan | Jangkau Penjuru Dunia Bersama Kami | PT. ANUGERAH MULTI LOGISTIK",
-    "description": "Menjadi perusahaan Logistik Export dan Import terbaik yang terkemuka, terpercaya, dan handal dengan mengutamakan kepercayaan dan kepuasan Customer"
+    "title": "Dokumen & Visa | Cari Travel | Cari tempat Travel Murah Meriah",
+    "description": "Make your Journey to the next level"
+  },
+  "MetadataContact": {
+    "title": "Hubungi Kami | Cari Travel | Cari tempat Travel Murah Meriah",
+    "description": "Make your Journey to the next level"
   },
   "About": {
     "header-1": "Tentang Kami",

@@ -54,11 +54,11 @@ export default async function ProductLocation() {
               </p>
             </header>
 
-            <Link href="/tour">
-              <Button className="bg-pink-200 text-pinkcaritravel-900 hidden md:block">
+            <LocaleLink href="/tour">
+              <Button className="bg-pink-200 text-pinkcaritravel-900 hover:text-pinkcaritravel-300 hover:bg-pink-50 hidden md:block">
                 See All
               </Button>
-            </Link>
+            </LocaleLink>
           </div>
           <div className="text-center">
             <Carousel>
@@ -75,7 +75,7 @@ export default async function ProductLocation() {
               <CarouselNext className="md:hidden" /> */}
             </Carousel>
             <LocaleLink href="/tour">
-              <Button className="bg-pink-200 text-pinkcaritravel-900 md:hidden text-lg w-full py-6 rounded-full">
+              <Button className="bg-pink-200 text-pinkcaritravel-900 hover:text-pinkcaritravel-300 hover:bg-pink-50 md:hidden text-lg w-full py-6 rounded-full">
                 See All
               </Button>
             </LocaleLink>

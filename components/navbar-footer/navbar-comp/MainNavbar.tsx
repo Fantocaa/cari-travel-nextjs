@@ -6,6 +6,7 @@ import Image from "next/image";
 import { Navbar } from "flowbite-react";
 import { usePathname } from "next/navigation";
 import LocaleLink from "@/components/locale-link";
+import LocalSwitcher from "./local-switcher";
 
 interface navLinks {
   id: number;
@@ -50,6 +51,11 @@ export default function MainNavbar({
   }, []);
 
   const pathname = usePathname();
+  const navLink1 = navLinks.find((link) => link.id === 1);
+  const navLink2 = navLinks.find((link) => link.id === 2);
+  const navLink3 = navLinks.find((link) => link.id === 3);
+  const navLink4 = navLinks.find((link) => link.id === 4);
+  const navLink5 = navLinks.find((link) => link.id === 5);
 
   return (
     <>
@@ -89,12 +95,7 @@ export default function MainNavbar({
               <Navbar.Collapse key={link.id}>
                 <LocaleLink
                   href={link.href}
-                  className={
-                    isScrolled
-                      ? "text-white"
-                      : // : "text-blackcaritravel hover:text-pinkcaritravel-900"
-                        "text-blackcaritravel"
-                  }
+                  className={isScrolled ? "text-white" : "text-blackcaritravel"}
                 >
                   {link.name}
                 </LocaleLink>
@@ -130,91 +131,95 @@ export default function MainNavbar({
             </Navbar.Brand>
 
             <Navbar.Collapse>
-              <LocaleLink
-                href="/"
-                className={`${
-                  pathname === `/${locale}`
-                    ? "active text-pinkcaritravel-900"
-                    : !isScrolled
-                    ? "text-blackcaritravel transition-colors duration-500"
-                    : "text-whitecaritravel opacity-75 hover:text-whitecaritravel hover:opacity-100 transition-colors duration-500"
-                } ${
-                  pathname === `/${locale}` && isScrolled
-                    ? "text-white transition-colors duration-500"
-                    : "hover:text-pinkcaritravel-900 transition-colors duration-500"
-                }`}
-              >
-                Home
-              </LocaleLink>
+              <ul className="flex flex-col md:mt-0 md:flex-row md:space-x-8 md:text-sm md:font-medium items-center">
+                <LocaleLink
+                  href="/"
+                  className={`${
+                    pathname === `/${locale}`
+                      ? "active text-pinkcaritravel-900"
+                      : !isScrolled
+                      ? "text-blackcaritravel transition-colors duration-500"
+                      : "text-whitecaritravel opacity-75 hover:text-whitecaritravel hover:opacity-100 transition-colors duration-500"
+                  } ${
+                    pathname === `/${locale}` && isScrolled
+                      ? "text-white transition-colors duration-500"
+                      : "hover:text-pinkcaritravel-900 transition-colors duration-500"
+                  }`}
+                >
+                  {navLink1?.name}
+                </LocaleLink>
 
-              <LocaleLink
-                href="/tour"
-                className={`${
-                  // pathname === `/${locale}/tour`
-                  pathname.startsWith(`/${locale}/tour`)
-                    ? "active text-pinkcaritravel-900"
-                    : !isScrolled
-                    ? "text-blackcaritravel transition-colors duration-500"
-                    : "text-whitecaritravel opacity-75 hover:text-whitecaritravel hover:opacity-100 transition-colors duration-500"
-                } ${
-                  // pathname === `/${locale}/tour` && isScrolled
-                  pathname.startsWith(`/${locale}/tour`) && isScrolled
-                    ? "text-white transition-colors duration-500"
-                    : "hover:text-pinkcaritravel-900 hover:opacity-100 transition-colors duration-500"
-                }`}
-              >
-                Tour Package
-              </LocaleLink>
+                <LocaleLink
+                  href="/tour"
+                  className={`${
+                    pathname.startsWith(`/${locale}/tour`)
+                      ? "active text-pinkcaritravel-900"
+                      : !isScrolled
+                      ? "text-blackcaritravel transition-colors duration-500"
+                      : "text-whitecaritravel opacity-75 hover:text-whitecaritravel hover:opacity-100 transition-colors duration-500"
+                  } ${
+                    pathname.startsWith(`/${locale}/tour`) && isScrolled
+                      ? "text-white transition-colors duration-500"
+                      : "hover:text-pinkcaritravel-900 hover:opacity-100 transition-colors duration-500"
+                  }`}
+                >
+                  {navLink2?.name}
+                </LocaleLink>
 
-              <LocaleLink
-                href="/visa"
-                className={`${
-                  pathname === `/${locale}/visa`
-                    ? "active text-pinkcaritravel-900"
-                    : !isScrolled
-                    ? "text-blackcaritravel transition-colors duration-500"
-                    : "text-whitecaritravel opacity-75 hover:text-whitecaritravel hover:opacity-100 transition-colors duration-500"
-                } ${
-                  pathname === `/${locale}/visa` && isScrolled
-                    ? "text-white transition-colors duration-500"
-                    : "hover:text-pinkcaritravel-900 hover:opacity-100 transition-colors duration-500"
-                }`}
-              >
-                Document & Visa
-              </LocaleLink>
+                <LocaleLink
+                  href="/visa"
+                  className={`${
+                    pathname === `/${locale}/visa`
+                      ? "active text-pinkcaritravel-900"
+                      : !isScrolled
+                      ? "text-blackcaritravel transition-colors duration-500"
+                      : "text-whitecaritravel opacity-75 hover:text-whitecaritravel hover:opacity-100 transition-colors duration-500"
+                  } ${
+                    pathname === `/${locale}/visa` && isScrolled
+                      ? "text-white transition-colors duration-500"
+                      : "hover:text-pinkcaritravel-900 hover:opacity-100 transition-colors duration-500"
+                  }`}
+                >
+                  {navLink3?.name}
+                </LocaleLink>
 
-              <LocaleLink
-                href="/about"
-                className={`${
-                  pathname === `/${locale}/about`
-                    ? "active text-pinkcaritravel-900"
-                    : !isScrolled
-                    ? "text-blackcaritravel transition-colors duration-500"
-                    : "text-whitecaritravel opacity-75 hover:text-whitecaritravel hover:opacity-100 transition-colors duration-500"
-                } ${
-                  pathname === `/${locale}/about` && isScrolled
-                    ? "text-white transition-colors duration-500"
-                    : "hover:text-pinkcaritravel-900 hover:opacity-100 transition-colors duration-500"
-                }`}
-              >
-                About Us
-              </LocaleLink>
-              <LocaleLink
-                href="/contact"
-                className={`${
-                  pathname === `/${locale}/contact`
-                    ? "active text-pinkcaritravel-900"
-                    : !isScrolled
-                    ? "text-blackcaritravel transition-colors duration-500"
-                    : "text-whitecaritravel opacity-75 hover:text-whitecaritravel hover:opacity-100 transition-colors duration-500"
-                } ${
-                  pathname === `/${locale}/contact` && isScrolled
-                    ? "text-white transition-colors duration-500"
-                    : "hover:text-pinkcaritravel-900 hover:opacity-100 transition-colors duration-500"
-                }`}
-              >
-                Contact
-              </LocaleLink>
+                <LocaleLink
+                  href="/about"
+                  className={`${
+                    pathname === `/${locale}/about`
+                      ? "active text-pinkcaritravel-900"
+                      : !isScrolled
+                      ? "text-blackcaritravel transition-colors duration-500"
+                      : "text-whitecaritravel opacity-75 hover:text-whitecaritravel hover:opacity-100 transition-colors duration-500"
+                  } ${
+                    pathname === `/${locale}/about` && isScrolled
+                      ? "text-white transition-colors duration-500"
+                      : "hover:text-pinkcaritravel-900 hover:opacity-100 transition-colors duration-500"
+                  }`}
+                >
+                  {navLink4?.name}
+                </LocaleLink>
+
+                <LocaleLink
+                  href="/contact"
+                  className={`${
+                    pathname === `/${locale}/contact`
+                      ? "active text-pinkcaritravel-900"
+                      : !isScrolled
+                      ? "text-blackcaritravel transition-colors duration-500"
+                      : "text-whitecaritravel opacity-75 hover:text-whitecaritravel hover:opacity-100 transition-colors duration-500"
+                  } ${
+                    pathname === `/${locale}/contact` && isScrolled
+                      ? "text-white transition-colors duration-500"
+                      : "hover:text-pinkcaritravel-900 hover:opacity-100 transition-colors duration-500"
+                  }`}
+                >
+                  {navLink5?.name}
+                </LocaleLink>
+                <li>
+                  <LocalSwitcher isScrolled={isScrolled} />
+                </li>
+              </ul>
             </Navbar.Collapse>
           </div>
         </Navbar>

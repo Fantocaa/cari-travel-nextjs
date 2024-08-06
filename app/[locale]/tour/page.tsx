@@ -3,16 +3,25 @@ import Header from "@/components/tour-page/header/header";
 import Product from "@/components/tour-page/product/product";
 import Cta from "@/components/main-page/cta/cta";
 import ProductTest from "@/components/tour-page/product/producttest";
-import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 
-export const metadata: Metadata = {
-  title: "Tour Package",
-  description: "Make your Journey to the next level",
-};
+interface Params {
+  params: {
+    locale: string;
+  };
+}
+
+export async function generateMetadata({ params: { locale } }: Params) {
+  const t = await getTranslations({ locale, namespace: "MetadataTour" });
+
+  return {
+    title: t("title"),
+    description: t("description"),
+  };
+}
 
 async function getData() {
   const res = await fetch("http://cms-caritravel-filament.test/traveldata", {
-    // const res = await fetch("http://cms-caritravel.test/api/postdata", {
     // const res = await fetch("https://backend.caritravel.com/api/postdata", {
     cache: "no-store",
   });

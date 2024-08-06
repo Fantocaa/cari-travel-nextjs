@@ -1,6 +1,21 @@
 import { Mail, Phone, MapPin } from "lucide-react";
+import { getTranslations } from "next-intl/server";
 import Image from "next/image";
-import React from "react";
+
+interface Params {
+  params: {
+    locale: string;
+  };
+}
+
+export async function generateMetadata({ params: { locale } }: Params) {
+  const t = await getTranslations({ locale, namespace: "MetadataContact" });
+
+  return {
+    title: t("title"),
+    description: t("description"),
+  };
+}
 
 const Contact = () => {
   return (

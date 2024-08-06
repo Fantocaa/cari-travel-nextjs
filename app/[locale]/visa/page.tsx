@@ -1,11 +1,27 @@
 import React from "react";
 import type { Metadata } from "next";
 import HeaderVisa from "@/components/visa-page/header-visa";
+import { getTranslations } from "next-intl/server";
 
-export const metadata: Metadata = {
-  title: "Document & Visa",
-  description: "Make your Journey to the next level",
-};
+// export const metadata: Metadata = {
+//   title: "Document & Visa",
+//   description: "Make your Journey to the next level",
+// };
+
+interface Params {
+  params: {
+    locale: string;
+  };
+}
+
+export async function generateMetadata({ params: { locale } }: Params) {
+  const t = await getTranslations({ locale, namespace: "MetadataServices" });
+
+  return {
+    title: t("title"),
+    description: t("description"),
+  };
+}
 
 async function getData() {
   const res = await fetch("http://cms-caritravel-filament.test/visadata", {

@@ -11,6 +11,9 @@ import {
 } from "@/components/ui/accordion";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { Button } from "../ui/button";
+import Link from "next/link";
+import { Building2 } from "lucide-react";
 
 type LocaleType = "en" | "id";
 
@@ -26,6 +29,7 @@ type Product = {
   };
   iso2: string[];
   country_names: string[];
+  author_phone: string;
 };
 
 interface Props {
@@ -38,6 +42,8 @@ export default function HeaderVisa({ products }: Props) {
   const [initialized, setInitialized] = useState(false);
   const router = useRouter();
   const locale = useLocale() as LocaleType;
+
+  // console.log(products);
 
   const constructUrl = (path: string) => {
     return path.startsWith(`/${locale}`) ? path : `/${locale}${path}`;
@@ -84,54 +90,70 @@ export default function HeaderVisa({ products }: Props) {
 
   return (
     <div>
-      <div className="py-16 container mt-16">
-        <div className="grid grid-cols-1 md:grid-cols-6 gap-8">
+      <div className="py-16 container mt-12 2xl:mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-8 gap-8">
           <div className="col-span-3">
-            <div className="sticky top-20">
+            <div className="sticky top-28 2xl:top-60 2xl:mt-28">
               <Image
-                src="/images/man-woman-dressed-travel-wear-glasses-take-paictures (1).png"
-                alt="document-img"
-                width={800}
-                height={800}
-                className="hidden md:block"
+                src={`https://flagcdn.com/${selected.toLowerCase()}.svg`}
+                alt={getCountryName(selected)}
+                width={400}
+                height={400}
               />
+              <div className="mt-8">
+                <div className="flex gap-3 mb-2 2xl:mb-4 items-center"></div>
+                <h1 className="text-xl 2xl:text-2xl mb-4 max-w-lg 2xl:max-w-xl">
+                  Untuk Kepengurusan Dokumen & Visa{" "}
+                  {selected && <span>{getCountryName(selected)}</span>} bisa
+                  kunjungi kami di :
+                </h1>
+                <h1 className="max-w-md mb-4">
+                  Jl. Dharmahusada Indah Blok I Nomor Ruko 16 E, RT.01, RW.09,/
+                  Kec. Mulyorejo, Kel. Mulyorejo Surabaya Kode pos : 60115
+                </h1>
+                <Link href={products[0].author_phone}>
+                  <Button>Contact Us</Button>
+                </Link>
+              </div>
             </div>
           </div>
-          <div className="col-span-3">
-            <ReactFlagsSelect
-              selected={selected}
-              onSelect={handleSelect}
-              countries={getAllCountries().map((code) => code.toUpperCase())}
-              className="w-64"
-            />
-            <div className="mt-8">
-              <h1 className="text-xl md:text-2xl font-semibold mb-4">
-                Documents & Visa{" "}
-                {selected && <span>{getCountryName(selected)}</span>}
-              </h1>
+          <div className="col-span-5">
+            <div className="bg-white p-6 rounded-2xl shadow-xl">
+              <ReactFlagsSelect
+                selected={selected}
+                onSelect={handleSelect}
+                countries={getAllCountries().map((code) => code.toUpperCase())}
+                className="w-64"
+              />
+              <div className="mt-8">
+                <h1 className="text-xl md:text-2xl font-semibold mb-4">
+                  Documents & Visa{" "}
+                  {selected && <span>{getCountryName(selected)}</span>}
+                </h1>
 
-              {selectedProducts.length > 0 && (
-                <Accordion type="single" defaultValue={"item-1"} collapsible>
-                  {selectedProducts.map((product) => (
-                    <AccordionItem
-                      key={product.id}
-                      value={`item-${product.id}`}
-                    >
-                      <AccordionTrigger className="text-xl text-left">
-                        Requirements {product.category[locale]}
-                      </AccordionTrigger>
-                      <AccordionContent>
-                        <div
-                          dangerouslySetInnerHTML={{
-                            __html: product.info[locale],
-                          }}
-                          className="text-gray-600 text-lg overflow-y-auto break-words w-full"
-                        />
-                      </AccordionContent>
-                    </AccordionItem>
-                  ))}
-                </Accordion>
-              )}
+                {selectedProducts.length > 0 && (
+                  <Accordion type="single" defaultValue={"item-1"} collapsible>
+                    {selectedProducts.map((product) => (
+                      <AccordionItem
+                        key={product.id}
+                        value={`item-${product.id}`}
+                      >
+                        <AccordionTrigger className="text-xl text-left">
+                          Requirements {product.category[locale]}
+                        </AccordionTrigger>
+                        <AccordionContent>
+                          <div
+                            dangerouslySetInnerHTML={{
+                              __html: product.info[locale],
+                            }}
+                            className="text-gray-600 overflow-y-auto break-words w-full text-base"
+                          />
+                        </AccordionContent>
+                      </AccordionItem>
+                    ))}
+                  </Accordion>
+                )}
+              </div>
             </div>
           </div>
         </div>

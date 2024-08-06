@@ -8,6 +8,8 @@ import HeaderProduct2 from "./api/header-product copy 2";
 
 interface DetailProductProps {
   image_name: string[];
+  yt_links: string;
+  thumb_img: string;
 }
 
 interface Props {
@@ -27,8 +29,8 @@ export default function HeaderProductMain({ product }: Props) {
         // images={product.attachment}
         // images={product.image_name.map((url) => ({ url, type: "png" }))}
         images={product.image_name} // Pass array of URLs directly
-        videoUrl="https://www.youtube-nocookie.com/embed/FsPvxPLi46U?si=IgChYazq6yzOXK6r"
-        thumbnailUrl="/images/image 11.png"
+        videoUrl={product.yt_links}
+        thumbnailUrl={product.thumb_img}
       />
       {/* )} */}
     </div>

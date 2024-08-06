@@ -7,13 +7,13 @@ import Script from "next/script";
 
 const poppins = Poppins({ subsets: ["latin"], weight: ["500"] });
 
-export const metadata: Metadata = {
-  title: {
-    default: "Cari Travel: Cari tempat Travel Murah Meriah",
-    template: "%s | Cari Travel | Cari tempat Travel Murah Meriah",
-  },
-  description: "Make your Journey to the next level",
-};
+// export const metadata: Metadata = {
+//   title: {
+//     default: "Cari Travel: Cari tempat Travel Murah Meriah",
+//     template: "%s | Cari Travel | Cari tempat Travel Murah Meriah",
+//   },
+//   description: "Make your Journey to the next level",
+// };
 
 interface RootLayoutProps {
   children: React.ReactNode;
@@ -25,11 +25,7 @@ interface RootLayoutProps {
 export default function RootLayout({
   children,
   params: { locale },
-}: // Readonly<{
-//   children: React.ReactNode;
-// }>
-
-Readonly<RootLayoutProps>) {
+}: Readonly<RootLayoutProps>) {
   return (
     <html lang={locale}>
       <head>

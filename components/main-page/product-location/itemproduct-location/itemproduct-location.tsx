@@ -19,7 +19,8 @@ const ItemProduct = ({ product }: ItemProductProps) => {
   const setSearchTerm = useSearchStore((state) => state.setSearchTerm);
 
   const handleClick = () => {
-    setSearchTerm(product.countries);
+    // setSearchTerm(product.countries);
+    setSearchTerm(product.cities);
   };
 
   return (
@@ -29,9 +30,7 @@ const ItemProduct = ({ product }: ItemProductProps) => {
       onClick={handleClick}
     >
       <Image
-        // src="/images/product-images/bali.webp"
         src={`http://cms-caritravel-filament.test/storage/${product.img_name}`}
-        // alt="photo-locatioin"
         alt={`${product.countries} - ${product.cities}`}
         className="h-64 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-72"
         width={600}

@@ -1,18 +1,26 @@
-import Image from "next/image";
 import Header from "@/components/main-page/header/header";
 import Product from "@/components/main-page/product/product";
 // import Video from "@/components/main-page/video/video";
 import Features from "@/components/main-page/features/features";
 import ProductLocation from "@/components/main-page/product-location/product-location";
 import Cta from "@/components/main-page/cta/cta";
-
-import type { Metadata } from "next";
 import Partner from "@/components/main-page/partner/Partner";
+import { getTranslations } from "next-intl/server";
 
-export const metadata: Metadata = {
-  title: "Home | Cari Travel | Cari tempat Travel Murah Meriah",
-  description: "Make your Journey to the next level",
-};
+interface Params {
+  params: {
+    locale: string;
+  };
+}
+
+export async function generateMetadata({ params: { locale } }: Params) {
+  const t = await getTranslations({ locale, namespace: "MetadataHome" });
+
+  return {
+    title: t("title"),
+    description: t("description"),
+  };
+}
 
 async function getData() {
   const res = await fetch("http://cms-caritravel-filament.test/traveldata", {

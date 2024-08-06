@@ -270,150 +270,154 @@ export default function ProductPage({ products }: Props) {
 
   return (
     <>
-      <div className=" p-8 rounded-xl mt-4 w-full container">
-        <h1 className="text-2xl pb-4">Kamu mau kemana?</h1>
-        <div className="md:flex justify-between">
-          <div className="flex gap-4 relative pb-4 md:pb-0">
-            <Search className="absolute translate-y-3 translate-x-4" />
-            <Input
-              id="search"
-              type="text"
-              placeholder="Cari lokasi travel kamu disini"
-              className="h-12 w-full md:w-96 rounded-full px-4 pl-12 bg-white"
-              value={tempSearchTerm}
-              onChange={handleSearchChange}
-              onKeyDown={handleKeyDown}
-            ></Input>
-            {tempSearchTerm && (
-              <X
-                className="absolute right-28 top-1/2 -translate-y-1/2 cursor-pointer"
-                onClick={clearSearch}
-              />
-            )}
-            <Button
-              onClick={handleSearchClick}
-              className="h-12 bg-pink-500 text-white hover:bg-pink-400 rounded-full px-4"
-            >
-              Search
-            </Button>
-          </div>
-          <div className="flex gap-2 md:gap-4">
-            <Select onValueChange={(value: string) => handleSortChange(value)}>
-              <SelectTrigger className="w-[180px] h-12 rounded-full px-4 bg-white">
-                {/* <SelectValue placeholder="Sort By" /> */}
-                <SelectValue
-                  placeholder={
-                    sortBy === "new"
-                      ? "Paling Baru"
-                      : sortBy === "old"
-                      ? "Paling Lama"
-                      : sortBy === "lowPrice"
-                      ? "Termurah"
-                      : sortBy === "highPrice"
-                      ? "Termahal"
-                      : "Sort By"
-                  }
-                ></SelectValue>
-              </SelectTrigger>
-              <SelectContent>
-                <SelectGroup>
-                  <SelectLabel>Sort By</SelectLabel>
-                  <SelectItem value="new">Paling Baru</SelectItem>
-                  <SelectItem value="old">Paling Lama</SelectItem>
-                  <SelectItem value="lowPrice">Termurah</SelectItem>
-                  <SelectItem value="highPrice">Termahal</SelectItem>
-                </SelectGroup>
-              </SelectContent>
-            </Select>
+      <div>
+        <div className=" p-8 rounded-xl mt-4 w-full container">
+          <h1 className="text-2xl font-semibold pb-4">Kamu mau kemana?</h1>
+          <div className="md:flex justify-between">
+            <div className="flex gap-4 relative pb-4 md:pb-0">
+              <Search className="absolute translate-y-3 translate-x-4" />
+              <Input
+                id="search"
+                type="text"
+                placeholder="Cari lokasi travel kamu disini"
+                className="h-12 w-full md:w-96 rounded-full px-4 pl-12 bg-white"
+                value={tempSearchTerm}
+                onChange={handleSearchChange}
+                onKeyDown={handleKeyDown}
+              ></Input>
+              {tempSearchTerm && (
+                <X
+                  className="absolute right-28 top-1/2 -translate-y-1/2 cursor-pointer"
+                  onClick={clearSearch}
+                />
+              )}
+              <Button
+                onClick={handleSearchClick}
+                className="h-12 bg-pink-500 text-white hover:bg-pink-400 rounded-full px-4"
+              >
+                Search
+              </Button>
+            </div>
+            <div className="flex gap-2 md:gap-4">
+              <Select
+                onValueChange={(value: string) => handleSortChange(value)}
+              >
+                <SelectTrigger className="w-[180px] h-12 rounded-full px-4 bg-white">
+                  {/* <SelectValue placeholder="Sort By" /> */}
+                  <SelectValue
+                    placeholder={
+                      sortBy === "new"
+                        ? "Paling Baru"
+                        : sortBy === "old"
+                        ? "Paling Lama"
+                        : sortBy === "lowPrice"
+                        ? "Termurah"
+                        : sortBy === "highPrice"
+                        ? "Termahal"
+                        : "Sort By"
+                    }
+                  ></SelectValue>
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectGroup>
+                    <SelectLabel>Sort By</SelectLabel>
+                    <SelectItem value="new">Paling Baru</SelectItem>
+                    <SelectItem value="old">Paling Lama</SelectItem>
+                    <SelectItem value="lowPrice">Termurah</SelectItem>
+                    <SelectItem value="highPrice">Termahal</SelectItem>
+                  </SelectGroup>
+                </SelectContent>
+              </Select>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="container sm:pb-12">
-        <>
+        <div className="container sm:pb-12">
           <>
-            {loading ? ( // Tampilkan elemen loading jika loading adalah true
-              <div className="flex flex-col justify-center items-center h-screen gap-2">
-                <BeatLoader loading={loading} color="#EE66A9" size={10} />
-                <h1 className="text-xl">Loading</h1>
-              </div>
-            ) : (
-              <>
-                {currentPosts.length > 0 ? (
-                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 w-full py-6">
-                    {currentPosts.map((product, idx) => (
-                      <div key={idx}>
-                        <div className="group relative block overflow-hidden rounded-xl shadow-lg">
-                          <Link
-                            href={{
-                              pathname: constructUrl("/tour/product/detail"),
-                              query: { id: product?.id },
-                            }}
-                            key={product.id}
-                          >
-                            <div>
-                              <div className="absolute px-4 end-4 top-4 z-10 rounded-full bg-white p-1.5 text-gray-900 transition hover:text-gray-900/75 flex items-center gap-2">
-                                <p>
-                                  {product.duration} Hari{" "}
-                                  {product.duration_night} Malam
-                                </p>
-                              </div>
+            <>
+              {loading ? ( // Tampilkan elemen loading jika loading adalah true
+                <div className="flex flex-col justify-center items-center h-screen gap-2">
+                  <BeatLoader loading={loading} color="#EE66A9" size={10} />
+                  <h1 className="text-xl">Loading</h1>
+                </div>
+              ) : (
+                <>
+                  {currentPosts.length > 0 ? (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 w-full py-6">
+                      {currentPosts.map((product, idx) => (
+                        <div key={idx}>
+                          <div className="group relative block overflow-hidden rounded-xl shadow-lg">
+                            <Link
+                              href={{
+                                pathname: constructUrl("/tour/product/detail"),
+                                query: { id: product?.id },
+                              }}
+                              key={product.id}
+                            >
+                              <div>
+                                <div className="absolute px-4 end-4 top-4 z-10 rounded-full bg-white p-1.5 text-gray-900 transition hover:text-gray-900/75 flex items-center gap-2">
+                                  <p>
+                                    {product.duration} Hari{" "}
+                                    {product.duration_night} Malam
+                                  </p>
+                                </div>
 
-                              <Image
-                                src={product.image_name[0]}
-                                alt="photo-location"
-                                className="h-72 w-full object-cover transition duration-500 group-hover:scale-105 bg-white"
-                                width={500}
-                                height={500}
-                              />
-                              <div className="relative border border-gray-100 bg-white p-6">
-                                <h3 className="text-xl font-semibold text-gray-900 line-clamp-1">
-                                  {product.title}
-                                </h3>
-                                <h4 className="text-sm text-gray-500 line-clamp-1">
-                                  {product.cities.join(", ")} |{" "}
-                                  {product.countries.join(", ")}
-                                </h4>
-                                <div className="flex justify-between items-end">
-                                  <div>
-                                    <h3 className="mt-4 text-sm font-medium text-gray-900">
-                                      Starting From:
-                                    </h3>
-                                    <h3 className="text-xl font-bold text-gray-900">
-                                      Rp. {product.price}
-                                    </h3>
+                                <Image
+                                  src={product.image_name[0]}
+                                  alt="photo-location"
+                                  className="h-72 w-full object-cover transition duration-500 group-hover:scale-105 bg-white"
+                                  width={500}
+                                  height={500}
+                                />
+                                <div className="relative border border-gray-100 bg-white p-6">
+                                  <h3 className="text-xl font-semibold text-gray-900 line-clamp-1">
+                                    {product.title}
+                                  </h3>
+                                  <h4 className="text-sm text-gray-500 line-clamp-1">
+                                    {product.cities.join(", ")} |{" "}
+                                    {product.countries.join(", ")}
+                                  </h4>
+                                  <div className="flex justify-between items-end">
+                                    <div>
+                                      <h3 className="mt-4 text-sm font-medium text-gray-900">
+                                        Starting From:
+                                      </h3>
+                                      <h3 className="text-xl font-bold text-gray-900">
+                                        Rp. {product.price}
+                                      </h3>
+                                    </div>
+                                    <Button className="bg-pink-200 text-pinkcaritravel-900 hover:text-pinkcaritravel-300 hover:bg-pink-50">
+                                      View Details
+                                    </Button>
                                   </div>
-                                  <Button className="bg-pink-200 text-pinkcaritravel-900 hover:text-pinkcaritravel-300 hover:bg-pink-50">
-                                    View Details
-                                  </Button>
                                 </div>
                               </div>
-                            </div>
-                          </Link>
+                            </Link>
+                          </div>
                         </div>
-                      </div>
-                    ))}
-                  </div>
-                ) : (
-                  <div className="flex justify-center items-center h-64">
-                    <h1 className="text-2xl font-bold text-gray-500">
-                      Tidak ada produk yang ditemukan
-                    </h1>
-                  </div>
-                )}
-              </>
-            )}
-          </>
+                      ))}
+                    </div>
+                  ) : (
+                    <div className="flex justify-center items-center h-64">
+                      <h1 className="text-2xl font-bold text-gray-500">
+                        Tidak ada produk yang ditemukan
+                      </h1>
+                    </div>
+                  )}
+                </>
+              )}
+            </>
 
-          <PaginationSection
-            // products={products.length}
-            products={filteredProducts}
-            postsPerPage={postsPerPage}
-            currentPage={currentPage}
-            setCurrentPage={setCurrentPage}
-            handlePrevPage={handlePrevPage}
-            handleNextPage={handleNextPage}
-          />
-        </>
+            <PaginationSection
+              // products={products.length}
+              products={filteredProducts}
+              postsPerPage={postsPerPage}
+              currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
+              handlePrevPage={handlePrevPage}
+              handleNextPage={handleNextPage}
+            />
+          </>
+        </div>
       </div>
     </>
   );
