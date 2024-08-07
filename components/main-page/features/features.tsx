@@ -1,24 +1,26 @@
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import React from "react";
 
 const Features = () => {
+  const t = useTranslations("Services");
   const features = [
     {
       id: 1,
-      h1: "Pengalaman Tak Terlupakan",
-      p: "Ikuti rasa ingin tahu Anda, rasakan kegembiraan dari penemuan-penemuan nyata, dan jelajahi lebih banyak dari dunia.",
+      h1: t("sub-title-1"),
+      p: t("desc-1"),
       src: "/images/features.png",
     },
     {
       id: 2,
-      h1: "Pesan dengan satu paket",
-      p: "Menawarkan pengalaman satu paket yang lengkap. Tidak perlu khawatir dengan kerumitan perjalanan dari satu tempat ke tempat lain.",
+      h1: t("sub-title-2"),
+      p: t("desc-2"),
       src: "/images/features.png",
     },
     {
       id: 3,
-      h1: "Jelajahi dengan penuh kenyamanan",
-      p: "Nikmati rekomendasi travel kami yang dipersonalisasi dengan lebih dari 100+ tour guide. Kamu tinggal berangkat cap cus aja!",
+      h1: t("sub-title-3"),
+      p: t("desc-3"),
       src: "/images/features.png",
     },
   ];
@@ -38,9 +40,7 @@ const Features = () => {
               />
             </div>
             <div className="lg:py-24 col-span-2 max-w-xl">
-              <h2 className="text-2xl font-bold sm:text-4xl">
-                Pelayanan terbaik kami!
-              </h2>
+              <h2 className="text-2xl font-bold sm:text-4xl">{t("header")}</h2>
               {features.map((feature) => (
                 <div key={feature.id} className="flex mt-8 gap-4">
                   <div className="mt-1 md:mt-0">

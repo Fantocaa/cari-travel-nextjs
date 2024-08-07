@@ -3,24 +3,29 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import LocaleLink from "@/components/locale-link";
+import { useTranslations } from "next-intl";
 
 const Cta = () => {
+  const t = useTranslations("CTA");
   return (
     <>
       <section>
         <div className="container py-16 relative mt-16">
           <div className="hidden md:block">
             <div className="absolute max-w-[21rem] 2xl:max-w-md inset-x-16 inset-y-32">
-              <h1 className="text-3xl 2xl:text-4xl font-bold pb-4">
-                Your Travel Journey Starts Here
+              <h1 className="text-3xl 2xl:text-4xl font-bold pb-4 2xl:leading-tight">
+                {/* Your Travel Journey Starts Here */}
+                {t("title")}
               </h1>
               <p className="pb-4 2xl:max-w-sm">
-                Have a healthy & beatiful trirp with us. You have all kinds of
-                entertainment here.
+                {/* Have a healthy & beatiful trirp with us. You have all kinds of
+                entertainment here. */}
+                {t("subtitle")}
               </p>
               <LocaleLink href="/contact">
                 <Button className="bg-yellowcaritravel text-blackcaritravel hover:bg-orange-300">
-                  Connect with us
+                  {/* Connect with us */}
+                  {t("button")}
                 </Button>
               </LocaleLink>
             </div>
@@ -35,15 +40,18 @@ const Cta = () => {
           <div className="md:hidden">
             <div className="absolute max-w-sm px-4 py-8">
               <h1 className="text-3xl font-bold pb-4 max-w-[85%]">
-                Your Travel Journey Starts Here
+                {/* Your Travel Journey Starts Here */}
+                {t("title")}
               </h1>
               <p className="pb-4 max-w-[80%]">
-                Have a healthy & beatiful trirp with us. You have all kinds of
-                entertainment here.
+                {/* Have a healthy & beatiful trirp with us. You have all kinds of
+                entertainment here. */}
+                {t("subtitle")}
               </p>
               <Link href="/contact">
                 <Button className="bg-yellowcaritravel text-blackcaritravel hover:bg-yellow-300 ">
-                  Connect with us
+                  {/* Connect with us */}
+                  {t("button")}
                 </Button>
               </Link>
             </div>

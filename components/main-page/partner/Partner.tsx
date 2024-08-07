@@ -1,9 +1,9 @@
 import { Button } from "@/components/ui/button";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
-import Link from "next/link";
-import React from "react";
 
 export default function Partner() {
+  const t = useTranslations("Hertz");
   return (
     <>
       <section>
@@ -11,13 +11,11 @@ export default function Partner() {
           <div className="hidden md:block">
             <div className="absolute max-w-[21rem] xl:max-w-lg inset-x-16 inset-y-32">
               <h1 className="text-3xl xl:text-5xl font-bold text-whitecaritravel max-w-lg">
-                Petualangan Lebih Seru dengan{" "}
-                <span className="text-yellowcaritravel">Hertz</span>
+                {t("title")}
+                <span className="text-yellowcaritravel">{t("hertz")}</span>
               </h1>
               <p className="py-6 text-whitecaritravel opacity-95 max-w-[95%] leading-relaxed">
-                Temukan betapa mudahnya menyewa mobil dan berpetualang sendiri
-                dengan Hertz. Dapatkan tarif spesial dan penawaran eksklusif
-                yang membuat perjalanan Anda lebih bebas dan menyenangkan.
+                {t("desc")}
               </p>
               <Image
                 src="/images/Frame 182.png"
@@ -38,13 +36,11 @@ export default function Partner() {
           <div className="md:hidden">
             <div className="absolute max-w-sm px-6 py-16">
               <h1 className="text-3xl font-bold pb-4 max-w-[85%] text-whitecaritravel">
-                Petualangan Lebih Seru dengan{" "}
-                <span className="text-yellowcaritravel">Hertz</span>
+                {t("title")}
+                <span className="text-yellowcaritravel">{t("hertz")}</span>
               </h1>
               <p className="pb-4 max-w-[80%] text-whitecaritravel">
-                Temukan betapa mudahnya menyewa mobil dan berpetualang sendiri
-                dengan Hertz. Dapatkan tarif spesial dan penawaran eksklusif
-                yang membuat perjalanan Anda lebih bebas dan menyenangkan.
+                {t("desc")}
               </p>
               <Image
                 src="/images/Frame 182.png"

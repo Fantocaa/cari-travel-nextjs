@@ -38,7 +38,7 @@ export default function LocalSwitcher({ isScrolled }: LocalSwitcherProps) {
       disabled={isPending}
       className={` h-9 rounded ${
         isScrolled
-          ? "bg-pinkcaritravel-100 transition-colors duration-300"
+          ? "bg-pink-100 transition-colors duration-300"
           : " bg-white transition-colors duration-300"
       }`}
     />

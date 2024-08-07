@@ -1,9 +1,10 @@
 import React from "react";
 import Header from "@/components/tour-page/header/header";
-import Product from "@/components/tour-page/product/product";
+// import Product from "@/components/tour-page/product/product";
 import Cta from "@/components/main-page/cta/cta";
 import ProductTest from "@/components/tour-page/product/producttest";
 import { getTranslations } from "next-intl/server";
+import MainProduct from "@/components/tour-page/product/main-product";
 
 interface Params {
   params: {
@@ -37,18 +38,18 @@ async function getData() {
   return { products, categories };
 }
 
-// Tentukan tipe untuk properti 'products'
 type ProductProps = {
   products: any[]; // Sesuaikan dengan tipe data produk yang Anda gunakan
 };
 
 export default async function Tour() {
   const { products, categories } = await getData();
+
   return (
     <main>
       <Header />
-      {/* <Product products={products} /> */}
-      <ProductTest products={products} categories={categories} />
+      <MainProduct products={products} categories={categories} />
+      {/* <ProductTest products={products} categories={categories} /> */}
       <Cta />
     </main>
   );

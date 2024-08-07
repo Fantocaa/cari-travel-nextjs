@@ -1,13 +1,14 @@
 import React from "react";
-import Link from "next/link";
 import Image from "next/image";
 import { Send } from "lucide-react";
 import LocaleLink from "@/components/locale-link";
+import { useTranslations } from "next-intl";
 
 const Header = () => {
+  const t = useTranslations("Header-Home");
+
   return (
     <section className="bg-gradient-to-b from-whitecaritravel via-white to-whitecaritravel text-slate-900 pb-16 md:pb-0">
-      {/* <div className="mx-auto max-w-screen-xl px-4 md:px-8 lg:flex lg:h-screen 2xl:h-full 2xl:pt-16 lg:items-end"> */}
       <div className="container lg:flex lg:h-screen 2xl:h-full 2xl:pt-16 lg:items-end">
         <div className="w-full pt-20 md:pt-0 md:flex md:flex-row-reverse md:items-center h-full">
           <Image
@@ -30,9 +31,7 @@ const Header = () => {
               </h1>
 
               <p className=" mt-4 max-w-md sm:text-base/relaxed">
-                Menjadi biro perjalanan wisata yang bisa membawa anda untuk
-                mengalami pengalaman perjalanan berlibur yang berbeda adalah
-                motto kami.
+                {t("subtitle")}
               </p>
 
               <div className="mt-4 flex flex-wrap justify-start gap-4">
@@ -42,12 +41,6 @@ const Header = () => {
                 >
                   <div className="flex gap-2 justify-center items-center">
                     Let&apos;s Travel
-                    {/* <Image
-                      src="/images/icon/send.svg"
-                      width={24}
-                      height={24}
-                      alt="send"
-                    /> */}
                     <Send />
                   </div>
                 </LocaleLink>
@@ -55,7 +48,6 @@ const Header = () => {
             </>
           </div>
         </div>
-        {/* </div> */}
       </div>
     </section>
   );

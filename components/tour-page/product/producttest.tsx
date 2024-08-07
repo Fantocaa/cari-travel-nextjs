@@ -26,7 +26,7 @@ import {
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { Search, X } from "lucide-react";
 import { BeatLoader } from "react-spinners";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import useSearchStore from "@/components/useSearchStore";
 
 interface DetailProductProps {
@@ -61,10 +61,17 @@ interface DetailProductProps {
 interface Props {
   products: DetailProductProps[];
   categories: any[];
+  translations: {
+    viewDetails: string;
+    Day: string;
+    Night: string;
+    price: string;
+    not: string;
+  };
 }
 
 // export default function ProductPage({ products, categories }: Props) {
-export default function ProductPage({ products }: Props) {
+export default function ProductPage({ products, translations }: Props) {
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(6);
   const { searchTerm, setSearchTerm } = useSearchStore();
@@ -79,8 +86,6 @@ export default function ProductPage({ products }: Props) {
   const [sortBy, setSortBy] = useState("new");
   // const [tempSearchTerm, setTempSearchTerm] = useState("");
   // const setProduct = useProductStore((state) => state.setProduct);
-
-  console.log();
 
   useEffect(() => {
     // Contoh: Menunggu 2 detik sebelum mengatur loading menjadi false
@@ -356,8 +361,9 @@ export default function ProductPage({ products }: Props) {
                               <div>
                                 <div className="absolute px-4 end-4 top-4 z-10 rounded-full bg-white p-1.5 text-gray-900 transition hover:text-gray-900/75 flex items-center gap-2">
                                   <p>
-                                    {product.duration} Hari{" "}
-                                    {product.duration_night} Malam
+                                    {product.duration} {translations.Day}{" "}
+                                    {product.duration_night}{" "}
+                                    {translations.Night}
                                   </p>
                                 </div>
 
@@ -379,14 +385,14 @@ export default function ProductPage({ products }: Props) {
                                   <div className="flex justify-between items-end">
                                     <div>
                                       <h3 className="mt-4 text-sm font-medium text-gray-900">
-                                        Starting From:
+                                        {translations.price}
                                       </h3>
                                       <h3 className="text-xl font-bold text-gray-900">
                                         Rp. {product.price}
                                       </h3>
                                     </div>
                                     <Button className="bg-pink-200 text-pinkcaritravel-900 hover:text-pinkcaritravel-300 hover:bg-pink-50">
-                                      View Details
+                                      {translations.viewDetails}
                                     </Button>
                                   </div>
                                 </div>
@@ -399,7 +405,7 @@ export default function ProductPage({ products }: Props) {
                   ) : (
                     <div className="flex justify-center items-center h-64">
                       <h1 className="text-2xl font-bold text-gray-500">
-                        Tidak ada produk yang ditemukan
+                        {translations.not}
                       </h1>
                     </div>
                   )}

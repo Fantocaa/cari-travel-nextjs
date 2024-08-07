@@ -13,9 +13,12 @@ type ItemProductProps = {
     cities: string;
     img_name: string;
   };
+  translations: {
+    viewDetails: string;
+  };
 };
 
-const ItemProduct = ({ product }: ItemProductProps) => {
+const ItemProduct = ({ product, translations }: ItemProductProps) => {
   const setSearchTerm = useSearchStore((state) => state.setSearchTerm);
 
   const handleClick = () => {
@@ -48,7 +51,7 @@ const ItemProduct = ({ product }: ItemProductProps) => {
             </h3>
           </div>
           <Button className="bg-pink-200 text-pinkcaritravel-900 hover:text-pinkcaritravel-300 hover:bg-pink-50">
-            View Details
+            {translations.viewDetails}
           </Button>
         </div>
       </div>

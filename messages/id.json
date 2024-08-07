@@ -1,55 +1,4 @@
 {
-  "Navigation-Bar": {
-    "home": "Beranda",
-    "about": "Tentang Kami",
-    "service": "Paket Tour",
-    "document": "Dokumen dan Visa",
-    "contact": "Hubungi Kami",
-    "layanan": "Layanan Kami",
-    "footer": "Menjadi perusahaan Logistik Export dan Import terbaik yang terkemuka, terpercaya, dan handal dengan mengutamakan kepercayaan dan kepuasan Customer."
-  },
-  "Header-Home": {
-    "title": "Jangkau Penjuru Dunia Bersama Kami",
-    "subtitle": "Menjadi perusahaan Logistik Export dan Import terbaik yang terkemuka, terpercaya, dan handal dengan mengutamakan kepercayaan dan kepuasan Customer",
-    "button": "Lihat Layanan Kami"
-  },
-  "WhyChooseUs": {
-    "special": "Apa yang membuat kami Spesial?",
-    "special-sub": "Menyediakan layanan transportasi berkualitas tinggi, komprehensif dan selalu memahami kebutuhan cutomer.",
-    "commit": "Komitmen",
-    "commit-sub": "Memiliki komitmen untuk memberikan service yang terbaik dan loyal terhadap setiap customer yang kami handle.",
-    "ontime": "Tepat Waktu",
-    "ontime-sub": "Dalam memberikan layanan yang berkualitas, kami selalu memastikan ketepatan dalam estimasi waktu yang kami janjikan.",
-    "efficiency": "Efisiensi",
-    "efficiency-sub": "Bersama dengan tim melakukan tugas dengan cepat, tepat, dan cermat sehingga memberikan hasil yang memuaskan bagi customer.",
-    "relation": "Relasi",
-    "relation-sub": "Selalu siap untuk menjadi solusi customer serta memberikan pelayanan yang komunikatif dan tepat dengan yang menjadi kunci dalam hubungan kerjasama kami dengan customer.",
-    "safety": "Keamanan",
-    "safety-sub": "Dalam menjaga kepercayaan yang diberikan customer kepada kami, Kami pastikan setiap pengiriman anda akan aman dan sesuai dengan kebutuhan customer.",
-    "nicely": "Dengan Baik",
-    "nicely-sub": "Memastikan setiap customer mendapatkan informasi yang komunikatif dengan layanan yang ramah. Sehingga menciptakan hubungan yang baik dengan semua pihak.",
-    "reliability": "Kehandalan",
-    "reliability-sub": "Memberikan pelatihan terhadap SDM untuk meningkatkan kualitas pelayanan dan kehandalan dalam melakukan tanggung jawab pekerjaan yang sudah di percayakan oleh customer.",
-    "quote": "Menjadi pilihan utama untuk solusi logistik internasional, kami siap menghadirkan kehandalan dan kepuasan pelanggan di setiap langkahnya."
-  },
-  "Services-Home": {
-    "title": "Layanan Kami",
-    "subtitle": "Pelayanan unggul kami mencakup segala kebutuhan Anda, dari pengiriman cepat hingga layanan konsultasi yang komprehensif.",
-    "button": "Lihat Layanan Kami"
-  },
-  "Specialist-Home": {
-    "title": "Spesialis Transportasi",
-    "subtitle": "Kami menyediakan layanan transportasi komprehensif bagi mitra kami di seluruh dunia dan selalu menawarkan solusi inovatif untuk menghadapi tantangan logistik yang kompleks.",
-    "button": "Lihat Tentang Kami"
-  },
-  "Member-Home": {
-    "title": "Talenta Profesional Kami",
-    "subtitle": "Kenali anggota tim kami yang ramah, berpengalaman, berpengetahuan, dan dinamis yang selalu membuat pelanggan kami puas."
-  },
-  "CTA": {
-    "title": "Hubungi Kami",
-    "subtitle": "Kami selalu ada untuk menjawab pertanyaan Anda, memberikan informasi lebih lanjut, atau membantu Anda dengan kebutuhan logistik Anda. Jangan ragu untuk menghubungi kami!"
-  },
   "MetadataHome": {
     "title": "Beranda | Cari Travel | Cari tempat Travel Murah Meriah",
     "description": "Make your Journey to the next level"
@@ -70,6 +19,51 @@
     "title": "Hubungi Kami | Cari Travel | Cari tempat Travel Murah Meriah",
     "description": "Make your Journey to the next level"
   },
+  "Navigation-Bar": {
+    "home": "Beranda",
+    "about": "Tentang Kami",
+    "service": "Paket Tour",
+    "document": "Dokumen dan Visa",
+    "contact": "Hubungi Kami",
+    "links": "Tautan Lainnya",
+    "footer": "Menjadi biro perjalanan wisata yang bisa membawa anda untuk mengalami pengalaman perjalanan berlibur yang berbeda."
+  },
+  "Header-Home": {
+    "subtitle": "Menjadi biro perjalanan wisata yang bisa membawa anda untuk mengalami pengalaman perjalanan berlibur yang berbeda adalah motto kami.",
+    "button": "Lihat Layanan Kami"
+  },
+  "Recomendation": {
+    "title": "Rekomendasi Untuk Kamu 🗺️📌",
+    "desc": "Jelajahi Destinasi Menarik dengan Rekomendasi Khusus dari Kami!",
+    "button": "Lihat Semua",
+    "button2": "Lihat Detail",
+    "price": "Harga Mulai Dari:"
+  },
+  "Hertz": {
+    "title": "Petualangan Lebih Seru dengan ",
+    "hertz": "Hertz",
+    "desc": "Temukan betapa mudahnya menyewa mobil dan berpetualang sendiri dengan Hertz. Dapatkan tarif spesial dan penawaran eksklusif yang membuat perjalanan Anda lebih bebas dan menyenangkan."
+  },
+  "Services": {
+    "header": "Pelayanan terbaik kami!",
+    "sub-title-1": "Pengalaman Tak Terlupakan",
+    "desc-1": "Ikuti rasa ingin tahu Anda, rasakan kegembiraan dari penemuan-penemuan nyata, dan jelajahi lebih banyak dari dunia.",
+    "sub-title-2": "Pesan dengan satu paket",
+    "desc-2": "Menawarkan pengalaman satu paket yang lengkap. Tidak perlu khawatir dengan kerumitan perjalanan dari satu tempat ke tempat lain.",
+    "sub-title-3": "Jelajahi dengan penuh kenyamanan",
+    "desc-3": "Nikmati rekomendasi travel kami yang dipersonalisasi dengan lebih dari 100+ tour guide. Kamu tinggal berangkat cap cus aja!"
+  },
+  "Product-Location": {
+    "header": "Petualangan yang Tak Terlupakan Menanti! 🌍🌟",
+    "subheader": "Rencanakan Liburan Impianmu dengan Ide-ide Seru, Penginapan Terbaik, dan Informasi Berguna Lainnya! 🏖️🚗🏨",
+    "button": "Lihat Semua",
+    "button-1": "Lihat Detail"
+  },
+  "CTA": {
+    "title": "Perjalanan Anda Dimulai dari Sini!",
+    "subtitle": "Nikmati perjalanan yang sehat dan indah bersama kami. Anda memiliki semua jenis hiburan di sini.",
+    "button": "Hubungi Kami"
+  },
   "About": {
     "header-1": "Tentang Kami",
     "header-2": "Beranda",
@@ -82,31 +76,13 @@
     "content-li-2": "Menjadi solusi customer dalam keperluan pengiriman Export maupun Import.",
     "content-li-3": "Melakukan perkembangan manajemen dan teknologi sehingga mampu memberikan kepuasan dan kepercayaan kepada Customer"
   },
-  "Services": {
-    "header-1": "Layanan",
-    "header-2": "Beranda",
-    "content-1": "Apa yang kami tawarkan",
-    "content-2": "Menyediakan layanan logistik transportasi berkualitas tinggi dan komprehensif dengan biaya terendah",
-    "content-custom": "Kami mengurus semua proses bea cukai untuk memastikan kelancaran impor dan ekspor barang. Layanan kami mencakup persiapan dokumen, konsultasi kepabeanan, dan penyelesaian prosedur kepabeanan dengan cepat dan akurat.",
-    "content-custom-2": "Kami menyediakan jasa pengurusan kepabeanan (Bea Cukai) untuk pengiriman barang export & import via laut dan udara karena kami memiliki lisensi resmi sebagai Pengusaha Pengurusan Jasa Kepabeanan (PPJK). Semua proses pengerjaan dilakukan secara resmi.",
-    "content-sea": "Dengan jaringan global yang luas, kami menawarkan layanan pengiriman laut yang kompetitif dan andal. Kami menangani pengiriman Full Container Load (FCL) dan Less than Container Load (LCL) untuk memastikan barang Anda tiba dengan aman dan tepat waktu.",
-    "content-sea-1": "Jaringan kami juga tersebar di seluruh nusantara & memiliki kerjasama dengan agent-agent dari seluruh dunia. Tentunya harga yang kami tawarkan akan sangat kompetitif",
-    "content-sea-2": "Service dalam Freight Domestic / International yang kami berikan bisa meliputi :",
-    "content-sea-3": "Kami menawarkan solusi transportasi intermodal dan multimodal yang menggabungkan berbagai moda transportasi seperti laut, darat, dan udara. Layanan ini dirancang untuk memberikan fleksibilitas dan efisiensi dalam pengiriman barang.",
-    "content-sea-5": "Kami menawarkan layanan Less than Container Load (LCL) dan Full Container Load (FCL) untuk pengiriman laut, disesuaikan dengan kebutuhan volume dan kapasitas barang Anda.",
-    "content-sea-7": "Kami memiliki keahlian dalam menangani barang berbahaya sesuai dengan regulasi internasional, memastikan keamanan dan kepatuhan selama proses pengiriman.",
-    "content-sea-8": "Kami mengelola pengiriman kargo curah yang tidak dapat dimuat dalam kontainer standar, dengan solusi yang efisien untuk barang berukuran besar atau berat.",
-    "content-sea-9": "Kami menyediakan layanan konsolidasi pengiriman laut, menggabungkan barang dari berbagai pengirim untuk mengoptimalkan biaya dan efisiensi pengiriman.",
-    "content-sea-10": "Kami menawarkan layanan pengiriman dari pintu ke pelabuhan, memastikan barang Anda diambil dari lokasi Anda dan dikirim langsung ke pelabuhan tujuan dengan proses yang lancar dan terintegrasi.",
-    "content-trucking": "Kami menyediakan layanan trucking untuk pengiriman barang di seluruh wilayah Indonesia. Armada truk kami yang modern dan terawat memastikan pengiriman yang cepat, aman, dan efisien.",
-    "content-cargo": "Kami memahami pentingnya melindungi barang Anda selama proses pengiriman. Oleh karena itu, kami menawarkan layanan perantara asuransi kargo untuk memberikan perlindungan maksimal terhadap risiko kerusakan atau kehilangan.",
-    "content-intermodal": "Kami menawarkan solusi transportasi intermodal dan multimodal yang menggabungkan berbagai moda transportasi seperti laut, darat, dan udara. Layanan ini dirancang untuk memberikan fleksibilitas dan efisiensi dalam pengiriman barang.",
-    "content-intermodal-1": "Kami juga menyediakan Air Freight yang mencakup penanganan barang kiriman yang sensitif dan membutuhkan layanan secara cepat dan tepat yaitu via udara baik untuk wilayah Domestik ataupun Internasional.",
-    "content-intermodal-2": "Kami dapat menyediakan Sea Freight dengan term mulai EXW (Ex-Work), FOB (Free On Board), CNF (Cost & Freight), & CIF (Cost Insurance & Freight) yang mana disesuaikan dengan kebutuhan anda. Freight yang kami sediakan baik untuk pengiriman domestik maupun internasional.",
-    "content-intermodal-3": "Salah satu keunggulan kami sebagai transporter adalah dapat mengatur pengiriman barang secara multimoda (kombinasi jenis transportasi) untuk pengiriman barang hingga ke daerah yang sulit dijangkau oleh transportasi pada umumnya."
-  },
-  "Contact": {
-    "title": "Hubungi Kami",
-    "subtitle": "Punya masalah teknis? Ingin mengirim masukan tentang suatu fitur? Butuh detail tentang rencana Bisnis kami? Beritahu kami."
+  "Tour": {
+    "title": "Biarkan Kami Merencanakan Gerbang Sempurna Anda",
+    "desc": "Serahkan Detailnya kepada Kami dan Mulailah Liburan Ideal Anda. Tim Ahli Kami Akan Menyusun Rencana Perjalanan yang Dipersonalisasi Untuk Perjalanan yang Sempurna dan Tak Terlupakan",
+    "button-1": "Lihat Detail",
+    "day": "Hari",
+    "night": "Malam",
+    "price": "Harga Mulai Dari:",
+    "not-found": "Tidak ada produk yang ditemukan"
   }
 }

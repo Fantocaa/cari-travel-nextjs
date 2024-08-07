@@ -2,10 +2,10 @@ import Header from "@/components/main-page/header/header";
 import Product from "@/components/main-page/product/product";
 // import Video from "@/components/main-page/video/video";
 import Features from "@/components/main-page/features/features";
-import ProductLocation from "@/components/main-page/product-location/product-location";
 import Cta from "@/components/main-page/cta/cta";
 import Partner from "@/components/main-page/partner/Partner";
 import { getTranslations } from "next-intl/server";
+import ItemProductLocation from "@/components/main-page/product-location/itemproduct-location";
 
 interface Params {
   params: {
@@ -53,7 +53,7 @@ export default async function Home() {
       {/* <Video /> */}
       <Partner />
       <Features />
-      <ProductLocation />
+      <ItemProductLocation />
       <Cta />
     </main>
   );

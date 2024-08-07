@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import LocaleLink from "@/components/locale-link";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 interface DetailProductProps {
   id: number;
@@ -42,7 +42,7 @@ interface Props {
 const Product = ({ products }: Props) => {
   const locale = useLocale();
 
-  // console.log(products);
+  const t = useTranslations("Recomendation");
 
   return (
     <section className="2xl:pt-32 py-16">
@@ -50,17 +50,15 @@ const Product = ({ products }: Props) => {
         <div className="flex justify-between">
           <header>
             <h2 className="text-2xl font-bold text-gray-900 sm:text-3xl">
-              Rekomendasi Untuk Kamu 🗺️📌
+              {t("title")}
             </h2>
 
-            <p className="mt-2 max-w-full text-gray-500">
-              Jelajahi Destinasi Menarik dengan Rekomendasi Khusus dari Kami!
-            </p>
+            <p className="mt-2 max-w-full text-gray-500">{t("desc")}</p>
           </header>
 
           <LocaleLink href="/tour">
             <Button className="bg-pink-200 text-pinkcaritravel-900 hover:text-pinkcaritravel-300 hover:bg-pink-50 hidden md:block">
-              See All
+              {t("button")}
             </Button>
           </LocaleLink>
         </div>
@@ -100,14 +98,14 @@ const Product = ({ products }: Props) => {
                       <div className="flex justify-between items-end">
                         <div>
                           <h3 className="mt-4 text-sm font-medium text-gray-900">
-                            Starting From:
+                            {t("price")}
                           </h3>
                           <h3 className="text-xl font-bold text-gray-900">
                             Rp. {product.price}
                           </h3>
                         </div>
                         <Button className="bg-pink-200 text-pinkcaritravel-900 hover:text-pinkcaritravel-300 hover:bg-pink-50">
-                          View Details
+                          {t("button2")}
                         </Button>
                       </div>
                     </div>

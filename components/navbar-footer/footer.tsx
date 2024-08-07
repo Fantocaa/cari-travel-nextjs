@@ -1,11 +1,21 @@
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import LocaleLink from "../locale-link";
-import { Building, Home, Mail, Phone } from "lucide-react";
+import { Building, Mail, Phone } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const t = useTranslations("Navigation-Bar");
+
+  const navLinks = [
+    { id: 1, name: `${t("home")}`, href: "/" },
+    { id: 2, name: `${t("service")}`, href: "/tour" },
+    { id: 3, name: `${t("document")}`, href: "/visa" },
+    { id: 4, name: `${t("about")}`, href: "/about" },
+    { id: 5, name: `${t("contact")}`, href: "/contact" },
+  ];
+
   return (
     <footer className="bg-slate-50">
       <div className="container space-y-8 py-16 lg:space-y-16">
@@ -21,10 +31,7 @@ const Footer = () => {
               />
             </div>
 
-            <p className="mt-4 max-w-md text-gray-500">
-              Menjadi biro perjalanan wisata yang bisa membawa anda untuk
-              mengalami pengalaman perjalanan berlibur yang berbeda.
-            </p>
+            <p className="mt-4 max-w-md text-gray-500">{t("footer")}</p>
 
             <ul className="mt-8 flex gap-6">
               <li>
@@ -99,57 +106,23 @@ const Footer = () => {
           <div className="w-full grid grid-cols-3 gap-6 lg:gap-8 col-span-2 sm:grid-cols-2 lg:col-span-3 lg:grid-cols-6">
             <div className="col-span-1 hidden md:block"></div>
             <div className="col-span-1 lg:col-span-2">
-              <p className="font-medium text-gray-900">Helpful Links</p>
+              <p className="font-medium text-gray-900">{t("links")}</p>
 
               <ul className="mt-6 space-y-4 text-sm">
-                <li>
-                  <LocaleLink
-                    href="/"
-                    className="text-gray-700 transition hover:opacity-75"
-                  >
-                    Home
-                  </LocaleLink>
-                </li>
-
-                <li>
-                  <LocaleLink
-                    href="/tour"
-                    className="text-gray-700 transition hover:opacity-75"
-                  >
-                    Tour Package
-                  </LocaleLink>
-                </li>
-
-                <li>
-                  <LocaleLink
-                    href="/visa"
-                    className="text-gray-700 transition hover:opacity-75"
-                  >
-                    Document & Visa
-                  </LocaleLink>
-                </li>
-
-                <li>
-                  <LocaleLink
-                    href="/about"
-                    className="text-gray-700 transition hover:opacity-75"
-                  >
-                    About Us
-                  </LocaleLink>
-                </li>
-
-                <li>
-                  <LocaleLink
-                    href="/contact"
-                    className="text-gray-700 transition hover:opacity-75"
-                  >
-                    Contact
-                  </LocaleLink>
-                </li>
+                {navLinks.map((link) => (
+                  <li key={link.id}>
+                    <LocaleLink
+                      href={link.href}
+                      className="text-gray-700 transition hover:opacity-75"
+                    >
+                      {link.name}
+                    </LocaleLink>
+                  </li>
+                ))}
               </ul>
             </div>
             <div className="col-span-2 lg:col-span-3 ">
-              <p className="font-medium text-gray-900">Contact Us</p>
+              <p className="font-medium text-gray-900">{t("contact")}</p>
 
               <ul className="mt-6 space-y-4 text-sm">
                 <li>

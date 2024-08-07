@@ -10,6 +10,7 @@ import {
 import Link from "next/link";
 import ItemProduct from "./itemproduct-location/itemproduct-location";
 import LocaleLink from "@/components/locale-link";
+import { useTranslations } from "next-intl";
 
 async function getData() {
   const res = await fetch(
@@ -35,8 +36,16 @@ type ProductProps = {
   img_name: string;
 };
 
-export default async function ProductLocation() {
+type ProductLocationProps = {
+  t: any;
+};
+
+export default async function ProductLocation({ t }: ProductLocationProps) {
   const { products } = await getData();
+
+  const translations = {
+    viewDetails: t("button-1"),
+  };
 
   return (
     <>
@@ -45,18 +54,15 @@ export default async function ProductLocation() {
           <div className="flex justify-between">
             <header>
               <h2 className="text-2xl font-bold text-gray-900 leading-normal">
-                Petualangan yang Tak Terlupakan Menanti! 🌍🌟
+                {t("header")}
               </h2>
 
-              <p className="mt-2 max-w-full text-gray-500">
-                Rencanakan Liburan Impianmu dengan Ide-ide Seru, Penginapan
-                Terbaik, dan Informasi Berguna Lainnya! 🏖️🚗🏨
-              </p>
+              <p className="mt-2 max-w-full text-gray-500">{t("subheader")}</p>
             </header>
 
             <LocaleLink href="/tour">
               <Button className="bg-pink-200 text-pinkcaritravel-900 hover:text-pinkcaritravel-300 hover:bg-pink-50 hidden md:block">
-                See All
+                {t("button")}
               </Button>
             </LocaleLink>
           </div>
@@ -66,7 +72,11 @@ export default async function ProductLocation() {
                 <CarouselItem>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8 mb-8 md:mb-0">
                     {products.slice(0, 6).map((product: ProductProps) => (
-                      <ItemProduct key={product.id} product={product} />
+                      <ItemProduct
+                        translations={translations}
+                        key={product.id}
+                        product={product}
+                      />
                     ))}
                   </div>
                 </CarouselItem>
@@ -76,7 +86,7 @@ export default async function ProductLocation() {
             </Carousel>
             <LocaleLink href="/tour">
               <Button className="bg-pink-200 text-pinkcaritravel-900 hover:text-pinkcaritravel-300 hover:bg-pink-50 md:hidden text-lg w-full py-6 rounded-full">
-                See All
+                {t("button")}
               </Button>
             </LocaleLink>
           </div>
