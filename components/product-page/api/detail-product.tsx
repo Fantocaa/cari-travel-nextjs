@@ -4,7 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 interface ProductTitleProps {
   general_info: {
@@ -27,6 +27,7 @@ interface Props {
 
 const ProductDetail = ({ product }: Props) => {
   const locale = useLocale();
+  const t = useTranslations("DetailPage");
 
   return (
     <div className="mt-16">
@@ -34,7 +35,7 @@ const ProductDetail = ({ product }: Props) => {
         <Accordion type="single" collapsible defaultValue={"item-1"}>
           <AccordionItem value="item-1">
             <AccordionTrigger>
-              <h1 className="font-bold text-lg pt-4">Informasi Umum</h1>
+              <h1 className="font-bold text-lg pt-4">{t("general")}</h1>
             </AccordionTrigger>
             <AccordionContent>
               <div
@@ -50,7 +51,7 @@ const ProductDetail = ({ product }: Props) => {
           </AccordionItem>
           <AccordionItem value="item-2">
             <AccordionTrigger>
-              <h1 className="font-bold text-lg pt-4">Informasi Paket</h1>
+              <h1 className="font-bold text-lg pt-4">{t("paket")}</h1>
             </AccordionTrigger>
             <AccordionContent>
               <div
@@ -66,7 +67,7 @@ const ProductDetail = ({ product }: Props) => {
           </AccordionItem>
           <AccordionItem value="item-3">
             <AccordionTrigger>
-              <h1 className="font-bold text-lg pt-4">Info Tambahan</h1>
+              <h1 className="font-bold text-lg pt-4">{t("add")}</h1>
             </AccordionTrigger>
             <AccordionContent>
               <div

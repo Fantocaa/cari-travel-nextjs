@@ -13,7 +13,6 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { Button } from "../ui/button";
 import Link from "next/link";
-import { Building2 } from "lucide-react";
 
 type LocaleType = "en" | "id";
 
@@ -34,9 +33,16 @@ type Product = {
 
 interface Props {
   products: Product[];
+  translations: {
+    title1: string;
+    title2: string;
+    title3: string;
+    req: string;
+    contact: string;
+  };
 }
 
-export default function HeaderVisa({ products }: Props) {
+export default function HeaderVisa({ products, translations }: Props) {
   const [selected, setSelected] = useState("");
   const [selectedProducts, setSelectedProducts] = useState<Product[]>([]);
   const [initialized, setInitialized] = useState(false);
@@ -100,25 +106,25 @@ export default function HeaderVisa({ products }: Props) {
                 width={400}
                 height={400}
               />
-              <div className="mt-8">
+              <div className="mt-8 flex flex-col">
                 <div className="flex gap-3 mb-2 2xl:mb-4 items-center"></div>
                 <h1 className="text-xl 2xl:text-2xl mb-4 max-w-lg 2xl:max-w-xl">
-                  Untuk Kepengurusan Dokumen & Visa{" "}
-                  {selected && <span>{getCountryName(selected)}</span>} bisa
-                  kunjungi kami di :
+                  {translations.title1}{" "}
+                  {selected && <span>{getCountryName(selected)}</span>}{" "}
+                  {translations.title2}
                 </h1>
                 <h1 className="max-w-md mb-4">
                   Jl. Dharmahusada Indah Blok I Nomor Ruko 16 E, RT.01, RW.09,/
                   Kec. Mulyorejo, Kel. Mulyorejo Surabaya Kode pos : 60115
                 </h1>
-                <Link href={products[0].author_phone}>
-                  <Button>Contact Us</Button>
+                <Link href={products[0].author_phone} target="__blank">
+                  <Button>{translations.contact}</Button>
                 </Link>
               </div>
             </div>
           </div>
           <div className="col-span-5">
-            <div className="bg-white p-6 rounded-2xl shadow-xl">
+            <div className="bg-white p-8 rounded-2xl shadow-xl">
               <ReactFlagsSelect
                 selected={selected}
                 onSelect={handleSelect}
@@ -127,7 +133,7 @@ export default function HeaderVisa({ products }: Props) {
               />
               <div className="mt-8">
                 <h1 className="text-xl md:text-2xl font-semibold mb-4">
-                  Documents & Visa{" "}
+                  {translations.title3}{" "}
                   {selected && <span>{getCountryName(selected)}</span>}
                 </h1>
 
@@ -139,7 +145,7 @@ export default function HeaderVisa({ products }: Props) {
                         value={`item-${product.id}`}
                       >
                         <AccordionTrigger className="text-xl text-left">
-                          Requirements {product.category[locale]}
+                          {translations.req} {product.category[locale]}
                         </AccordionTrigger>
                         <AccordionContent>
                           <div

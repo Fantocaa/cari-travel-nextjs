@@ -4,13 +4,6 @@ import AboutContent from "@/components/about-page/content-about";
 import Cta from "@/components/main-page/cta/cta";
 import { getTranslations } from "next-intl/server";
 
-// import type { Metadata } from "next";
-
-// export const metadata: Metadata = {
-//   title: "About Us ",
-//   description: "Make your Journey to the next level",
-// };
-
 interface Params {
   params: {
     locale: string;

@@ -13,14 +13,31 @@ export default function LocalSwitcher({ isScrolled }: LocalSwitcherProps) {
   const pathname = usePathname();
   const localActive = useLocale();
 
+  // const onSelectChange = (code: string) => {
+  //   const nextLocale = code === "ID" ? "id" : "en";
+
+  //   // Replace the locale in the current pathname
+  //   const newPathname = pathname.replace(`/${localActive}`, `/${nextLocale}`);
+
+  //   startTransition(() => {
+  //     router.replace(newPathname, { scroll: false });
+  //   });
+  // };
+
   const onSelectChange = (code: string) => {
     const nextLocale = code === "ID" ? "id" : "en";
+
+    // Get the current query parameters
+    const queryParams = new URLSearchParams(window.location.search);
 
     // Replace the locale in the current pathname
     const newPathname = pathname.replace(`/${localActive}`, `/${nextLocale}`);
 
+    // Combine the new path with the existing query parameters
+    const newUrl = `${newPathname}?${queryParams.toString()}`;
+
     startTransition(() => {
-      router.replace(newPathname, { scroll: false });
+      router.replace(newUrl, { scroll: false });
     });
   };
 

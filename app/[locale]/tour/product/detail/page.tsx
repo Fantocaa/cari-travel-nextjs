@@ -1,19 +1,29 @@
 import { getDetailProductsPage } from "@/components/main-page/product/helpers";
 import ProductDetailPageContent from "@/components/main-page/product/itemproduct/detailproductpage";
+import { getTranslations } from "next-intl/server";
 
-export const generateMetadata = async ({ searchParams }: Props) => {
+type Props = {
+  searchParams: { [key: string]: string | string[] | undefined };
+  params: {
+    locale: string;
+  };
+};
+
+export const generateMetadata = async ({
+  searchParams,
+  params: { locale },
+}: Props) => {
   const idString = searchParams?.id;
   const id = Number(idString);
 
   const product = await getDetailProductsPage(id);
 
-  return {
-    title: `${product?.title}`,
-  };
-};
+  const t = await getTranslations({ locale, namespace: "MetadataProduct" });
 
-type Props = {
-  searchParams: { [key: string]: string | string[] | undefined };
+  return {
+    title: `${product?.title} ${t("title")}`, // Combine product title with translated title
+    description: t("description"), // Use translated description
+  };
 };
 
 const DetailProductPage = async ({ searchParams }: Props) => {

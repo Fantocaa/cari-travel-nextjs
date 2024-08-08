@@ -19,6 +19,10 @@
     "title": "Contact Us | Cari Travel | Cari tempat Travel Murah Meriah",
     "description": "Make your Journey to the next level"
   },
+  "MetadataProduct": {
+    "title": " | Cari Travel | Cari tempat Travel Murah Meriah",
+    "description": "Make your Journey to the next level"
+  },
   "Navigation-Bar": {
     "home": "Home",
     "about": "About Us",
@@ -63,18 +67,6 @@
     "subtitle": "Have a healthy & beatiful trirp with us. You have all kinds of entertainment here.",
     "button": "Connect with us"
   },
-  "About": {
-    "header-1": "About Us",
-    "header-2": "Home",
-    "desc": "We have built a team of employees, who are participated in professional training courses , are groomed to handle any emerging situation with a level of composure that gives the customer peace of mind.",
-    "vision": "Our Vision",
-    "mission": "Our Mission",
-    "content-1": "Become the best leading, trusted and reliable Export and Import Logistics Company by prioritizing customer trust and satisfaction",
-    "content-2": "We are determined to be the first choice in logistics services, providing the best solutions for export and import needs, and providing unmatched satisfaction to every customer. With a focus on reliability, professionalism and innovation, we are committed to continuously improving service quality for customer satisfaction and trust.",
-    "content-li-1": "Providing Competitive, Quality and Safe Services",
-    "content-li-2": "Become a customer solution for export and import shipping needs.",
-    "content-li-3": "Carrying out management and technology developments so as to provide satisfaction and trust to customers"
-  },
   "Tour": {
     "title": "Let Us Plan Your Perfect Gateway",
     "desc": "Leave the Details to Us and Embark on your Ideal Escape. Our Expert Team Will Curate A Personalized Itinerary For A Seamless And Unforgettable Journey",
@@ -82,6 +74,45 @@
     "day": "Day",
     "night": "Night",
     "price": "Starting From:",
-    "not-found": "No products found"
+    "not-found": "No products found",
+    "where": "Where are you going?",
+    "pc": "Find your travel location here",
+    "sort-new": "Newest",
+    "sort-old": "Oldest",
+    "sort-low": "Low Price",
+    "sort-high": "High Price",
+    "sc": "Search"
+  },
+  "Visa": {
+    "title-1": "For Document & Visa Processing",
+    "title-2": "can visit us at :",
+    "title-3": "Documents & Visa",
+    "req": "Requirements",
+    "contact": "Contact Us"
+  },
+  "About": {
+    "header-1": "About Us",
+    "desc": "Find out more about us. We are dedicated to providing our customers with an unforgettable travel experience.",
+    "desc-1": "Engaged in the world of travel agencies CARI TRAVEL has an extensive business network that makes it easy for us to provide the best services including flight tickets, trains, hotels, travel document management, domestic and international tours, incentive tours, cruises, travel insurance, vehicle rental.",
+    "header-2": "Who We Are?",
+    "visi-misi": "Company Mission & Vision",
+    "tit-visi": "Our Vision",
+    "visi": "Become a leading travel agency that is able to provide different, quality, and unforgettable travel experiences, as well as being a trusted friend in every tour of our customers.",
+    "tit-misi": "Our Mission",
+    "misi": "Providing high quality travel services by utilizing an extensive network and expert staff, and ensuring customer satisfaction through impeccable service, affordable prices, and memorable vacation experiences.",
+    "discover-desc": "We always improve the quality of service and customer comfort with our motto that wants to make your trip a different experience, we are committed to providing perfect service, affordable prices and a new experience on vacation and memorable memories.",
+    "btn": "See Our Tour"
+  },
+  "DetailPage": {
+    "service": "Tour Package",
+    "see": "See All Photos",
+    "order": "Order Now",
+    "price": "Starting From:",
+    "people": "Person",
+    "day": "Day",
+    "night": "Night",
+    "general": "General Information",
+    "paket": "Package Information",
+    "add": "Additional Information"
   }
 }

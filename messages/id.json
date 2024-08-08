@@ -19,6 +19,10 @@
     "title": "Hubungi Kami | Cari Travel | Cari tempat Travel Murah Meriah",
     "description": "Make your Journey to the next level"
   },
+  "MetadataProduct": {
+    "title": " | Cari Travel | Cari tempat Travel Murah Meriah",
+    "description": "Make your Journey to the next level"
+  },
   "Navigation-Bar": {
     "home": "Beranda",
     "about": "Tentang Kami",
@@ -64,18 +68,6 @@
     "subtitle": "Nikmati perjalanan yang sehat dan indah bersama kami. Anda memiliki semua jenis hiburan di sini.",
     "button": "Hubungi Kami"
   },
-  "About": {
-    "header-1": "Tentang Kami",
-    "header-2": "Beranda",
-    "desc": "Kami telah membangun tim yang berpartisipasi dalam kursus pelatihan profesional, dipersiapkan untuk menangani setiap situasi yang muncul dengan tingkat ketenangan yang memberikan ketenangan pikiran kepada pelanggan.",
-    "vision": "Visi Kami",
-    "mission": "Misi Kami",
-    "content-1": "Menjadi Perusahaan Logistik Export dan Import terbaik yang terkemuka, terpercaya, dan handal dengan mengutamakan kepercayaan dan kepuasan Customer.",
-    "content-2": "Kami bertekad untuk menjadi pilihan utama dalam layanan logistik, memberikan solusi terbaik bagi kebutuhan ekspor dan impor, serta memberikan kepuasan yang tak tertandingi kepada setiap pelanggan. Dengan fokus pada keandalan, profesionalisme, dan inovasi, kami berkomitmen untuk terus meningkatkan kualitas layanan demi kepuasan dan kepercayaan pelanggan.",
-    "content-li-1": "Memberikan Pelayanan yang Kompetitif, Berkualitas, dan Aman.",
-    "content-li-2": "Menjadi solusi customer dalam keperluan pengiriman Export maupun Import.",
-    "content-li-3": "Melakukan perkembangan manajemen dan teknologi sehingga mampu memberikan kepuasan dan kepercayaan kepada Customer"
-  },
   "Tour": {
     "title": "Biarkan Kami Merencanakan Gerbang Sempurna Anda",
     "desc": "Serahkan Detailnya kepada Kami dan Mulailah Liburan Ideal Anda. Tim Ahli Kami Akan Menyusun Rencana Perjalanan yang Dipersonalisasi Untuk Perjalanan yang Sempurna dan Tak Terlupakan",
@@ -83,6 +75,45 @@
     "day": "Hari",
     "night": "Malam",
     "price": "Harga Mulai Dari:",
-    "not-found": "Tidak ada produk yang ditemukan"
+    "not-found": "Tidak ada produk yang ditemukan",
+    "where": "Kamu Mau Kemana?",
+    "pc": "Cari lokasi travel kamu disini",
+    "sort-new": "Paling Baru",
+    "sort-old": "Paling Lama",
+    "sort-low": "Termurah",
+    "sort-high": "Termahal",
+    "sc": "Cari"
+  },
+  "Visa": {
+    "title-1": "Untuk Kepengurusan Dokumen & Visa",
+    "title-2": "bisa kunjungi kami di :",
+    "title-3": "Dokumen & Visa",
+    "req": "Persyaratan",
+    "contact": "Hubungi Kami"
+  },
+  "About": {
+    "header-1": "Tentang Kami",
+    "desc": "Ketahui lebih tentang kami. Kami berdedikasi memberikan pengalaman wisata yang tak terlupakan kepada pelanggan kami",
+    "desc-1": "Bergerak di dunia biro perjalanan wisata CARI TRAVEL memiki jaringan bisnis yang luas sehingga memudahkan kami untuk memberikan pelayanan terbaik diantaranya tiket penerbangan, kereta api, hotel, pegurusan dokumen perjalanan,tour domestik dan internasional, incentive tour, cruises, asuransi perjalanan, rental kendaraan.",
+    "header-2": "Siapa Kami?",
+    "visi-misi": "Visi Misi Perusahaan",
+    "tit-visi": "Visi Kami",
+    "visi": "Menjadi biro perjalanan wisata terkemuka yang mampu memberikan pengalaman perjalanan yang berbeda, berkualitas, dan tak terlupakan, serta menjadi sahabat terpercaya dalam setiap perjalanan wisata pelanggan kami.",
+    "tit-misi": "Misi Kami",
+    "misi": "Menyediakan layanan perjalanan berkualitas tinggi dengan memanfaatkan jaringan luas dan staf ahli, serta memastikan kepuasan pelanggan melalui pelayanan sempurna, harga terjangkau, dan pengalaman liburan yang berkesan.",
+    "discover-desc": "Kami selalu meningkatkan kualitas pelayanan dan kenyamanan pelanggan dengan motto kami yang ingin mejadikan perjalanan anda menjadi pengalaman yang berbeda kami berkomitmen memberikan service dengan sempurna,harga yang terjangkau dan pengalaman yang baru dalan berlibur dan memorable memories.",
+    "btn": "Lihat Tour Kami"
+  },
+  "DetailPage": {
+    "service": "Paket Tour",
+    "see": "Lihat Semua Foto",
+    "order": "Pesan Sekarang",
+    "price": "Harga Mulai Dari:",
+    "people": "Orang",
+    "day": "Hari",
+    "night": "Malam",
+    "general": "Informasi Umum",
+    "paket": "Informasi Paket",
+    "add": "Informasi Tambahan"
   }
 }

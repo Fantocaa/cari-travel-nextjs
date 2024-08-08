@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 interface ProductTitleProps {
   // id: number;
@@ -18,6 +19,7 @@ interface Props {
 }
 
 export default function ProductTitle({ product }: Props) {
+  const t = useTranslations("DetailPage");
   return (
     <div className="pt-8">
       <h1 className="font-semibold text-xl md:text-3xl">{product.title}</h1>
@@ -42,7 +44,9 @@ export default function ProductTitle({ product }: Props) {
             src="/images/icon/user.svg"
             className="h-6 w-6"
           />
-          <h1>{product.traveler} Orang</h1>
+          <h1>
+            {product.traveler} {t("people")}
+          </h1>
         </div>
         <div className="flex items-center gap-2">
           <Image
@@ -53,7 +57,7 @@ export default function ProductTitle({ product }: Props) {
             className="h-6 w-6"
           />
           <h1>
-            {product.duration} Hari {product.duration_night} Malam
+            {product.duration} {t("day")} {product.duration_night} {t("night")}
           </h1>
         </div>
         <div className="flex items-center gap-2">

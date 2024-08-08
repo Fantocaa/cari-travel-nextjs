@@ -2,11 +2,7 @@ import React from "react";
 import type { Metadata } from "next";
 import HeaderVisa from "@/components/visa-page/header-visa";
 import { getTranslations } from "next-intl/server";
-
-// export const metadata: Metadata = {
-//   title: "Document & Visa",
-//   description: "Make your Journey to the next level",
-// };
+import MainVisa from "@/components/visa-page/main-visa";
 
 interface Params {
   params: {
@@ -47,7 +43,8 @@ export default async function Visa() {
   const { products } = await getData();
   return (
     <>
-      <HeaderVisa products={products} />
+      {/* <HeaderVisa products={products} /> */}
+      <MainVisa products={products} />
     </>
   );
 }

@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import Lightbox, { Slide } from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
@@ -15,16 +17,14 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-// interface ImageProps {
-//   url: string;
-//   // type: "png" | "mp4";
-// }
-
 interface HeaderProductProps {
   // images: ImageProps[];
   images: string[]; // Array of image URLs
   videoUrl?: string;
   thumbnailUrl?: string;
+  translations: {
+    see: string;
+  };
 }
 
 type CarouselItemType =
@@ -41,6 +41,7 @@ const HeaderProduct2 = ({
   images,
   videoUrl,
   thumbnailUrl,
+  translations,
 }: HeaderProductProps) => {
   const [index, setIndex] = useState<number>(-1);
 
@@ -141,7 +142,7 @@ const HeaderProduct2 = ({
                     className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 text-white text-xl font-bold cursor-pointer rounded-xl"
                     onClick={() => setIndex(4)}
                   >
-                    Lihat semua foto
+                    {translations.see}
                   </div>
                 )}
               </div>

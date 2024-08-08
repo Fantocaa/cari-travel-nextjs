@@ -67,6 +67,13 @@ interface Props {
     Night: string;
     price: string;
     not: string;
+    where: string;
+    pc: string;
+    sn: string;
+    so: string;
+    sl: string;
+    sh: string;
+    sc: string;
   };
 }
 
@@ -277,14 +284,14 @@ export default function ProductPage({ products, translations }: Props) {
     <>
       <div>
         <div className=" p-8 rounded-xl mt-4 w-full container">
-          <h1 className="text-2xl font-semibold pb-4">Kamu mau kemana?</h1>
+          <h1 className="text-2xl font-semibold pb-4">{translations.where}</h1>
           <div className="md:flex justify-between">
             <div className="flex gap-4 relative pb-4 md:pb-0">
               <Search className="absolute translate-y-3 translate-x-4" />
               <Input
                 id="search"
                 type="text"
-                placeholder="Cari lokasi travel kamu disini"
+                placeholder={translations.pc}
                 className="h-12 w-full md:w-96 rounded-full px-4 pl-12 bg-white"
                 value={tempSearchTerm}
                 onChange={handleSearchChange}
@@ -300,7 +307,7 @@ export default function ProductPage({ products, translations }: Props) {
                 onClick={handleSearchClick}
                 className="h-12 bg-pink-500 text-white hover:bg-pink-400 rounded-full px-4"
               >
-                Search
+                {translations.sc}
               </Button>
             </div>
             <div className="flex gap-2 md:gap-4">
@@ -308,17 +315,16 @@ export default function ProductPage({ products, translations }: Props) {
                 onValueChange={(value: string) => handleSortChange(value)}
               >
                 <SelectTrigger className="w-[180px] h-12 rounded-full px-4 bg-white">
-                  {/* <SelectValue placeholder="Sort By" /> */}
                   <SelectValue
                     placeholder={
                       sortBy === "new"
-                        ? "Paling Baru"
+                        ? translations.sn
                         : sortBy === "old"
-                        ? "Paling Lama"
+                        ? translations.so
                         : sortBy === "lowPrice"
-                        ? "Termurah"
+                        ? translations.sl
                         : sortBy === "highPrice"
-                        ? "Termahal"
+                        ? translations.sh
                         : "Sort By"
                     }
                   ></SelectValue>
@@ -326,10 +332,10 @@ export default function ProductPage({ products, translations }: Props) {
                 <SelectContent>
                   <SelectGroup>
                     <SelectLabel>Sort By</SelectLabel>
-                    <SelectItem value="new">Paling Baru</SelectItem>
-                    <SelectItem value="old">Paling Lama</SelectItem>
-                    <SelectItem value="lowPrice">Termurah</SelectItem>
-                    <SelectItem value="highPrice">Termahal</SelectItem>
+                    <SelectItem value="new">{translations.sn}</SelectItem>
+                    <SelectItem value="old">{translations.so}</SelectItem>
+                    <SelectItem value="lowPrice">{translations.sl}</SelectItem>
+                    <SelectItem value="highPrice">{translations.sh}</SelectItem>
                   </SelectGroup>
                 </SelectContent>
               </Select>

@@ -45,6 +45,13 @@ export default function MainProduct({ products, categories }: Props) {
     Night: t("night"),
     price: t("price"),
     not: t("not-found"),
+    where: t("where"),
+    pc: t("pc"),
+    sn: t("sort-new"),
+    so: t("sort-old"),
+    sl: t("sort-low"),
+    sh: t("sort-high"),
+    sc: t("sc"),
   };
   return (
     <>
