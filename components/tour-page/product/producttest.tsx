@@ -80,7 +80,7 @@ interface Props {
 // export default function ProductPage({ products, categories }: Props) {
 export default function ProductPage({ products, translations }: Props) {
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage] = useState(6);
+  const [postsPerPage] = useState(24);
   const { searchTerm, setSearchTerm } = useSearchStore();
   const [tempSearchTerm, setTempSearchTerm] = useState(searchTerm);
   const [filteredProducts, setFilteredProducts] = useState(products);
@@ -299,7 +299,7 @@ export default function ProductPage({ products, translations }: Props) {
               ></Input>
               {tempSearchTerm && (
                 <X
-                  className="absolute right-28 top-1/2 -translate-y-1/2 cursor-pointer"
+                  className="absolute right-24 top-1/2 -translate-y-1/2 cursor-pointer"
                   onClick={clearSearch}
                 />
               )}

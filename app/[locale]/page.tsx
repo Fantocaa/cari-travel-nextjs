@@ -23,10 +23,13 @@ export async function generateMetadata({ params: { locale } }: Params) {
 }
 
 async function getData() {
-  const res = await fetch("http://cms-caritravel-filament.test/traveldata", {
-    // const res = await fetch("https://backend.caritravel.com/api/postdata", {
-    cache: "no-store",
-  });
+  const res = await fetch(
+    "http://cms-caritravel-filament.test/traveldata/recomendation",
+    {
+      // const res = await fetch("https://backend.caritravel.com/api/postdata", {
+      cache: "no-store",
+    }
+  );
 
   if (!res.ok) {
     throw console.log("Error failed to fetch");

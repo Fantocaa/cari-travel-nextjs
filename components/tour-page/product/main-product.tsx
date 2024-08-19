@@ -53,6 +53,7 @@ export default function MainProduct({ products, categories }: Props) {
     sh: t("sort-high"),
     sc: t("sc"),
   };
+
   return (
     <>
       <ProductTest

@@ -1,6 +1,4 @@
 import React from "react";
-import type { Metadata } from "next";
-import HeaderVisa from "@/components/visa-page/header-visa";
 import { getTranslations } from "next-intl/server";
 import MainVisa from "@/components/visa-page/main-visa";
 
@@ -21,6 +19,7 @@ export async function generateMetadata({ params: { locale } }: Params) {
 
 async function getData() {
   const res = await fetch("http://cms-caritravel-filament.test/visadata", {
+    // const res = await fetch("https://backend.caritravel.com/visadata", {
     cache: "no-store",
   });
 

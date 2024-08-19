@@ -4,6 +4,8 @@ import { Send } from "lucide-react";
 import LocaleLink from "@/components/locale-link";
 import { useTranslations } from "next-intl";
 
+import SearchHeader from "./searchHeader";
+
 const Header = () => {
   const t = useTranslations("Header-Home");
 
@@ -30,21 +32,11 @@ const Header = () => {
                 </span>
               </h1>
 
-              <p className=" mt-4 max-w-md sm:text-base/relaxed">
+              <p className=" mt-4 max-w-lg sm:text-base/relaxed">
                 {t("subtitle")}
               </p>
 
-              <div className="mt-4 flex flex-wrap justify-start gap-4">
-                <LocaleLink
-                  className="block text-center md w-full border border-yellowcaritravel bg-yellowcaritravel transition-colors duration-500 px-12 py-3 text-sm font-medium text-blackcaritravel hover:bg-transparent hover:text-yellowcaritravel focus:outline-none focus:ring active:text-opacity-75 sm:w-auto rounded-full"
-                  href="/tour"
-                >
-                  <div className="flex gap-2 justify-center items-center">
-                    Let&apos;s Travel
-                    <Send />
-                  </div>
-                </LocaleLink>
-              </div>
+              <SearchHeader />
             </>
           </div>
         </div>

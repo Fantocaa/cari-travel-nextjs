@@ -21,8 +21,8 @@ export const generateMetadata = async ({
   const t = await getTranslations({ locale, namespace: "MetadataProduct" });
 
   return {
-    title: `${product?.title} ${t("title")}`, // Combine product title with translated title
-    description: t("description"), // Use translated description
+    title: `${product?.title} ${t("title")}`,
+    description: t("description"),
   };
 };
 

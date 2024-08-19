@@ -83,7 +83,7 @@ const ProductDetailPageContent = ({ product }: Props) => {
               </p>
             </div>
             <div>
-              <Link href={product?.author_phone}>
+              <Link href={product?.author_phone} target="__blank">
                 <Button className="text-base md:text-lg p-5 2xl:p-6 bg-pinkcaritravel-900 hover:bg-pinkcaritravel-700">
                   {t("order")}
                 </Button>
