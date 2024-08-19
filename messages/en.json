@@ -81,7 +81,8 @@
     "sort-old": "Oldest",
     "sort-low": "Low Price",
     "sort-high": "High Price",
-    "sc": "Search"
+    "sc": "Search",
+    "emptySearchError": "Please Fill this field"
   },
   "Visa": {
     "title-1": "For Document & Visa Processing",

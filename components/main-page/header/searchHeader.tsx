@@ -9,11 +9,12 @@ export default function SearchHeader() {
   const translations = {
     pc: t("pc"),
     sc: t("sc"),
+    emptySearchError: t("emptySearchError"),
   };
 
   return (
     <>
-      <div className="mt-6 flex flex-wrap justify-start gap-4">
+      <div className="mt-6">
         {/* <LocaleLink
     className="block text-center md w-full border border-yellowcaritravel bg-yellowcaritravel transition-colors duration-500 px-12 py-3 text-sm font-medium text-blackcaritravel hover:bg-transparent hover:text-yellowcaritravel focus:outline-none focus:ring active:text-opacity-75 sm:w-auto rounded-full"
     href="/tour"

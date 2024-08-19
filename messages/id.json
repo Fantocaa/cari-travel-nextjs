@@ -82,7 +82,8 @@
     "sort-old": "Paling Lama",
     "sort-low": "Termurah",
     "sort-high": "Termahal",
-    "sc": "Cari"
+    "sc": "Cari",
+    "emptySearchError": "Mohon untuk diisi"
   },
   "Visa": {
     "title-1": "Untuk Kepengurusan Dokumen & Visa",
