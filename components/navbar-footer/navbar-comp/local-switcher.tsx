@@ -45,7 +45,7 @@ export default function LocalSwitcher({ isScrolled }: LocalSwitcherProps) {
     <ReactFlagsSelect
       selected={localActive === "id" ? "ID" : "GB"} // Indonesia and English flags
       onSelect={onSelectChange}
-      countries={["GB", "ID"]} // GB for English (UK flag), ID for Indonesia
+      countries={["ID", "GB"]} // GB for English (UK flag), ID for Indonesia
       //   customLabels={{ GB: "English", ID: "Indonesia" }}
       showSelectedLabel={false}
       showOptionLabel={false}
