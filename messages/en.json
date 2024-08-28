@@ -60,7 +60,8 @@
   "Product-Location": {
     "header": "An Unforgettable Adventure Awaits! 🌍🌟",
     "subheader": "Plan Your Dream Vacation with Fun Ideas, Best Lodging, and Other Useful Information! 🏖️🚗🏨",
-    "button": "See All"
+    "button": "See All",
+    "button-1": "View Details"
   },
   "CTA": {
     "title": "Your Travel Journey Starts Here!",
